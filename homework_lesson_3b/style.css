@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 800px;
+    width: 450px;
+    margin: auto;
+} 
+
+body {
+    box-shadow: 0 2px 4px rgb(92, 86, 86);
+    border-radius: 4px;
+    overflow:auto;
+}
+.card-time {
+    height: 160px;
+    text-align: center;
+    color: #fff
+}
+
+.card_time-year {
+    background-color: #ef5321;
+    height: 30px;
+    padding-top: 7px;
+}
+
+.card_time-date{
+    background-color: #fe6d3f;
+    height: 60px;
+    padding: 30px;
+}
+
+.card_time-date .day {
+    font-size: 40px;
+}
+
+.content {
+    margin-top: 15px;
+    height: 170px;
+    width: 450px;
+    font-family: Roboto;
+    color: #464646;
+    text-align: left;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.card-content-time .time, .card-content-time .day, .card-content-time .position {
+    color: #757575;
+}
+
+a {
+    color: #3c78e8;
+    text-decoration: none;
+}
+
+.register {
+    padding-top: 5px;
+}
+
+.teacher {
+    margin-top: 10px;
+}
+
+.content .time {
+    margin: 30px;
+}
+
+.content .time {
+    margin: 0px;
+}
+
+.card-content-time-item-style {
+    margin-bottom: 3px;
+}

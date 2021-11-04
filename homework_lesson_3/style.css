@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 000px;
+    width: 450px;
+    margin: auto;
+} 
+
+body {
+    box-shadow: 0 2px 4px rgb(92, 86, 86);
+    border-radius: 4px;
+    overflow:auto;
+}
+.card {
+    height: 160px;
+    text-align: center;
+    color: #fff
+}
+
+.year {
+    background-color: #ef5321;
+    height: 30px;
+    padding-top: 7px;
+}
+
+
+.time2 {
+    background-color: #fe6d3f;
+    height: 60px;
+    padding: 30px;
+}
+
+.time2 .day {
+    font-size: 40px;
+}
+
+.content {
+    padding: 20px;
+    font-family: Roboto;
+    color: #464646;
+}
+
+.content .time, .content .day, .content .position {
+    color: #757575;
+}
+
+a {
+    color: #3c78e8;
+    text-decoration: none;
+}
+
+.register {
+    padding-top: 5px;
+}
+
+.teacher {
+    margin-top: 10px;
+}
+
+.content .time {
+    margin: 30px;
+}
+
+.content .time {
+    margin: 0px;
+}
+
+.card-content-time-item-style {
+    margin-bottom: 3px;
+}
