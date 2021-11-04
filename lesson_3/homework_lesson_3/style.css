@@ -4,7 +4,7 @@
 }
 
 html {
-    height: 000px;
+    height: 800px;
     width: 450px;
     margin: auto;
 } 
@@ -31,7 +31,8 @@ body {
 .time2 {
     background-color: #fe6d3f;
     height: 60px;
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 40px;   
 }
 
 .time2 .day {
@@ -39,7 +40,10 @@ body {
 }
 
 .content {
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
     font-family: Roboto;
     color: #464646;
 }

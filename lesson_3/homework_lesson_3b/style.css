@@ -30,7 +30,8 @@ body {
 .card_time-date{
     background-color: #fe6d3f;
     height: 60px;
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 40px;
 }
 
 .card_time-date .day {
@@ -38,13 +39,15 @@ body {
 }
 
 .content {
-    margin-top: 15px;
-    height: 170px;
+    margin-top: 10px;
+    height: 220px;
     width: 450px;
     font-family: Roboto;
     color: #464646;
     text-align: left;
-    padding-left: 15px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     box-sizing: border-box;
 }
 
