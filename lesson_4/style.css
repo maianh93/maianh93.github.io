@@ -1,0 +1,61 @@
+.container {
+    height: 800px;
+    background-color: beige;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+
+    /* flex-wrap: wrap; */
+    /* chỉ áp dụng cho dòng */
+    align-content: center; 
+    
+
+}
+
+.container div {
+    width: 200px;
+    height: 200px;
+    background-color: violet;
+    font-size: 30px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+
+}
+/* 
+.container div:first-child {
+    font-size: 48px;
+
+}
+
+.container div:nth-child(3) {
+    font-size: 70px;
+} */
+
+.container div:first-child {
+    order: 1;
+    /* flex-grow: 1; */
+    width: 500px;
+    flex-shrink: 2;
+}
+
+
+.container div:nth-child(3) {
+    /* flex-grow: 3; */
+    order: 2;
+    width: 400px;
+    flex-shrink: 3;
+}
+
+.container div:nth-child(2) {
+    /* flex-basis: 400px; */
+    width: 300px;
+}
+
+    /* .container div:last-child {
+        order: 3;
+    } */

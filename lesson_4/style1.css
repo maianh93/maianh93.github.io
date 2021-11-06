@@ -1,0 +1,54 @@
+html {
+    background-color: #464646;
+    font-family: roboto;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+    
+}
+
+.CSH {
+    width: 25%;
+    padding-left: 200px;
+}
+
+.Intro {
+    width: 25%;
+}
+
+.TVTS {
+    width: 25%;
+}
+
+.address {
+    width: 25%;
+    padding-right: 200px;
+}
+
+.address p {
+    line-height: 30px;
+}
+
+h4 {
+    color: #f5fcff;
+}
+p {
+    color: #919294}
+
+a {
+    color: #919294;
+    text-decoration : none
+}
+    
+a:hover {
+    color: #919294;
+    text-decoration: underline;
+}
+i {
+    padding-right: 30px;
+}
