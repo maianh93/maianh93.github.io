@@ -1,0 +1,55 @@
+body {
+    height: 2000px;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+
+}
+
+.box1 {
+    width: 1000px;
+    height: 500px;  
+    position: relative;
+}
+
+.box2 {
+    background-color: cadetblue;
+    position: absolute;
+    right: 100px;
+    bottom: 100px;  
+}
+
+.box3 {
+    width: 1300px;
+    height: 600px;
+    background-color: beige;
+    position: relative;
+}
+
+button {
+    background-color: chocolate;
+    color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+}
+
+button:hover {
+    border: 1px solid chocolate;
+    background-color: #fff;
+    color: chocolate;
+
+}
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: turquoise;
+    padding: 30px 0;
+    text-align: center;
+}
