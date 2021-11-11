@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: roboto;
+}
+
+.container {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    width: 400px;
+    height: 387px;
+    margin: 20vh;
+    box-shadow: 3px 3px 3px grey;
+    transition: all 0.5s;
+}
+
+.image-container {
+    position: relative;
+    width: 400px;
+    height: 225px;
+    background: url(/City-Lights-Wallpapers.jpg) no-repeat;
+    background-size: 400px 225px;
+    transition: all 0.5s;
+}
+
+.container:hover .image-container {
+    transition: all 0.5s;
+    height: 125px;
+    background-size: 450px 250px;
+    background-position: -16px -16px;
+}
+
+.date-div {
+    float: right;
+    margin: 20px 20px 0 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: tomato;
+    font-weight: bold;
+}
+
+.date-div .day {
+    color: white;
+    font-size: 18px;
+    padding: 8px 8px 0 19.2px;
+}
+
+.date-div .month {
+    color: white;
+    font-size: 18px;
+    padding: 0rem 0rem 0 12.8px;
+}
+
+.content-label {
+    position: absolute;
+    padding: 5px 0 0 14px;
+    float: left;
+    width: 100px;
+    height: 30px;
+    background: tomato;
+    font-weight: bold;
+    margin-top: -30px;
+    color: white;
+    font-size: 18px;
+}
+
+.content-body {
+    padding: 13px;
+    height: 100px;
+    transition: all 0.5s;
+}
+
+.container:hover .content-body {
+    transition: all 0.5s;
+    /* margin-top: -50px; */
+}
+
+.content-body .content-h1 {
+    padding: 0 0 5px 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.content-body .content-h2 {
+    padding: 0px;
+    font-size: 24px;
+    font-weight: bold;
+    color: tomato;
+}
+
+.content-body .content-hidden {
+    margin-left: 8px;
+    line-height: 1.5em;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.container:hover .content-body .content-hidden {
+    opacity: 1;
+    padding: 20px 0 0 0;
+    font-size: 17px;
+    color: grey;
+    transition: all 0.2s;
+    /* height: 125px; */
+}
+
+
+.content-footer {
+    display: flex;
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 15px;
+    color: grey;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+}
+
+.content-time, .content-comment {
+    margin: 5px;
+    padding: 5px;
+}
+
+.content-h1, .content-h2 {
+    margin-left: 5px;
+}
+
+.container:hover .content-footer {
+    transition: all 0.5s;
+    margin-top: 100px;
+}
