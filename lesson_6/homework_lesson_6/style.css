@@ -21,7 +21,7 @@
     position: relative;
     width: 400px;
     height: 225px;
-    background: url(/lesson_6/homework_lesson_6/City-Lights-Wallpapers.jpg) no-repeat;
+    background: url(/City-Lights-Wallpapers.jpg) no-repeat;
     background-size: 400px 225px;
     transition: all 0.5s;
 }
@@ -31,6 +31,7 @@
     height: 125px;
     background-size: 450px 250px;
     background-position: -16px -16px;
+    filter: brightness(90%);
 }
 
 .date-div {
@@ -71,6 +72,7 @@
 .content-body {
     padding: 13px;
     height: 100px;
+    width: 100%;
     transition: all 0.5s;
 }
 
@@ -94,15 +96,17 @@
 }
 
 .content-body .content-hidden {
-    margin-left: 8px;
+    /* margin-left: 8px; */
+    padding: 20px 20px 20px 20px;
     line-height: 1.5em;
     opacity: 0;
     transition: all 0.2s;
+    /* box-sizing: border-box; */
 }
 
 .container:hover .content-body .content-hidden {
     opacity: 1;
-    padding: 20px 0 0 0;
+    padding: 20px 0px 0px 9px;
     font-size: 17px;
     color: grey;
     transition: all 0.2s;
