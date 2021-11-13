@@ -6,6 +6,7 @@
 }
 
 .container {
+    position: relative;
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -18,7 +19,7 @@
 }
 
 .image-container {
-    position: relative;
+    position: relative; 
     width: 400px;
     height: 225px;
     background: url(/lesson_6/homework_lesson_6/City-Lights-Wallpapers.jpg) no-repeat;
@@ -31,11 +32,12 @@
     height: 125px;
     background-size: 450px 250px;
     background-position: -16px -16px;
-    filter: brightness(90%);
+    filter: brightness(70%);
 }
 
 .date-div {
-    float: right;
+    position: absolute;
+    right: 0;
     margin: 20px 20px 0 0;
     width: 60px;
     height: 60px;
@@ -57,7 +59,7 @@
 }
 
 .content-label {
-    position: absolute;
+    position: relative;
     padding: 5px 0 0 14px;
     float: left;
     width: 100px;
@@ -100,7 +102,7 @@
     padding: 20px 20px 20px 20px;
     line-height: 1.5em;
     opacity: 0;
-    transition: all 0.2s;
+    transition: all 0.7s;
     /* box-sizing: border-box; */
 }
 
@@ -109,7 +111,7 @@
     padding: 20px 0px 0px 9px;
     font-size: 17px;
     color: grey;
-    transition: all 0.2s;
+    transition: all 0.7s;
     /* height: 125px; */
 }
 
