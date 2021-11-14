@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    z-index: -1;
+    position: relative;
+    background-image: url(/christmas-background-with-decoration-gift-1226783.jpg);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: 100%;
+
+}
+
+.container {
+    position: relative;
+    left: 50%;
+    background-color: whitesmoke;
+    display: flex;
+    font-family: Caveat;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    width: 600px;
+    height: 650px;
+    margin: 5vh 10vh;
+    box-shadow: 3px 3px 3px grey;
+    transition: all 0.5s;
+    /* overflow: hidden; */
+}
+
+.image-container {
+    position: relative; 
+    width: 600px;
+    height: 400px;
+    background: url(/904383.jpg) no-repeat;
+    background-size: 600px 400px;
+    transition: all 0.5s;
+}
+
+.container:hover .image-container {
+    transition: all 0.5s;
+    height: 250px;
+    background-size: 750px 500px;
+    background-position: -16px -16px;
+    filter: brightness(30%);
+}
+
+.date-div {
+    position: absolute;
+    right: 0;
+    margin: 20px 20px 0 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: tomato;
+    font-weight: bold;
+}
+
+.date-div .heart {
+    color: white;
+    font-size: 35px;
+    padding: 20px 10px 0 40px;
+    animation-name: example;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;}
+    
+    @keyframes example {
+        0%   {font-size: 35px;}
+        12%  {font-size: 36px;}
+        25%  {font-size: 37px;}
+        32%  {font-size: 38px;}
+        50%  {font-size: 39px;}
+        68%  {font-size: 38px;}
+        75%  {font-size: 37px;}
+        88%  {font-size: 36px;}
+        100% {font-size: 35px;}
+      }
+    
+
+
+
+.date-div .month {
+    color: white;
+    font-size: 25px;
+    padding: 0 0 0 25px;
+}
+
+
+.content-body {
+    padding: 20px;
+    height: 150px;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.container:hover .content-body {
+    transition: all 0.5s;
+    /* margin-top: -50px; */
+}
+
+.content-body .content-h1 span {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    animation: animate 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+    
+@keyframes animate {
+    0% {
+        transform: translateY(0px);
+    }
+    20% {
+        transform: translateY(-20px);
+    }
+
+    40%, 100% {
+        transform: translateY(0px);
+    }
+}
+
+.content-body .content-h2 {
+    padding: 0px;
+    font-size: 40px;
+    /* font-weight: bold; */
+    color: tomato;
+}
+
+.content-body .content-hidden {
+    padding: 20px 20px 20px 20px;
+    line-height: 1em;
+    opacity: 0;
+    transition: all 0.1s;
+    position: absolute;
+}
+
+.container:hover .content-body .content-hidden {
+    opacity: 1;
+    padding: 20px 0px 0px 9px;
+    font-size: 2.7em;
+    color: grey;
+    transition: all 0.1s;
+}
+
+
+.content-footer {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 20px;
+    font-size: 40px;
+    color:tomato;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+}
+
+.content-time, .content-comment {
+    margin: 5px;
+    padding: 5px;
+}
+
+.content-h1, .content-h2 {
+    margin-left: 5px;
+}
+
+.container:hover .content-footer {
+    transition: all 0.5s;
+    margin-top: 150px;
+}
+
+/**/
+.drop {
+    position: absolute;
+    top: 0;    
+    z-index: -1;
+    opacity: 0;
+}
+.snow {
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    background-color: snow;
+    box-shadow: 0 0 10px whitesmoke
+}
+
+
+.animate {
+    animation: falling 8.5s infinite ease-in;    
+}
+
+
+@keyframes falling {
+    0% {top: 0; opacity: 1;}
+    100% {top: 100vh; opacity: 0}
+} 

@@ -1,0 +1,149 @@
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+
+}
+
+.snow {
+    font-size: 1em;
+    /* animation-name: example;
+    animation-duration: 20s;
+    animation-iteration-count: infinite; */
+    position: relative;
+}
+
+.snow-1 {
+    font-size: 1em;
+    animation-name: example;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    color: grey;
+}
+
+.snow-2 {
+    font-size: 0.5em;
+    animation-name: example-2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.snow-3 {
+    font-size: 1em;
+    animation-name: example-3;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.snow-4 {
+    font-size: 0.5em;
+    animation-name: example-4;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+.snow-5 {
+    animation-name: example;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    color: grey;
+}
+
+.snow-6 {
+    animation-name: example-2;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+.snow-7 {
+    animation-name: example-3;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    color: grey;
+}
+
+.snow-8 {
+    animation-name: example-4;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+.snow-9 {
+    animation-name: example;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    color: grey;
+}
+
+.snow-10 {
+    animation-name: example-2;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    from {top: 0px;}
+    to {top: 1000px;}
+  }
+
+  @keyframes example-2 {
+    0% {top: 0px}
+    20% {top: 200px; left: 200px;}
+    50% {top: 400px; left: 400px;}
+    75% {top: 700px; left: 600px;}
+    100% {top: 1000px; left: 800px;}
+}
+
+  @keyframes example-3 {
+    0% {top: 0px}
+    20% {top: 100px; left: 300px;}
+    50% {top: 500px; right: 500px;}
+    75% {top: 700px; right: 800px;}
+    100% {top: 1000px; right: 1000px;}
+  }
+
+  @keyframes example-4 {
+    0% {top: 0px}
+    20% {top: 50px; right: 100px;}
+    50% {top: 150px; right: 300px;}
+    75% {top: 300px; right: 600px;}
+    100%{top: 1000px; right: 800px;}
+  }
+
+  @keyframes example-5 {
+    0% {top: 0px}
+    20% {top: 50px; right: 100px;}
+    50% {top: 150px; right: 300px;}
+    75% {top: 300px; right: 600px;}
+    100%{top: 1000px; right: 800px;}
+  }
+
+  @keyframes example-6 {
+    0% {top: 0px}
+    20% {top: 50px; right: 100px;}
+    50% {top: 150px; right: 300px;}
+    75% {top: 300px; right: 600px;}
+    100%{top: 1000px; right: 800px;}
+  }
+
+  @keyframes example-7 {
+    0% {top: 0px}
+    20% {top: 50px; right: 100px;}
+    50% {top: 150px; right: 300px;}
+    75% {top: 300px; right: 600px;}
+    100%{top: 1000px; right: 800px;}
+  }
+
+  @keyframes example-8 {
+    0% {top: 0px}
+    20% {top: 50px; right: 100px;}
+    50% {top: 150px; right: 300px;}
+    75% {top: 300px; right: 600px;}
+    100%{top: 1000px; right: 800px;}
+  }
+
+  

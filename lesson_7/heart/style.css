@@ -1,0 +1,29 @@
+.heart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: red;
+    font-size: 30em;
+    animation-name: example;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes example {
+    0%   {font-size: 30em;}
+    12%  {font-size: 31em;}
+    25%  {font-size: 32em;}
+    32%  {font-size: 33em;}
+    50%  {font-size: 34em;}
+    68%  {font-size: 33em;}
+    75%  {font-size: 32em;}
+    88%  {font-size: 31em;}
+    100% {font-size: 30em;}
+  }
+
+
+
+
