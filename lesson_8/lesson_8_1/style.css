@@ -1,0 +1,334 @@
+* { 
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x:hidden;
+}
+
+#menu{
+    background-color: rgb(225,212,200);
+    z-index:1;
+    width: 100%;
+    display:flex;
+    position: fixed;
+    background: rgb(225,212,200);
+}
+
+#menu > ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1em; 
+    
+}
+
+#menu > ul > li{
+    list-style: none;
+    text-align: center;
+    padding: 1em;
+}
+
+#menu > ul > li > a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Century Gothic',sans-serif;
+    font-size: 1.25em;
+}
+
+#menu > ul > li:hover{
+    background-color: rgb(114,86,74);
+    color: white;
+}
+
+#menu > ul > li:hover > a{
+    color: white;
+}
+
+#menu .fullname {
+    margin: 0em 1em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgb(225,212,200);
+    font-size: 1.5em;
+    color: rgb(114,86,74);
+}
+
+#menu .mainMenu {
+    display: flex;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(225,212,200);
+    font-size: 1.5em;
+    list-style-type: none;
+}
+
+.intro{
+    background-image: url(image/CMA.png);
+    background-color: rgb(114,86,74);
+    background-repeat: no-repeat;
+    background-size:50%;
+    background-position: center;
+    width: 100%;
+    /* height: 100vh; */
+    margin:0;
+    padding:50px;
+    color: rgb(225,212,200);
+}
+.text-intro-main{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:3em;
+    text-shadow: rgb(225,212,200);
+}
+.text-intro{
+    margin: 1.5em 3em;
+    font-size: 1.7em;
+    color: rgb(225,212,200);
+}
+.text-intro-left{
+    margin-top: 40vh;
+}
+.text-intro-right{
+    text-align: right;
+} 
+
+#portfolio {
+    background-color: rgb(225,212,200);
+    background-repeat: no-repeat;
+    background-size:50%;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* height: 120vh; */
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+
+#portfolio h1, h3 {
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+#portfolio .image1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#portfolio .image2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #fff;
+}
+
+
+
+#information {
+    background-color: rgb(225,212,200);
+    /* background-repeat: no-repeat;
+    background-size:50%; */
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* height: 12vh; */
+    margin:0;
+    padding:0;
+    font-size: 0.9em;
+    /* text-align: center; */
+}
+
+#information h1, h3 {
+    padding: 0.5em;
+    padding: 12px;
+    margin-bottom: 25px; 
+}
+
+#information .transition {
+    text-align: center;
+}
+
+#information .biotext {
+    line-height: 2em;
+    font-size: 1.5em;
+}
+
+.image1 img, .image2 img {
+    width: 400px;
+    height: 400px;
+}
+
+#information > .biocontent{
+    margin: 3em 0 1em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding-bottom: 1em;
+}
+
+#information > div > figure{
+    transform: rotate(90deg);
+    MARGIN:0;
+    width: 45%;
+    padding: 0;
+    justify-content: center;
+    display:flex;   
+}
+#information > div > figure > img{
+    height: 14vmax;
+    max-height: 15vh;
+    width: auto;
+    margin:0;
+    padding:0;
+   
+}
+#information > div > div{
+    color: rgb(114,86,74);
+    font-size:1em;
+    width: 80%;
+}
+
+#information > div > div > div{
+    margin-bottom: 1em;
+}
+
+#contact  .transition {
+    background-color: rgb(225,212,200);
+    /* background-repeat: no-repeat; */
+    background-size:50%;
+    background-position: center;
+    margin: 0;
+    padding: 3em;
+    width: 100%;
+    /* height: 10vh; */
+    margin:1em;
+    padding:20px;
+    
+    /* text-align: center; */
+}
+
+#contact > div{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+#contact .content{
+    padding: 3em;
+    margin: 0em 5em;
+    line-height: 2em;
+    font-size: 1.5em;
+    background-color: #fff;
+    
+}
+#contact .contentfigure{
+    width: 30%;
+    display:flex;
+    justify-content: center;
+}
+#contact > div > div > figure img{
+    width: 100%;
+    margin-left: 30%;
+}
+#contact .content1{
+    width: 50%;
+    color: rgb(114,86,74);
+}
+#contact .contentText{
+    font-size: 1.25em;
+}
+#contact .content2column{
+    display:flex;
+}
+#contact .tele{
+    width: 50%;
+    color: black;
+}
+#contact .email{
+    width: 50%;
+    color: black;
+}
+footer {
+    
+    padding: 0em;
+    background-color: rgb(225,212,200);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    
+}
+
+footer > div > figure{
+    width: 25%;  
+    padding-left: 5%; 
+}
+
+
+footer > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > div > div {
+    width: 75%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+.content1{
+    color: black;
+    width: 50%;
+    margin: 0 1.25em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.content1 > p{
+    padding: 0;
+    margin:0.5em 1em;
+}
+.content2{
+    margin:0 1.25em;
+}
+footer > div > div > div > a {
+    padding: 3px;
+    color: rgb(114,86,74);
+}
+
+footer > div > div > div> a > i {
+    font-size: 8em;
+}
+
+footer > div > div > div > a:hover > i {
+    color: black;
+}
