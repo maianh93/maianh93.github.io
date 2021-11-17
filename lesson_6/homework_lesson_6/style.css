@@ -22,7 +22,7 @@
     position: relative; 
     width: 400px;
     height: 225px;
-    background: url(/lesson_6/homework_lesson_6/City-Lights-Wallpapers.jpg) no-repeat;
+    background: url(/City-Lights-Wallpapers.jpg) no-repeat;
     background-size: 400px 225px;
     transition: all 0.5s;
 }
@@ -102,7 +102,7 @@
     padding: 20px 20px 20px 20px;
     line-height: 1.5em;
     opacity: 0;
-    transition: all 0.7s;
+    transition:step-end 0.1s;
     /* box-sizing: border-box; */
 }
 
@@ -111,7 +111,7 @@
     padding: 20px 0px 0px 9px;
     font-size: 17px;
     color: grey;
-    transition: all 0.7s;
+    transition:step-start 2s;
     /* height: 125px; */
 }
 
