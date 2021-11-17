@@ -8,7 +8,7 @@
 body {
     z-index: -1;
     position: relative;
-    background-image: url(/lesson_7/homework_lesson_7/christmas-background-with-decoration-gift-1226783.jpg);
+    background-image: url(/christmas-background-with-decoration-gift-1226783.jpg);
     background-repeat: no-repeat;
     background-attachment:fixed;
     background-size: 100%;
@@ -35,7 +35,7 @@ body {
     position: relative; 
     width: 600px;
     height: 400px;
-    background: url(/lesson_7/homework_lesson_7/904383.jpg) no-repeat;
+    background: url(/904383.jpg) no-repeat;
     background-size: 600px 400px;
     transition: all 0.5s;
 }
@@ -134,20 +134,22 @@ body {
 }
 
 .content-body .content-hidden {
-    padding: 20px 20px 20px 20px;
-    line-height: 1em;
-    opacity: 0;
+    padding: 3px 10px;
+    line-height: 0.9em;
+    opacity: 1;
     transition: all 0.1s;
     position: absolute;
+    font-size: 2.7em;
+    color: grey;
 }
-
+/* 
 .container:hover .content-body .content-hidden {
     opacity: 1;
     padding: 20px 0px 0px 9px;
     font-size: 2.7em;
     color: grey;
     transition: all 0.1s;
-}
+} */
 
 
 .content-footer {
@@ -158,6 +160,7 @@ body {
     color:tomato;
     letter-spacing: 1px;
     transition: all 0.5s;
+    margin-top: 150px;
 }
 
 .content-time, .content-comment {
@@ -169,10 +172,10 @@ body {
     margin-left: 5px;
 }
 
-.container:hover .content-footer {
+/* .container:hover .content-footer {
     transition: all 0.5s;
     margin-top: 150px;
-}
+} */
 
 /**/
 .drop {

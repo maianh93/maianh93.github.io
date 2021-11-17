@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    width: 400px;
+    border: 10px solid #ccc;
+    padding: 50px;
+}
+
+.box p{
+    transition: all 1s;
+    opacity: 0;
+}
+
+.box:hover p{
+    transform: translateX(calc(100%-50px));
+    transition: all 0.3s;
+    opacity: 1;
+}
+
+button {
+    padding: 10px 20px;
+    border: 1px solid orange;
+    background-color: orange;
+    color: #fff;
+    border-radius: 4px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+button:hover {
+    /* padding: 20px, 40px; */
+    background-color: #fff;
+    color: orange;
+    /* transform: scale(2); */
+}
+
