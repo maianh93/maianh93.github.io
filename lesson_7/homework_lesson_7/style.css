@@ -8,7 +8,7 @@
 body {
     z-index: -1;
     position: relative;
-    background-image: url(/christmas-background-with-decoration-gift-1226783.jpg);
+    background-image: url(/lesson_7/homework_lesson_7/christmas-background-with-decoration-gift-1226783.jpg);
     background-repeat: no-repeat;
     background-attachment:fixed;
     background-size: 100%;
@@ -35,7 +35,7 @@ body {
     position: relative; 
     width: 600px;
     height: 400px;
-    background: url(/904383.jpg) no-repeat;
+    background: url(/lesson_7/homework_lesson_7/904383.jpg) no-repeat;
     background-size: 600px 400px;
     transition: all 0.5s;
 }
