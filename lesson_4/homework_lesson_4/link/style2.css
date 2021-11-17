@@ -6,7 +6,7 @@
 
 .container {
     margin-top: 50px;
-    padding-left: 33%;
+    padding: 0 30%;
     width: 800px;
     height: 1700px;
     line-height: 30px;
@@ -23,7 +23,8 @@ button {
     text-transform: uppercase;
     border: none;
     border-radius: 4px;
-    position: fixed;
-    left: 20px;
-    top: 20px;
+    margin-bottom: 30px;
+    /* position: fixed; */
+    /* left: 20px;
+    top: 20px; */
 }
