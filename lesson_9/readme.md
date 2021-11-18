@@ -73,7 +73,8 @@ VD:
 let fullName = "Phùng Mai Anh";
 ```
 > Nếu trong chuỗi có dấu nháy đơn hoặc nháy kép thì phải thêm ký từ \ trước dấu nháy đó <br>
-VD:
+VD:<br>
+
 ```javascript
 let fullName = "\"Phùng Mai Anh\"";
 ```
@@ -87,7 +88,7 @@ let fullName = firstName + "" + lastName;
 <li> Templates strings: Quan trọng: <br>
 - Khai báo chuỗi ký tự back-tick `` thay cho ký tự ngoặc đơn hoặc ngoặc kép.<br>
 - Khi khai báo chuỗi kiểu này có thể viết chuỗi trong nhiều dòng và có thể dùng dấu ngoặc đơn, ngoặc kép thoải mái mà không cần dùng escape character.
-- Có thể dùng các biến, biểu thức ngay trong chuỗi theo cú pháp: <strong>`string text ${expression} string text`.<br>
+- Có thể dùng các biến, biểu thức ngay trong chuỗi theo cú pháp: <strong>`string text ${expression} string text` </strong>.<br>
 VD: 
 
 ```javascript
