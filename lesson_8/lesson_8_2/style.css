@@ -95,7 +95,8 @@ html, body{
 .intro-thumnail img {
     box-shadow: 0 0 7px rgba(0,0,0,.3);
     border-radius: 15px;
-    margin-right: 5em;
+    margin-right: 2em;
+    height: 70vh;
 }
 
 .intro-content {
@@ -119,6 +120,8 @@ html, body{
     font-weight: 400;
     display: block;
     text-transform: uppercase;
+    margin-left: 0.3em;
+    margin-right: 4em;
 }
 
 .intro-content-inner h1 {
