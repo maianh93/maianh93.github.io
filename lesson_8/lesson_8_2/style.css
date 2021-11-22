@@ -254,8 +254,9 @@ html, body{
 }
 
 .image1 img, .image2 img {
-    width: 400px;
     height: 400px;
+    object-fit: cover;
+        
 }
 
 #information > .biocontent{
