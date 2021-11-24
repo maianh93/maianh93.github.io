@@ -26,10 +26,10 @@ function repeatString2(str, time) {
 }
 
 // Tính tổng các số chia hết cho 5 từ 0 -> 100
-function sumOfNumbersDivisibleby5And10 () {
+function sumOfNumbersDivisibleby5 () {
     let sum = 0;
     for (let i = 1; i <= 100; i++) {
-        if (i % 5 == 0 && i % 10 == 0) {
+        if (i % 5 == 0) {
             sum = sum + i
         }
     }
