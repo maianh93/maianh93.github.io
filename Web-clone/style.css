@@ -9,7 +9,7 @@
     flex-direction: row;
     justify-content: space-around;
     height: 600px;
-    background-image: url(/image/header.jpg);
+    background-image: url(/Web-clone/image/header.jpg);
     background-repeat: no-repeat;
     background-size: inherit;
     box-sizing: border-box;
@@ -116,7 +116,7 @@
     flex-direction: row;
     justify-content: space-around;
     /* height: 800px; */
-    background-image: url(/image/content2.jpg);
+    background-image: url(/Web-clone/image/content2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
@@ -175,7 +175,7 @@ a {
     flex-direction: row;
     justify-content: space-around;
     /* height: 800px; */
-    background-image: url(/image/content3.jpeg);
+    background-image: url(/Web-clone/image/content3.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
