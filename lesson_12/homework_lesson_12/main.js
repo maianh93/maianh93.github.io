@@ -72,47 +72,6 @@ console.log("isSymmetry: " + isSymmetry(" 2 734 1   1 437 2"));
 // 14350 -> 10345
 // 203950 -> 200359
 
-function splitNumber(number) {
-    let arr = [];
-    let c = number;
-    while (c != 0) {
-        let m = c % 10;
-        arr.push(m);
-        c = Math.floor(c/10); 
-    }
-    return arr.reverse();
-}
-
-function mergeNumber(numberArr) {
-    let result = 0;
-    let n = 1;
-    for (let i = numberArr.length - 1; i >= 0; i--) {
-        result = result + numberArr[i] * n;
-        n = n * 10;
-    }
-    return result;
-}
-
-function convertToSmallestNum(number) {
-    let arr = splitNumber(number);
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j <= i; j++) {
-            if (arr[j] > arr[i]) {
-                let temp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = temp;
-            }
-        } 
-    }
-    if (arr.length > 2) {
-        if (arr[0] == 0) {
-            arr[0] = arr[1];
-            arr[1] = 0;
-        }
-    }
-    return mergeNumber(arr);
-}
-console.log(convertToSmallestNum(1203123));
 
 
 // Bài 5: Viết function truyền vào 1 chuỗi bất kỳ gồm nhiều từ. Hãy chuyển chuỗi đó thành dạng snake_case và viết thường
