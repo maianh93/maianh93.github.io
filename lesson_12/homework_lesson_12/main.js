@@ -33,35 +33,19 @@ console.log(shortenString("hello"))
 // Ví dụ
 // "Race car" => true,
 // "hello world" => false.
-function isSymmetry(someString) {
-    let i = 0;
-    let j = someString.length - 1;
-    let result = true;
-    for (;;) {
-        for (; i < someString.length; i++) {
-            if (someString[i] !== " ")
-                break;
+function checkSymmetry(str) {
+    //loại bỏ khoảng trống và cho in thường
+    // str = str.replaceAll(" ", "").toLocaleLowerCase ()
+    str = str.split(" ").join("").toLocaleLowerCase()
+    for (let i = 0; i<str.length/2; i++) {
+        if (str[str.length - 1 - i] != str[i]) {
+            return false;
         }
-
-        for (; j >= 0; j--) {
-            if (someString[j] !== " ")
-                break;
-        }
-
-        if (i >= j)
-            break;
-            
-        if (someString[i] !== someString[j]) {
-            result = false;
-            break;
-        } else {
-            i++;
-            j--;
-        }
-    } 
-    return result;
+        return true;
+    }
 }
-console.log("isSymmetry: " + isSymmetry(" 2 734 1   1 437 2"));
+console.log(checkSymmetry("MaiAnh"));
+console.log(checkSymmetry(" 2 734 1   1 437 2"));
 
 
 // Bài 4: Viết function truyền vào 1 số nguyên, hãy sắp xếp lại các chữ số trong số nguyên đó sao cho ra 1 số nhỏ nhất có thể (không tính số 0 đầu tiên).
@@ -71,8 +55,26 @@ console.log("isSymmetry: " + isSymmetry(" 2 734 1   1 437 2"));
 // 53751 -> 13557
 // 14350 -> 10345
 // 203950 -> 200359
+function sortNumber(number) {
+    arr = number.toString().split("").sort();
+    // console.log(arr)
+    if(arr[0] == "0") {
+        for(let i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                //Đổi vị trí arr [i] cho arr [0]
+                let temp = arr[0];
+                arr[0] = arr[i];
+                arr[i] = temp;
+
+                break;
+            }
+        }
+    }
+    return Number(arr.join(""))
+}
 
 
+console.log(sortNumber(103450))
 
 // Bài 5: Viết function truyền vào 1 chuỗi bất kỳ gồm nhiều từ. Hãy chuyển chuỗi đó thành dạng snake_case và viết thường
 
