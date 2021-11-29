@@ -38,7 +38,7 @@ console.log(remainderResult([1,2,3,4,5]))
 function repeatString(arr) {
     let result = [];
     for (let i = 0; i < 10; i++) {
-        result = result.push(arr);
+        result = result.concat(arr);
     }
     return result.join("")
 }
@@ -47,12 +47,12 @@ console.log(repeatString(["a"]))
 // Cho 1 chuỗi, hãy viết hàm có tác dụng sao chép đó chuỗi lên 10 lần, ngăn cách nhau bởi dấu
 // gạch ngang.
 // Ví dụ: repeatString('a') => Kết quả trả về là 'a-a-a-a-a-a-a-a-a-a'
-function repeatString(arr) {
+function repeatString1(arr) {
     let result = [];
     for (let i = 0; i < 10; i++) {
-        result = result.push(arr);
+        result = result.concat(arr);
     }
     return result.join("-")
 }
-console.log(repeatString([1, 2, 3]))
+console.log(repeatString1(["a"]))
 
