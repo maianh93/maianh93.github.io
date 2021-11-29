@@ -38,7 +38,7 @@ console.log(remainderResult([1,2,3,4,5]))
 function repeatString(arr) {
     let result = [];
     for (let i = 0; i < 10; i++) {
-        result = result.concat(arr);
+        result = result.push(arr);
     }
     return result.join("")
 }
@@ -50,7 +50,7 @@ console.log(repeatString(["a"]))
 function repeatString(arr) {
     let result = [];
     for (let i = 0; i < 10; i++) {
-        result = result.concat(arr);
+        result = result.push(arr);
     }
     return result.join("-")
 }
