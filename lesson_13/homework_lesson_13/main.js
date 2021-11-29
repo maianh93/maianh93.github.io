@@ -35,25 +35,25 @@ function remainderResult(arr) {
 console.log(remainderResult([1,2,3,4,5]))
 
 // Cho 1 chuỗi, hãy viết hàm có tác dụng sao chép đó chuỗi lên 10 lần
-function repeatString(arr) {
+function repeatString(str) {
     let result = [];
     for (let i = 0; i < 10; i++) {
-        result.push(arr);
+        result.push(str);
     }
     return result.join("")
 }
-console.log(repeatString(["a"]))
+console.log(repeatString("a"))
 
 // Cho 1 chuỗi, hãy viết hàm có tác dụng sao chép đó chuỗi lên 10 lần, ngăn cách nhau bởi dấu
 // gạch ngang.
 // Ví dụ: repeatString('a') => Kết quả trả về là 'a-a-a-a-a-a-a-a-a-a'
-function repeatString1(arr) {
+function repeatString1(str) {
     let result = [];
     for (let i = 0; i < 10; i++) {
-        result = result.concat(arr);
+        result = result.concat(str);
     }
     return result.join("-")
 }
-console.log(repeatString1(["a"]))
+console.log(repeatString1("a"))
 
 
