@@ -42,7 +42,7 @@ function repeatString(arr) {
     }
     return result.join("")
 }
-console.log(repeatString(["a", "b", "c", 1, 2, 3]))
+console.log(repeatString(["a"]))
 
 // Cho 1 chuỗi, hãy viết hàm có tác dụng sao chép đó chuỗi lên 10 lần, ngăn cách nhau bởi dấu
 // gạch ngang.
