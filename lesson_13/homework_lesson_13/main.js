@@ -1,9 +1,4 @@
 // Tìm số lớn nhất trong mảng
-// function arrayMax(arr) {
-//   return Math.max.apply(null, [arr]);
-// }
-
-// console.log("Số lớn nhất là" + " " + arrayMax(40, 100, 1, 5, 25, 10))
 function arrayMax(arr) {
     let max = arr[0];
     for (let i = 1; i < arr.length; i++) {
@@ -16,11 +11,6 @@ function arrayMax(arr) {
 console.log(arrayMax([40, 100, 1, 5, 25, 10]))
 
 // Tìm số nhỏ nhất trong mảng
-// function arrayMin(arr) {
-//     return Math.min.apply(null, [arr]);
-// }
-  
-// console.log("Số nhỏ nhất là" + " " + arrayMin(40, 100, 1, 5, 25, 10))
 function arrayMin(arr) {
     let min = arr[0];
     for (let i = 1; i < arr.length; i++) {
@@ -50,18 +40,19 @@ function repeatString(arr) {
     for (let i = 0; i < 10; i++) {
         result = result.concat(arr);
     }
-    return result
+    return result.join("")
 }
 console.log(repeatString(["a", "b", "c", 1, 2, 3]))
 
 // Cho 1 chuỗi, hãy viết hàm có tác dụng sao chép đó chuỗi lên 10 lần, ngăn cách nhau bởi dấu
 // gạch ngang.
 // Ví dụ: repeatString('a') => Kết quả trả về là 'a-a-a-a-a-a-a-a-a-a'
-function repeatString1(arr) {
-    arr.push("-");
-    let result = repeatString(arr);
-    result.pop();
-    return result;
+function repeatString(arr) {
+    let result = [];
+    for (let i = 0; i < 10; i++) {
+        result = result.concat(arr);
+    }
+    return result.join("-")
 }
-console.log(repeatString1([1, 2, 3]))
+console.log(repeatString([1, 2, 3]))
 
