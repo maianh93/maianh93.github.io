@@ -4,13 +4,12 @@
 // checkStringExist("i love you", "you") => true
 // checkStringExist("i love you", "hate") => false
 function checkStringExist(str, substring) {
-    if (str.indexOf(substring) > 0) {
+    if (str.indexOf(substring) != -1) {
         return true;
     } else {
         return false; 
    }
 }
-
 console.log(checkStringExist("Phung Mai Anh", "Mai Anh"))
 console.log(checkStringExist("i love you", "hate"))
 
