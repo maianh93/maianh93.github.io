@@ -10,32 +10,16 @@ console.log (sortStudents(['Nam', 'Hoa', 'Tuấn']))
 //Bài 2: Viết function đổi chỗ ngẫu nhiên vị trí của các phần tử trong mảng
 // shuffle([1,2,3,4,5]) => [2,3,4,1,5]
 // shuffle([1,2,3,4,5]) => [4,2,3,5,1]
-// const shuffleArray = (array) => {
-//     let result = [];
-//     let set = new Set();
-//     while (result.length != array.length) {
-//       let i = Math.floor((Math.random() * array.length - 1) + 1);
-//       if (!set.has(i)) {
-//         set.add(i);
-//         result.push(array[i]);
-//       }
-//     }
-//     return result;
-// }
-
-// console.log (shuffleArray([1,2,3,4,5]))
-
-function shuffle(array) {
-  for (var i = array.length - 1; i > 0; i--) {
+const shuffle = (arr) => {
+  for (var i = arr.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      var temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
   }
-  return array;
+  return arr;
 }
 console.log (shuffle([1,2,3,4,5]))
-
 
 
 // Bài 3: Viết function để lấy sự phần tử không xuất hiện ở cả 2 mảng
