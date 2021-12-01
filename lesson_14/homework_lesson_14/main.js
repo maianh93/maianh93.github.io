@@ -11,9 +11,9 @@ console.log (sortStudents(['Nam', 'Hoa', 'Tuấn']))
 // shuffle([1,2,3,4,5]) => [2,3,4,1,5]
 // shuffle([1,2,3,4,5]) => [4,2,3,5,1]
 const shuffle = (arr) => {
-  for (var i = arr.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = arr[i];
+  for (let i = arr.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = arr[i];
       arr[i] = arr[j];
       arr[j] = temp;
   }
