@@ -6,11 +6,9 @@
 // max2Numbers([2, 1, 3, 4]) => 3
 // max2Numbers([2, 1, 4, 3, 4]) => 3
 // Duỗi mảng thành 1 chuỗi
-// Dùng hàm sort để return tìm xem số nào lớn hơn
-// Gán giá trị max là giá trị đầu tiên của mảng
-// Gán giá trị cần tìm là giá trị rỗng
-// Sử dụng vòng lặp qua mảng, chạy tới từng giá trị của mảng, ví dụ giá trị newArr[0] là max, thì giá trị nào nhỏ hơn sẽ là giá trị nhì, ra khỏi vòng lặp và trả về kết quả newArr[i]
-// Nếu không đúng thì sẽ trả kết quả rỗng và chạy lại vòng lặp
+// Sắp xếp theo thứ tự giảm dần bằng sort
+// Gán max ở vị trí đầu tiên, chạy từ đầu chuỗi, nếu tìm thấy giá trị nào nhỏ hơn giá trị max thì trả về kết quả là số tại vị trí đó, kết thúc vòng lặp
+// Nếu không có giá trị nào nhỏ hơn (trường hợp chuỗi chỉ có 1 số), trả kết quả null
 const max2Numbers = (arr) => {
     let newArr = [...arr]
     newArr.sort((a, b) => - (a - b));
