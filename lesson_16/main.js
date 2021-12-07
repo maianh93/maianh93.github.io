@@ -153,21 +153,23 @@ console.log(sortByAge(users))
 // Mỗi lần chạy xong thì thêm vào mảng result, ra kết quả là result
 const getCountElement = (arr) => {
     let uniqueValueArr = [];
-    let result = [];
 
     arr.forEach((value) => {
         if (uniqueValueArr.indexOf(value) === -1) {
             uniqueValueArr.push(value);
         }
     });
+    let jsonObj = {};
+    uniqueValueArr.forEach(value => jsonObj[value] = 0);
     uniqueValueArr.forEach((value1) => {
         let tempArr = arr.filter((value2) => value1 === value2);
         let count = tempArr.length;
-        let jsonObj = JSON.parse(`{"${value1}": ${count}}`);
-        result.push(jsonObj);
+        jsonObj[value1] = jsonObj[value1] + count;
     });
 
-    return result;
+    
+
+    return jsonObj;
 }
 console.log(`Object hiển thị số lần mỗi phần tử trong mảng xuất là:`)
 console.log(getCountElement(["one", "two", "three", "one", "one", "three"]))
