@@ -126,7 +126,7 @@ html, body{
     display: flex;
     min-height: 750px;
     width: 80%;
-    background-image: url("/image/content1.jpg");
+    background-image: url("/Web-clone/Web-clone-2/image/content1.jpg");
     background-repeat: no-repeat;
     background-size:cover;
     box-sizing: border-box;
@@ -450,7 +450,7 @@ html, body{
 .container-about-us-b-2-girl {
     display: flex;
     width: 50%;
-    background-image: url("/image/content4girl.jpg");
+    background-image: url("/Web-clone/Web-clone-2/image/content4girl.jpg");
     background-repeat: no-repeat;
     background-size:cover;
     box-sizing: border-box;
@@ -462,7 +462,7 @@ html, body{
 .container-about-us-b-2-boy {
     display: flex;
     width: 50%;
-    background-image: url("/image/content4boy.jpg");
+    background-image: url("/Web-clone/Web-clone-2/image/content4boy.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
@@ -666,7 +666,7 @@ html, body{
 }
 
 .container-innovative-methods-girl {
-    background-image: url(/image/content7girl.jpg);
+    background-image: url(/Web-clone/Web-clone-2/image/content7girl.jpg);
     min-height: 420px;
     flex: 0 0 33.33333333%;
     max-width: 33.33333333%;
@@ -734,7 +734,7 @@ html, body{
     background-repeat: no-repeat;
     background-position: 50% 10%;
     box-sizing: border-box;
-    background-image: url(/image/content7boy.jpg);
+    background-image: url(/Web-clone/Web-clone-2/image/content7boy.jpg);
 }
 
 .about-us-details-content {
@@ -790,7 +790,7 @@ html, body{
     display: flex;
     min-height: 570px;
     width: 60%;
-    background-image: url("/image/content8.jpg");
+    background-image: url("/Web-clone/Web-clone-2/image/content8.jpg");
     background-repeat: no-repeat;
     background-size:cover;
     box-sizing: border-box;
@@ -890,7 +890,7 @@ html, body{
     width: 50%;
     min-height: 570px;
     width: 50%;
-    background-image: url("/image/content9.jpg");
+    background-image: url("/Web-clone/Web-clone-2/image/content9.jpg");
     background-repeat: no-repeat;
     background-size:cover;
     box-sizing: border-box;
