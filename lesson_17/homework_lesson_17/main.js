@@ -22,7 +22,7 @@ for (let i = 0; i < liByUL.length; i++) {
 // Thêm 3 thẻ <li> có nội dung Item 8, Item 9, Item 10 vào cuối danh sách
 
 const addLi = document.querySelector('#list');
-for (let i = 0; i < 10; i++) {
+for (let i = 8; i < 10; i++) {
     let li = document.createElement('li');
     li.innerText = (`Item ${i}`)
     addLi.appendChild(li)
