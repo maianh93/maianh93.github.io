@@ -7,27 +7,27 @@ para.style.fontSize = "2rem";
 para.innerHTML = "Tôi có thể làm <em> bất cứ điều gì </em> tôi muốn với JavaScript."
 
 //Bài 2: Sử dụng vòng lặp để đặt màu chữ cho tất cả thẻ li thành màu blue (tạo thẻ ul-li bằng html)
-let c = document.querySelector('ul');
-c.style.color = "blue";
+// let c = document.querySelector('ul');
+// c.style.color = "blue";
+
+const ul1 = document.querySelector('ul');
+const liByUL = ul1.querySelectorAll ('li');
+console.log(liByUL)
+for (let i = 0; i < liByUL.length; i++) {
+  liByUL[i].style.color = "blue";
+}
 
 // Bài 3: Sử dụng javascript để thực hiện những công việc sau
 
 // Thêm 3 thẻ <li> có nội dung Item 8, Item 9, Item 10 vào cuối danh sách
-//B1: Tạo thẻ
-const li8 = document.createElement('li');
-const li9 = document.createElement('li');
-const li10 = document.createElement('li');
-//B2: Chèn nội dung cho thẻ
-li8.innerText = "Item 8";
-li9.innerText = "Item 9";
-li10.innerText = "Item 10";
-// B3: Xác định vị trí
-const li7 = document.querySelector ('#list li:last-child');
 
-// B4 Thay thế
-li7.appendChild(li8);
-li8.appendChild(li9);
-li9.appendChild(li10);
+const addLi = document.querySelector('#list');
+for (let i = 0; i < 10; i++) {
+    let li = document.createElement('li');
+    li.innerText = (`Item ${i}`)
+    addLi.appendChild(li)
+}
+
 
 // Sửa nội dung cho thẻ <li> 1 thành màu đỏ (color)
 const li1 = document.querySelector ('#list li:first-child');
