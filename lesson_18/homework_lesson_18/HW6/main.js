@@ -2,16 +2,6 @@
 const highLight = document.createElement("span");
 highLight.classList.add("bold-word")
 const para = document.querySelector('p');
-const setupHighLight = (paragraph) => {
-    let indexOfSpace = 0;
-    
-    while (indexOfSpace != -1) {
-        let nextIndexOfSpace = paragraph.indexOf(" ");
-        let wordLength = nextIndexOfSpace - indexOfSpace;
-        // if (wordLength)
-    }
-}
-console.log(para);
 
 
 // bài 2: Thêm link hiển thị text "facebook" link đến trang facebook.com ở sau thẻ p
