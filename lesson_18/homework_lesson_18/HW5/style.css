@@ -69,13 +69,13 @@ svg {
 }
 
 .green-background {
-    background-color: green;
+    color: green;
 }
 
 .grey-background {
-    background-color: #333333;
+    color: #333333;
 }
 
 .red-background {
-    background-color: red;
+    color: red;
 }
