@@ -1,0 +1,5 @@
+B1: hoan thien phan thong tin chi tiet lop hoc
+B2: hoan thien chi tiet thong tin hoc vien 
+- Phan de: thong tin co ban, chi bao gom 1 dong duy nhat
+B3: 
+- Phan kho: hoan thien not thong tin so ngay nghi
