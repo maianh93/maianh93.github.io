@@ -32,15 +32,20 @@ document.body.appendChild(linkFacebook);
 const countTextDiv = document.createElement('div');
 document.body.appendChild(countTextDiv);
 console.log(countTextDiv);
-
-const countText = (paragraph) => {
-    let words = paragraph.split(" ");
-    return words.length;
+function isEmpty(str) {
+    return (!str || str.length === 0 );
 }
-
+const countText = (paragraph) => {
+    let result = 0;
+    let words = paragraph.split(" ");
+    console.log(words)
+    let wordFilter = words.filter(e => !isEmpty(e));
+    return result = wordFilter.length;
+}
 
 countTextDiv.innerText = countText(pElement.innerText);
 
 // Bài 4: thay thế các ký hiệu ? => 🤔, ! => 😲
 pElement.innerHTML = pElement.innerHTML.replaceAll("?", "🤔");
 pElement.innerHTML = pElement.innerHTML.replaceAll("!", "😲");
+
