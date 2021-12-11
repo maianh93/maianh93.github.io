@@ -24,7 +24,6 @@ listOfprevBtn[0].addEventListener("click", () => {
 });
 
 const changeColor = () => {
-    numberH1.classList = "";
     if (time.innerText > 0) {
         numberH1.classList.add("green-background");
     } else if(time.innerText < 0) {
