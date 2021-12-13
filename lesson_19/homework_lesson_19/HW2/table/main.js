@@ -81,3 +81,87 @@ let student_warning = {
 };
 
 // Dựa vào thông tin của object student_warning. Hãy hiển thị dự liệu tương tự như demo trong mã HTML
+const classNameElement = document.querySelector("#className");
+const courseNameElement = document.querySelector("#courseName");
+const teacherElement = document.querySelector("#teachers");
+const sessionsElement = document.querySelector("#sessions");
+const teacherDetailsElement = document.querySelector("#teacher-details");
+const studentTableElement = document.querySelector("table tbody");
+
+
+const fillClassName = () => {
+    let newClassNameHtml = classNameElement.innerHTML.replace("replace_me", student_warning.class);
+    classNameElement.innerHTML = newClassNameHtml;
+}
+
+const fillCourseName = () => {
+    let newCourseNameHtml = courseNameElement.innerHTML.replace("replace_me", student_warning.course);
+    courseNameElement.innerHTML = newCourseNameHtml;
+}
+
+const fillSessionsName = () => {
+    let newSessionsNameHtml = sessionsElement.innerHTML.replace("replace_me", student_warning.sessions);
+    sessionsElement.innerHTML = newSessionsNameHtml;
+}
+
+const singleTeacherDetailsElement = () => {
+    let singleTeacher = document.createElement("li");
+    return singleTeacher;
+}
+
+const fillTeachersInfo = () => {
+    for (let i = 0; i < student_warning.teachers.length; i++) {
+        let newLi = singleTeacherDetailsElement();
+        teacherDetailsElement.appendChild(newLi);
+        newLi.innerText = `${student_warning.teachers[i].name}  ( ${student_warning.teachers[i].email} - ${student_warning.teachers[i].phone} ) `
+    }
+}
+
+const renderClassInfo = (obj) => {
+    fillClassName();
+    fillCourseName();
+    fillSessionsName();
+    fillTeachersInfo();
+}
+
+const renderStudentInfo = (arr) => {
+    studentTableElement.innerHTML = '';
+
+    for (let i = 0; i < arr.length; i++) {
+        const s = arr[i]; // object student
+        for (let j = 0; j < s.detail_info.length; j++) {
+            const d = s.detail_info[j];
+            if (j == 0) {
+                studentTableElement.innerHTML += `
+            <tr>
+                <td rowspan="${s.total_off}">${i + 1}</td>
+                <td rowspan="${s.total_off}">${s.name}</td>
+                <td rowspan="${s.total_off}">${s.email}</td>
+                <td rowspan="${s.total_off}">${s.phone}</td>
+                <td class="text-center" rowspan="${s.total_off}">${s.total_off}/${s.sessions}</td>
+                <td class="text-center">${d.date}</td>
+                <td>${d.note}</td>
+                <td>${d.teacher}</td>
+            </tr>
+        `} else {
+                studentTableElement.innerHTML += `
+            <tr>
+                <td class="text-center">${d.date}</td>
+                <td>${d.note}</td>
+                <td>${d.teacher}</td>
+            </tr>
+        `
+            }
+        }
+    }
+}
+
+// -----------------
+
+const main = () => {
+    renderClassInfo(student_warning);
+    renderStudentInfo(student_warning.students);
+}
+
+main();
+
