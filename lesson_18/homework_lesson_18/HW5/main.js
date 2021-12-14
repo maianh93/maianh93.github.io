@@ -24,13 +24,12 @@ listOfprevBtn[0].addEventListener("click", () => {
 });
 
 const changeColor = () => {
-    numberH1.classList = "";
     if (time.innerText > 0) {
-        numberH1.classList.add("green-background");
+        numberH1.style.color = "green";
     } else if(time.innerText < 0) {
-        numberH1.classList.add("red-background");
+        numberH1.style.color = "red";
     } else {
-        numberH1.classList.add("grey-background")
+        numberH1.style.color = "#333333";
     }
 }
 // Nếu counter > 0 có màu green
