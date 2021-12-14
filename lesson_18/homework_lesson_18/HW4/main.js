@@ -74,6 +74,7 @@ btn.addEventListener('click', () =>  {
   const newLi = document.createElement('li');
   newLi.innerText = input.value;
   parent.appendChild(newLi);
+  input.value = "";
 })
 
 // Trường hợp không có nội dung trong ô input mà bấm add thì cảnh báo (sử dụng alert)
@@ -85,7 +86,11 @@ document.body.insertBefore(removeBtn, parent);
 
 removeBtn.addEventListener('click', () => {
   const lastLi = document.querySelector('#list li:last-child');
-  parent.removeChild(lastLi);
+  if (parent.childElementCount > 0) {
+    parent.removeChild(lastLi);
+  } else {
+    alert("Nothing to remove!");
+  }
 });
 
 // Thêm 1 nút Hide trên đầu của danh sách 
@@ -107,6 +112,3 @@ hideBtn.addEventListener('click', () => {
     hideBtn.innerText = "Show";
   }
 })
-
-
-
