@@ -23,7 +23,7 @@ margin: 0;
 }
 
 #intro {
-    background-image: url(/image/background-intro.jpg);
+    background-image: url(/Web-clone/Web-clone-3/image/background-intro.jpg);
     background-position: 50% 50%;
 }
 
@@ -128,7 +128,7 @@ margin: 0;
 }
 
 .container-all-level-content-right {
-    background-image: url(/image/running-man.png);
+    background-image: url(/Web-clone/Web-clone-3/image/running-man.png);
     pointer-events: initial;
     width: 420px;
     height: 823px;
@@ -308,7 +308,7 @@ margin: 0;
 }
 
 .know-how-container-details-streaking-img-left {
-    background-image: url(/image/streaking.jpg);
+    background-image: url(/Web-clone/Web-clone-3/image/streaking.jpg);
     height: 302px;
     width: 100%;
     background-size: cover;
@@ -316,7 +316,7 @@ margin: 0;
 }
 
 .know-how-container-details-start-running-img-center {
-    background-image: url(/image/start-running.jpg);
+    background-image: url(/Web-clone/Web-clone-3/image/start-running.jpg);
     height: 302px;
     width: 100%;
     background-size: cover;
@@ -324,7 +324,7 @@ margin: 0;
 }
 
 .know-how-container-details-streaking-img-right {
-    background-image: url(/image/running-shoe.jpg);
+    background-image: url(/Web-clone/Web-clone-3/image/running-shoe.jpg);
     height: 302px;
     width: 100%;
     background-size: cover;
@@ -376,7 +376,7 @@ margin: 0;
 }
 
 .ultra-marathons-container-left {
-    background-image: url(/image/ultra-marathons.jpg);
+    background-image: url(/Web-clone/Web-clone-3/image/ultra-marathons.jpg);
     width: 50%;
     min-height: 650px;
     position: relative;
@@ -536,7 +536,7 @@ margin: 0;
 }
 
 .start-running-container-details-right {
-    background-image: url(/image/start-running.png);
+    background-image: url(/Web-clone/Web-clone-3/image/start-running.png);
     width: 33.33%;
     object-fit: contain;
     background-size: contain;
