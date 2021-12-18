@@ -65,10 +65,7 @@ function renderSubBreeds(arr, parent) {
 btnElement.addEventListener("click", () => {
     getSubBreedList();
 })
-// btnElement.addEventListener("click", () => {
-//     let a = selectElement.value;
-//     getRandomImage(a);
-// })
+
 
 async function getRandomImage(a) {
     // Gọi API lấy ảnh random: cần có công cụ để gọi: axios(nên dùng) ->  dùng link CDN; fetchAPI(sẵn có)
