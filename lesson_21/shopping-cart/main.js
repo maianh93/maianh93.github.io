@@ -24,7 +24,7 @@ let products = [
         name: "Áo kiểu nữ cam đất phối cổ trắng dập ly",
         description: "Sản phẩm dễ dàng phối hợp cùng nhiều trang phục và phụ kiện khác mang đến phong cách thời trang riêng cho bạn nữ.",
         image: "https://image.yes24.vn/Upload/ProductImage/anhduong201605/1947415_L.jpg?width=550&height=550",
-        price: 250,
+        price: 250000,
         total: 1
     },
     {
@@ -32,15 +32,17 @@ let products = [
         name: "Áo trắng bèo lé đen tay loe dễ thương",
         description: "Một chút khéo léo trong khâu mix & match hẳn sẽ giúp bạn trở nên duyên dáng hơn, xinh đẹp hơn trong mắt tất cả mọi người xung quanh.",
         image: "https://image.yes24.vn/Upload/ProductImage/anhduong201605/1914666_L.jpg?width=550&height=550",
-        price: 350,
+        price: 350000,
         total: 1
     },
     {
         id: 3,
-        name: "Váy nữ xanh phối cổ trắng dập ly",
+        name: "Váy nữ xanh dập ly",
         description: "Sản phẩm dễ dàng phối hợp cùng nhiều trang phục và phụ kiện khác mang đến phong cách thời trang riêng cho bạn nữ.",
-        image: "https://image.yes24.vn/Upload/ProductImage/anhduong201605/1914666_L.jpg?width=550&height=550",
-        price: 300,
+        // image: "https://image.yes24.vn/Upload/ProductImage/anhduong201605/1914666_L.jpg?width=550&height=550",
+        image: "https://thoitrangthietkemydu.vn/wp-content/uploads/2019/09/photo_2019-09-23_16-59-18-300x300.jpg",
+
+        price: 300000,
         total: 1
     }
 ]
@@ -51,8 +53,7 @@ let promotionCode = {
     C: 0.2,
     D: 0.1,
 }
-
-
+const numberFormater = new Intl.NumberFormat('de-DE');
 const productsElement = document.querySelector(".products");
 const promotionElement = document.querySelector(".promotion");
 const summaryElement = document.querySelector(".summary");
@@ -60,6 +61,11 @@ const totalProductsElement = document.querySelector(".count");
 const subTotalElement = document.querySelector(".subtotal");
 const btnElement = document.querySelector(".promotion button");
 const promoCodeElement = document.querySelector("#promo-code");
+const summaryUlElement = document.querySelector(".summary ul");
+const inputCodeElement = document.getElementById("promo-code");
+const discountElement = document.querySelector(".discount.hide")
+let discountRate = 0;
+
 
 
 // Render danh sách sản phẩm ra ngoài giao diện
@@ -95,12 +101,12 @@ const renderProduct = (arr) => {
                             <div class="description">
                                 ${t.description}
                             </div>
-                            <div class="price">${t.price}.000 VND</div>
+                            <div class="price">${numberFormater.format(t.price)} VND</div>
                         </div>
                     </div>
                     <div class="col right">
                         <div class="quantity" onchange="changeTotalProduct(${t.id}, event)">
-                            <input type="number" class="quantity" value="${t.total}">
+                            <input type="number"  class="quantity" value="${t.total}">
                         </div>
     
                         <div class="remove">
@@ -113,9 +119,8 @@ const renderProduct = (arr) => {
         `
     }
     updateTotalMoney(products)
-
 }
-
+ 
 // Xóa sản phẩm
 const deleteProduct = (id) => {
     for (let i = 0; i < products.length; i++) {
@@ -167,35 +172,52 @@ const updateTotalMoney = (arr) => {
     }
 
     // Kiểm tra xem mã giảm giá có chính xác hay không
-
-
     // Nếu có => discount = subtotal * (% mã giảm giá)
     // Nếu không => discount = 0
     // Ẩn hiện class "hide" nếu discount chính xác hoặc không
-
+    let discountRate = getDiscountRate();
+    let discountTotal = discountRate * subTotal;
     // Tính tổng tiền phải trả
     // total = subtotal + VAT - discount
+    let totalMoney = subTotal + vatTotal - discountTotal;
+
+    let hideClass = discountRate == 0 ? " hide" : "";
 
     // Cập nhật lên trên giao diện
-    console.log(vatTotal)
-}
+    summaryUlElement.innerHTML = "";
 
+    summaryUlElement.innerHTML += `
+    <li class="subtotal">Subtotal <span>${numberFormater.format(subTotal)} VND</span></li>
+    <li class="vat">VAT<span>${numberFormater.format(vatTotal)} VND</span></li>
+    <li class="discount${hideClass}">
+        Discount<span>- ${numberFormater.format(discountTotal)} VND</span>
+    </li>
+    <li class="total">Total <span>${numberFormater.format(totalMoney)} VND</span></li>
+    `
+}
 
 const checkPromoCodeValue = () => {
-
+    let inputPromodCode = inputCodeElement.value;
+    let rate = promotionCode[inputPromodCode];
+    if (!rate) {
+        alert("Ma giam gia khong phu hop!");
+        discountRate = 0;
+    } else {
+        discountRate = rate;
+    }
+    updateTotalMoney(products);
 }
-checkPromoCodeValue(promotionCode)
 
-btnElement.addEventListener("click", updateTotalMoney(products));
+const getDiscountRate = () => {
+    return discountRate;
+}
 
+btnElement.addEventListener("click", checkPromoCodeValue);
 
 //-------------------------
 const main = () => {
     renderProduct(products)
-
 }
 
 main()
 
-
-// console.log(btn)
