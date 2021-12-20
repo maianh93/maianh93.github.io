@@ -63,6 +63,7 @@ function renderSubBreeds(arr, parent) {
 
 
 btnElement.addEventListener("click", () => {
+    imgElemeent.classList.add("hide");
     getSubBreedList();
 })
 
@@ -74,6 +75,7 @@ async function getRandomImage(a) {
     let res = await axios.get(url);
     console.log(url)
     // Gán ảnh vào thẻ image
+    imgElemeent.classList.remove("hide");
     imgElemeent.src = res.data.message;
     } catch (error) {
         console.log(error);
