@@ -28,18 +28,20 @@ a {
 
 .container {
     background-color: var(--color-blue);
+    min-height: 900px;
 }
 
 .container-body {
     display: flex;
-    padding: 10% 20%;
+    width: 60%;
+    padding-top: 100px;
+    margin: auto;
 }
 
 .left-content {
     display: flex;
     flex-direction: column;
     width: 65%;
-    /* height: 600px; */
     background-color: #fff;
 }
 
@@ -144,8 +146,10 @@ a {
     .container-body {
         display: flex;
         flex-direction: column;
-        padding: 5% 10%;
-        }
+        width: 80%;
+        padding-top: 100px;
+        margin: auto;
+    }
 
     .left-content {
         height: 50%;
