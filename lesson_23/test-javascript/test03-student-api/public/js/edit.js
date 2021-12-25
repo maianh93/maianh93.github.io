@@ -35,10 +35,10 @@ saveBtnElement.addEventListener("click", () => {
     if (nameInputElement.value === "" || birthdayInputElement.value === "" || emailInputElement.value === "" || phoneInputElement.value == "") {
         alert("Chưa nhập hết thông tin!");
     } else {
-        nameInputElement.value = nameInputElement.value;
-        birthdayInputElement.value = birthdayInputElement.value;
-        emailInputElement.value = emailInputElement.value;
-        phoneInputElement.value = phoneInputElement.value;
+        user.name = nameInputElement.value;
+        user.birthday = birthdayInputElement.value;
+        user.email = emailInputElement.value;
+        user.phone = phoneInputElement.value;
         alert("Đã cập nhật thành công!");
         updateUsersAPI(user)
     }
@@ -62,7 +62,7 @@ function updateUsersAPI(user) {
         method: "put",
         url: `/users/${userID}`,
         data: user,
-    });
+    })
 }
 
 

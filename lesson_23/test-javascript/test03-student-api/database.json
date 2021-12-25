@@ -2,10 +2,10 @@
   "users": [
     {
       "id": 1,
-      "name": "Nguyễn Tuấn ANh",
+      "name": "Nguyễn Tuấn Anh",
       "email": "tuananh@gmail.com",
       "phone": "0965234185",
-      "birthday": "09/02/1995"
+      "birthday": "09/02/1990"
     },
     {
       "id": 2,

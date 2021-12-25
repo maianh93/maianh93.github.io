@@ -9,6 +9,9 @@ async function refreshUsers () {
     try {
         const res = await getUsersAPI();
         users = res.data;
+        users.sort((user1, user2) => {
+            return user2.id - user1.id;
+        })
         console.log(users)
         // Render ra ngoài giao diện
         renderUI(users);
@@ -41,19 +44,48 @@ function renderUI(arr) {
                         <td>
                             <a href="/edit.html?id=${t.id}" class="text-info"><i class="fa fa-edit"></i> Chỉnh sửa</a>
                             |
-                            <a href="#" class="text-danger" onclick="deleteOrNot(); return false;"><i class="fa fa-trash-alt"></i> Xóa</a>
+                            <a href="#" class="text-danger" onclick="deleteOrNot(${t.id}); return false;"><i class="fa fa-trash-alt"></i> Xóa</a>
                         </td>
                     </tr>
         `;
     }
 }
-const deleteOrNot = () => {
+
+// API xóa công việc
+function deleteUserAPI(id) {
+    return axios({
+        method: "delete",
+        url: `/users/${id}`,
+    })
+}
+
+// Hàm xử lý việc xóa
+async function deleteUser(id) {
+    try {
+        await deleteUserAPI(id) // Gọi API xóa
+
+        // Xóa user trong mảng users ban đầu
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].id == id) {
+                users.splice(i, 1);
+            }
+        }
+        // Render ra ngoài giao diện
+        renderUI(users);
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+const deleteOrNot = (id) => {
     let text = "Bạn có chắc chắn xóa không?"
     if (confirm(text) == true) {
-        console.log("OK")
-      } else {
-        console.log("Cancel")
-      }
+        deleteUser(id);
+    } else {
+        console.log("No")
+    }
 }
 
 refreshUsers();
