@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto,sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+.blog-item {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+
+.image {
+    height: 79px;
+    width: 79px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.image img {
+    width: 48px;
+    height: 48px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0 0;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.blog-container {
+    padding: 20px;
+}
+
+.blog-content h6 {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+p {
+    font-weight: 300;
+    margin: 20px 0 0;
+    text-align: center;
+}
+
+.blog-form {
+    margin-top: 30px;
+}
+
+input, textarea  {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    background-clip: padding-box;
+    border: none;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    height: auto;
+    overflow: visible;
+}
+
+.input-name, .input-email, .input-message {
+    padding-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.submit {
+    width: 20%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #454545;
+    color: #454545;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    position: relative;
+    text-align: center;
+    /* padding: 10px 30px; */
+}
+
+.blog-maps {
+    box-sizing: border-box;
+    object-fit: contain;
+    overflow: hidden;
+}

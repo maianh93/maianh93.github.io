@@ -1,0 +1,60 @@
+img {
+    max-width: 100%;
+    display: block;
+    max-width: auto;
+    height: 310px;
+}
+
+h6 {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1rem;
+    margin: 20px auto 0 0;
+    font-family: Roboto,sans-serif;
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 20px auto 0 0;
+    font-family: 'Playfair Display', serif;
+}
+
+p {
+    font-family: 'Open Sans',sans-serif;
+    margin: 30px 0 0 0;
+    color: #999999;
+}
+
+h5 {
+    font-family: 'Playfair Display', serif;
+    position: absolute;
+    margin: 47px 90px 0 90px;
+    width: auto;
+    margin-right: 0;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+.blog-item {
+    padding: 20px;
+    box-shadow: 5px 5px 12px 0 rgb(0 0 0 / 15%);
+}
+
+.blog-footer {
+    display: flex;
+}
+
+.footer-image {
+    background-image: url(/image/pexelsphoto709802.jpeg);
+    width: 70px;
+    height: 70px;
+    background-position: 50% 50%;
+    margin: 23px auto 0 0;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    background-size: cover;
+}
