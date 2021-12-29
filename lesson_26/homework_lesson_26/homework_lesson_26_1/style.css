@@ -63,7 +63,7 @@ p {
     margin-top: 30px;
 }
 
-input, textarea  {
+.input-name input, .input-email input, .input-message textarea{
     display: block;
     width: 100%;
     padding: 10px 12px;
@@ -75,24 +75,32 @@ input, textarea  {
 }
 
 .input-name, .input-email, .input-message {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.text-input::placeholder{
+    color: rgb(177, 177, 177);
 }
 
 a {
     text-decoration: none;
 }
 
-.submit {
-    width: 20%;
-    border-style: solid;
+.submit button {
     border-width: 2px;
-    border-color: #454545;
-    color: #454545;
+    background-image: none;
+    border-style: solid;
+    border-color: #454545 !important;
+    color: #454545 !important;
+    background-color: transparent !important;
+    stroke: none;
     margin-top: 1px;
     margin-bottom: 1px;
-    position: relative;
+    vertical-align: middle;
     text-align: center;
-    /* padding: 10px 30px; */
+    padding: 10px 30px;
+    cursor: pointer;
+
 }
 
 .blog-maps {
