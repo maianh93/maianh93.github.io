@@ -1,0 +1,199 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto,sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+nav {
+    padding: 0 80px;
+}
+
+.nav-item {
+    padding: 10px 10px;
+}
+
+.nav-item:hover {
+    color: #f2c8c9;
+}
+
+.blog-item {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #fff;
+    height: auto;
+    height: 226px;
+    margin-top: 129px;
+}
+
+
+.image {
+    height: 79px;
+    width: 79px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.image img {
+    width: 48px;
+    height: 48px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0 0;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2.25rem;
+}
+
+.blog-container {
+    padding: 20px;
+    color: #fff;
+}
+
+.blog-content h6 {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+p {
+    font-weight: 300;
+    margin: 20px 0 0;
+    text-align: center;
+}
+
+#blog {
+    background: #1957ec;
+}
+
+.blog-container {
+    margin: 50px 0 0 0;
+}
+
+.blog-container h6 {
+    font-weight: 700;
+    line-height: 1.8;
+    font-style: italic;
+    font-size: 1.125rem;
+    margin: 20px 0 0;
+}
+
+.blog-container p {
+    font-weight: 400;
+    line-height: 1.8;
+    font-size: 1.125rem;
+    margin: 20px 0 0;
+    text-align: left;
+}
+
+.blog-form {
+    margin-top: 30px;
+}
+
+input, textarea  {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    background-clip: padding-box;
+    border: none;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    height: auto;
+    overflow: visible;
+}
+
+.input-name, .input-email, .input-message {
+    padding-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.submit {
+    width: 100%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #454545;
+    color: #454545;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    position: relative;
+    text-align: center;
+}
+
+.contact {
+    margin: 30px 0 0 0;
+}
+
+.p-2 {
+    color: #fff;
+}
+
+label {
+    font-weight: 700;
+    color: #fff;
+}
+
+.message label, .name label {
+    margin-top: 20px;
+}
+
+.blog-form input, .blog-form textarea {
+    stroke: none;
+    border-bottom: 2px solid #fff;
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    background-clip: padding-box;
+    border-radius: 3px;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    background-color: transparent;
+    height: auto;
+    overflow: visible;
+}
+
+.submit {
+    margin-top: 40px;
+    text-transform: uppercase;  
+    width: 100%;
+    color: #111111;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    border: 0 none transparent;
+    vertical-align: middle;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.text-input::placeholder {
+    color: rgb(177, 177, 177);
+}
+
+@media (max-width: 992px) {
+    .blog-item {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 769px) {
+    .blog-form {
+        margin-top: auto;
+    }
+}
