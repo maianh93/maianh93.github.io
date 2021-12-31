@@ -84,7 +84,7 @@ margin: 0;
 }
 
 .vr-headsets-container-image {
-    background-image: url(/image/intro.jpg);
+    background-image: url(/Web-clone/Web-clone-4/image/intro.jpg);
     background-position: 50% 30%;
     background-repeat: no-repeat;
     height: 100%;
@@ -206,7 +206,7 @@ margin: 0;
 }
 
 .virtual-reality-container-details-image {
-    background-image: url(/image/virtual-reality-image.jpg);
+    background-image: url(/Web-clone/Web-clone-4/image/virtual-reality-image.jpg);
     background-repeat: no-repeat;
     height: 100%;
     background-position: 60% 30%;
@@ -370,7 +370,7 @@ margin: 0;
 }
 
 .effect-for-brain-container-image {
-    background-image: url(/image/effect-to-brain.jpg);
+    background-image: url(/Web-clone/Web-clone-4/image/effect-to-brain.jpg);
     height: 100%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -401,7 +401,7 @@ margin: 0;
 }
 
 #benefits-of-vr {
-    background-image: url(/image/benefit-of-vr.jpg);
+    background-image: url(/Web-clone/Web-clone-4/image/benefit-of-vr.jpg);
     background-position: 50% 50%;
     min-height: 630px;
     background-repeat: no-repeat;
