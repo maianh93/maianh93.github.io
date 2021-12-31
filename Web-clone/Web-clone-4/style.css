@@ -1,0 +1,617 @@
+* {
+padding: 0;
+margin: 0;
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 20%;
+}
+
+.image-by-freepik {
+    font-weight: 300;
+    font-style: normal;
+    margin: 20px 0 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.more-button {
+    color: #111111;
+    border-width: 2px;
+    font-size: 0.9375rem;
+    border-style: solid;
+    text-transform: none;
+    margin: 20px auto 0;
+    font-family: Raleway, sans-serif;
+    border-color: #654aff;
+    background-color: transparent;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 3px;
+}
+
+.vr-headsets-container-content-rectangle {
+    width: 111px;
+    height: 6px;
+    transform-origin: left center 0;
+    margin: 42px auto 0 0;
+    background-color: #654aff;
+}
+
+.container-header img {
+    width: 2em;
+    height: 2em;
+    vertical-align: top;
+}
+
+.container-header a img {
+    width: 4em;
+    height: 2em;
+    vertical-align: top;    
+}
+
+.vr-headsets-container {
+    display: flex;
+    padding: 15% 0;
+}
+
+.vr-headsets-container-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5% 0 30%;
+}
+
+.vr-headsets-container-content-header {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 100;
+    margin: 20px 0 0;
+    font-family: Raleway, sans-serif;
+    color: #654aff;
+}
+
+.vr-headsets-container-content p:nth-child(3) {
+    font-weight: 700;
+    font-size: 1.125rem;
+    font-style: normal;
+    line-height: 1.8;
+    margin: 23px 0 0;
+    text-align: left;
+    font-family: Raleway, sans-serif;
+}
+
+.vr-headsets-container-image {
+    background-image: url(/image/intro.jpg);
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    height: 100%;
+    padding: 30px;
+    position: relative;
+    flex: 1;
+    max-width: 100%;
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
+.vr-headsets-container-content button {
+    color: #ffffff;
+    background-color: #654aff;
+    letter-spacing: 3px;
+    font-size: 1.25rem;
+    border-style: solid;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 35px auto 0 0;
+    padding: 10px 52px 10px 50px;
+    border-color: #654aff;
+    font-family: Raleway, sans-serif;
+    stroke: none;
+    border-radius: 5px;
+}
+
+.vr-headsets-container-content button:hover {
+    color: gray;
+    background-color: #ffffff;
+    border-color: gray;
+}
+
+#summary-benefits {
+    background-color: #654aff;
+}
+
+#summary-benefits h1 {
+    color: #fff;
+    font-size: 3.75rem;
+    font-weight: 400;
+    margin: 60px auto 0;
+    font-family: Montserrat,sans-serif;
+}
+
+#summary-benefits .text-center p {
+    color: #fff;
+    font-size: 1.25rem;
+    margin: 9px auto 0;
+}
+
+#summary-benefits .container .row .col-lg-4.col-md-6.col-sm-12 {
+    margin-top: 74px;
+    margin-bottom: 60px;
+}
+
+.summary-benefits-container-list-container-details {
+    position: relative;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 0 30px 32px;
+    position: relative;
+    flex: 1;
+    max-width: 100%;
+    display: block;
+    box-sizing: border-box;
+    color: #111;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.summary-benefits-container-list-container-details span {
+    position: absolute;
+    align-items: center;
+    height: 94px;
+    width: 94px;
+    text-shadow: 0px 0 0 rgb(0 0 0 / 0%);
+    left: 38%;
+    margin: -45px auto 0;
+    padding: 27px;
+    background-color: #f0edff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.summary-benefits-container-list-container-details h5 {
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    margin: auto;
+    font-family: Raleway, sans-serif;
+    color: #654aff;
+    display: table;
+    align-self: flex-start;
+    padding-top: 70px;
+}
+
+.summary-benefits-container-list-container-details p {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        font-weight: 400;
+        margin: 20px 0 0;
+        color: #524b77;
+        word-wrap: break-word;
+        position: relative;
+        font-family: Raleway, sans-serif;
+}
+
+#virtual-reality {
+    margin: 60px auto;
+}
+
+.virtual-reality-container-details-content {
+    padding: 50px 60px;
+    width: 80%;
+}
+
+.virtual-reality-container-details-image {
+    background-image: url(/image/virtual-reality-image.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: 60% 30%;
+    padding: 30px;
+    vertical-align: middle;
+    background-size: cover;
+}
+
+.virtual-reality-container-details-content h6 {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0 auto 0 0;
+    color: #654aff;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    font-family: Montserrat,sans-serif;
+}
+
+.virtual-reality-container-details-content h4 {
+    font-size: 3.75rem;
+    letter-spacing: 4px;
+    font-weight: 300;
+    line-height: 1;
+    text-transform: none;
+    margin: 20px auto 0 0;
+    font-family: Montserrat,sans-serif;
+}
+
+.virtual-reality-container-details-content p {
+    margin: 20px 2px 0 0;
+    font-family: Montserrat,sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #111;
+    font-weight: 400;
+}
+
+.virtual-reality-container-details-content-lists-light, .virtual-reality-container-details-content-lists-loudspeaker {
+    display: flex;
+    padding: 30px 30px 19px 0;
+}
+
+.virtual-reality-container-details-content-lists span {
+    align-items: center;
+    height: 65px;
+    width: 65px;
+    padding: 15px;
+    background-color: #f0edff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.virtual-reality-container-details-content-lists img{
+    height: 100%;
+}
+
+.virtual-reality-container-details-content-lists p {
+    margin: 2px 0 0 17px;
+}
+
+#main-benefits {
+    background-color: #e5e5e5;
+} 
+
+.main-benefits-container h1 {
+    font-size: 3.75rem;
+    font-weight: 400;
+    margin: 60px auto 0;
+    line-height: 1.1;
+    color: #654aff;
+}
+
+.main-benefits-container p {
+    font-size: 1.25rem;
+    margin: 23px auto 0;
+    font-family: Raleway,sans-serif;
+}
+
+.main-benefits-container-content {
+    margin: 40px auto 60px;;
+    width: 80%;
+}
+
+.main-benefits-container-content-details {
+    display: flex;
+    padding: 10px 30px 14px;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.main-benefits-container-content-details h2 {
+    color: #654aff;
+    display: table;
+    align-self: flex-start;
+    font-family: Montserrat,sans-serif;
+    margin-top: 0;
+    font-size: 4.5rem;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.main-benefits-container-content-details p {
+    margin: 15px 15px 16px 10px;
+    font-family: Raleway,sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.main-benefits-container-content-details-3 {
+    display: flex;
+    padding: 10px 30px 14px;
+    justify-content: center;
+    background-color: #654aff;
+}
+
+.main-benefits-container-content-details-3 h2 {
+    color: #fff;
+    display: table;
+    align-self: flex-start;
+    font-family: Montserrat,sans-serif;
+    margin-top: 0;
+    font-size: 4.5rem;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.main-benefits-container-content-details-3 p {
+    margin: 15px 15px 16px 10px;
+    font-family: Raleway,sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+    color: #fff;
+}
+
+#effect-for-brain {
+    margin: 60px auto;
+    padding: 0 20%;
+}
+
+.effect-for-brain-container-content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 60px;
+}
+
+.effect-for-brain-container-content span {
+    align-items: center;
+    height: 65px;
+    width: 65px;
+    padding: 15px;
+    background-color: #f0edff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.effect-for-brain-container-image {
+    background-image: url(/image/effect-to-brain.jpg);
+    height: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.effect-for-brain-container-content h4 {
+    font-size: 1.875rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 20px auto 0 0;
+    font-family: Montserrat,sans-serif;
+}
+
+.effect-for-brain-container-content p:nth-child(3) {
+    margin: 20px 2px 0 0;
+    font-family: Montserrat,sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.effect-for-brain-container-content p:nth-child(4) {
+    margin: 20px 2px 0 0;
+    font-family: Montserrat,sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+#benefits-of-vr {
+    background-image: url(/image/benefit-of-vr.jpg);
+    background-position: 50% 50%;
+    min-height: 630px;
+    background-repeat: no-repeat;
+}
+
+.benefits-of-vr-content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px 30px 31px;
+    justify-content: center;
+    font-family: Raleway,sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #fff;
+    margin: 130px auto 60px 0;
+}
+
+.benefits-of-vr-content h6 {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0 auto 0 0;
+    color: #654aff;
+}
+
+.benefits-of-vr-content h1 {
+    font-size: 3.75rem;
+    font-weight: 400;
+    margin: 24px 0 0;
+    color: #654aff;
+}
+
+#ten-key-benefits {
+    margin: 30px 0;
+    padding: 0 18%;
+}
+
+.ten-key-benefits-container-left {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ten-key-benefits-container-left h6 {
+    font-size: 1.875rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #654aff;
+    font-family: Montserrat,sans-serif;
+}
+
+.ten-key-benefits-container-left h5 {
+        font-size: 1rem;
+        line-height: 2;
+        font-weight: 400;
+        margin: 15px 0 0;
+        font-family: Raleway,sans-serif;
+}
+
+.ten-key-benefits-container-left span {
+    width: 2em;
+    height: 2em;
+}
+
+.ten-key-benefits-container-right {
+    padding: 30px 20px;
+}
+
+.viber {
+    margin: 20px 0;
+    display: flex;
+}
+
+.viber a {
+    text-decoration: none;
+    border-style: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1px auto 0 7px;
+    padding: 0;
+    color: #654aff;
+    text-transform: uppercase;
+}
+
+.ten-key-benefits-container-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.ten-key-benefits-container-right h1 {
+    font-size: 3rem;
+    font-weight: 200;
+    font-family: Montserrat, sans-serif;
+    line-height: 1.1;
+    color: #654aff;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.ten-key-benefits-container-right h6 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    margin-top: 20px;
+    font-family: Montserrat,sans-serif;
+}
+
+#contact {
+    background-color: #654aff;
+    font-family: Montserrat,sans-serif;
+}
+
+.contact-folowus {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact h2 {
+    letter-spacing: 4px;
+    font-size: 3.275rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 52px auto 0;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-folowus-address {
+    display: inline;
+    white-space: nowrap;
+    min-height: 16px;
+    min-width: 160px;
+    margin: 13px auto 0;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-folowus-rectangle {
+    width: 100px;
+    height: 10px;
+    margin: 10px auto 60px;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+footer {
+    background-color: #333333;
+    min-height: 120px;
+}
+
+footer p {
+    color: #fff;
+    width: 417px;
+    margin-top: 49px;
+    margin-bottom: 49px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 767px) {
+    .vr-headsets-container-content-header h1 {
+        font-size: 5rem;
+    }
+
+    .vr-headsets-container {
+        margin-left: -20%;
+        padding-right: 5%;
+    }
+
+    .vr-headsets-container-image {
+        height: 600px;
+    }
+    
+    #summary-benefits h1 {
+        color: #fff;
+        font-size: 2.75rem;
+        font-weight: 600;
+        margin: 30px auto 0;
+        font-family: Montserrat,sans-serif;
+    }
+
+    
+    #summary-benefits .text-center p {
+        margin: 39px auto 0;
+    }
+
+    .virtual-reality-container-details-image {
+        min-height: 600px;
+    }
+
+    
+    .virtual-reality-container-details-content {
+        padding: 30px 20px;
+        width: 95%;
+    }
+
+    .effect-for-brain-container-image {
+        min-height: 600px;
+    }
+
+    .main-benefits-container h1 {
+        font-size: 3.35rem;
+        font-weight: 300;
+        margin: 30px auto 0;
+    }
+
+    .ten-key-benefits-container-right {
+        padding: 0 30px 30px 30px;
+    }
+}
