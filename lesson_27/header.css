@@ -1,0 +1,42 @@
+#header {
+    background-image: url(/image/Header.png);
+    background-size: cover;
+    padding-bottom: 100px;
+    min-height: 700px;
+}
+
+.logo {
+    padding-top: 30px;
+    color: #fff;
+}
+
+.header-content h2 {
+    color: #fff;
+    font-size: 55px;
+    line-height: 60px;
+    margin-top: 200px;
+
+}
+.header-content p {
+    color: whitesmoke;
+    font-size: 18px;
+    line-height: 32px;
+    width: 540px;
+    margin: 20px auto 0;
+}
+.header-content input {
+    width: 375px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 30px 15px;
+    opacity: 0.3;    
+}
+.header-content button {
+    background-image: linear-gradient(to right, #FE985B, #FE4FA7);
+    padding: 11px 25px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 0 10px;
+}

@@ -1,0 +1,19 @@
+@media (max-width: 997px) {
+    .quote-content {
+        margin-left: 50px;
+        padding-top: 7%;
+    }
+
+    .premium-price {
+        padding: 0;
+        margin: 50px 0;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .quote-content {
+        margin: 3% 0;
+        padding-top: 5%;
+    }
+}
