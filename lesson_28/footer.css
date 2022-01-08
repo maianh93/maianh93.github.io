@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    color: #000000;
+    font-family: Poppins;
+    margin: 90px auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer h5 {
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 42px;
+    letter-spacing: 0.826794px;
+    color: #000000;
+}
+
+footer p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;    
+    letter-spacing: 0.53151px;
+    padding-top: 10px;
+}
