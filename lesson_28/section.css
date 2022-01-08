@@ -103,51 +103,51 @@
 }
 
 .img-cooking {
-    background-image: url(/image/cooking.png);
+    background-image: url(/lesson_28/image/cooking.png);
     min-height: 295px;
     background-repeat: no-repeat;
 }
 
 .img-program {
-    background-image: url(/image/programming.png);
+    background-image: url(/lesson_28/image/programming.png);
     min-height: 295px;
     background-repeat: no-repeat;
     filter: linear-gradient(to bottom, #630A12, #DD2476);
 }
 
 .img-fashion {
-    background-image: url(/image/fashion.png);
+    background-image: url(/lesson_28/image/fashion.png);
     min-height: 295px;
     background-repeat: no-repeat;
 }
 
 .img-health {
-    background-image: url(/image/health.png);
+    background-image: url(/lesson_28/image/health.png);
     min-height: 295px;
     background-repeat: no-repeat;
     position: relative;
 }
 
 .img-todd {
-    background-image: url(/image/Todd-Hicks.png);
+    background-image: url(/lesson_28/image/Todd-Hicks.png);
     min-height: 295px;
     background-repeat: no-repeat;
 }
 
 .img-ronald {
-    background-image: url(/image/Ronald.png);
+    background-image: url(/lesson_28/image/Ronald.png);
     min-height: 295px;
     background-repeat: no-repeat;
 }
 
 .img-edith {
-    background-image: url(/image/Edith.png);
+    background-image: url(/lesson_28/image/Edith.png);
     min-height: 295px;
     background-repeat: no-repeat;
 }
 
 .img-edwin {
-    background-image: url(/image/Edwin.png);
+    background-image: url(/lesson_28/image/Edwin.png);
     min-height: 295px;
     background-repeat: no-repeat;
     position: relative;
@@ -155,7 +155,7 @@
 
 #marketer {
     font-family: Poppins;
-    background-image: url(/image/marketer.png);
+    background-image: url(/lesson_28/image/marketer.png);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
