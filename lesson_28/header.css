@@ -25,7 +25,7 @@ nav {
 }
 
 .nav-content p {
-    padding: 0 15px;
+    padding: 10px 15px 0;
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
@@ -78,7 +78,7 @@ header .header-content {
     margin: 30px 20px 20px 0px;
 }
 
-.phone {
+/* .phone {
     background-image: url(/lesson_28/image/Phone.png);
     background-repeat: no-repeat;
     position: absolute;
@@ -88,4 +88,4 @@ header .header-content {
     left: 68%;
     overflow: hidden;
     z-index: 1;
-}
+} */
