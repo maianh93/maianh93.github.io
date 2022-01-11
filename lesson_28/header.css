@@ -78,7 +78,7 @@ header .header-content {
     margin: 30px 20px 20px 0px;
 }
 
-/* .phone {
+.phone {
     background-image: url(/lesson_28/image/Phone.png);
     background-repeat: no-repeat;
     position: absolute;
@@ -88,4 +88,4 @@ header .header-content {
     left: 68%;
     overflow: hidden;
     z-index: 1;
-} */
+}
