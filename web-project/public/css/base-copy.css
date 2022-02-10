@@ -139,13 +139,18 @@ a {
 
 .main_menu {
     background-color: var(--orange-color);
+    height: 69px;
+}
+
+.nav-margin {
+    margin-top: -16px;
 }
 
 .nav-item {
     display: inline-block;
     font-size: 20px;
     color: var(--white-color);
-    margin: 18px 31px;
+    padding: 18px 21px;
     position: relative;
     font-weight: bold;
 }
@@ -157,8 +162,8 @@ a {
     width: 1px;
     height: 39px;
     background-color: #CC561E;
-    right: -32px;
-    top: 50%;
+    right: 0px;
+    /* top: 50%; */
     transform: translateY(-100%);
 }
 
@@ -211,12 +216,11 @@ a {
     cursor: pointer;
     height: 2rem;
     overflow: hidden;
-    padding-left: 1rem;
     width: 3rem;
 }
 
 .header__navbar-item-shopping-cart {
-    margin-left: -50px;
+    margin-left: -30px;
 }
 
 .count-cart-item {
@@ -375,17 +379,8 @@ a {
     .footer__download {
         margin-left: 0 !important;
     }
-
-    .navbar-toggler-icon {
-        order: 1;
-    }
-
-    .navbar-brand {
-        order: 2;
-    }
-
-    .d-flex {
-        order: 3;
+    .nav-margin {
+        margin-top: 0px;
     }
 }
 
@@ -396,6 +391,9 @@ a {
 
     .footer__download {
         margin-left: 0 !important;
+    }
+    .nav-margin {
+        margin-top: 0px;
     }
 }
 
@@ -414,7 +412,7 @@ a {
     }
     .navbar-brand span {
         max-width: 100px;
-        margin: 0 auto;
+        margin: 0 30%;
         position: absolute;
         left: 0;
         right: 0;
@@ -425,5 +423,49 @@ a {
         border-color: transparent;
         position: absolute;
         left: 0;
+    }
+    .navbar-brand img {
+        height: 94px;
+    }
+
+    .nav-margin {
+        margin-top: 0px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .main_menu .main-menu-item {
+        text-align: left !important;
+    }
+    .navbar-collapse {
+        z-index: 9999 !important;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        width: 100%;
+        background-color: #fff;
+        text-align: center !important;
+    }
+    .navbar-brand span {
+        max-width: 100px;
+        margin: 0 25%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: inline-block;
+        top: 0;
+    }
+    .navbar-light .navbar-toggler {
+        border-color: transparent;
+        position: absolute;
+        left: 0;
+    }
+
+    .navbar-brand img {
+        height: 94px;
+    }
+    .nav-margin {
+        margin-top: 0px;
     }
 }
