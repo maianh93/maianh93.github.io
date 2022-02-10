@@ -110,7 +110,7 @@ ul {
 }
 
 .background {
-    background-image: url(/public/image/background/istockphoto-637633780-1024x1024.jpg);
+    background-image: url(../public/image/background/istockphoto-637633780-1024x1024.jpg);
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;

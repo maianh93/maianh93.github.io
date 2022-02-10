@@ -1,4 +1,4 @@
-@import url(/public/css/base.css);
+@import url(./base.css);
 
 .store{
     background-color: var(--beige-color);
@@ -23,7 +23,7 @@
 }
 
 .store__card-image {
-    background-image: url(/public/image/cua-hang/pluto-loduc.png);
+    background-image: url(../public/image/cua-hang/pluto-loduc.png);
     height: 240px;
     background-position: 50% 10%;
     width: 100%;

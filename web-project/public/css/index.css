@@ -1,4 +1,4 @@
-@import url(/public/css/base.css);
+@import url(./base.css);
 
 .home__main-menu-card {
     display: flex;
