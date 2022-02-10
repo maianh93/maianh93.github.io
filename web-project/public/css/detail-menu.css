@@ -1,0 +1,24 @@
+@import url(/public/css/base.css);
+
+body {
+    background-color: var(--beige-color);
+}
+
+.detail-menu__card {
+    width: 355px;
+    background-color: var(--white-color);
+}
+
+.detail-menu__card-image {
+    margin-bottom: 25px;
+    height: 241px;
+    box-sizing: border-box;
+}
+
+.detail-menu h3 {
+    height: 43px;
+}
+
+.detail-menu__info-content {
+    height: 76px;
+}

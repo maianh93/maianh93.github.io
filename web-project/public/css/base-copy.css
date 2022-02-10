@@ -133,39 +133,33 @@ a {
     text-decoration: none;
 }
 
-.navbar__logo img {
+.navbar-brand img {
     height: 107px;
 }
 
-.header{
+.main_menu {
     background-color: var(--orange-color);
 }
 
-/* 
-.header__navbar {
-    margin-left: 207px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.header__logo {
-    width: 231px;
-    height: 107px;
-    background-image: url(/public/image/logo/Logo_1.png);
-}
-
-.header__navbar-list {
-    list-style: none;
-    display: flex;
-} */
-
-.header__navbar-item {
+.nav-item {
     display: inline-block;
     font-size: 20px;
     color: var(--white-color);
     margin: 18px 31px;
     position: relative;
     font-weight: bold;
+}
+
+.nav-item--separate::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 39px;
+    background-color: #CC561E;
+    right: -32px;
+    top: 50%;
+    transform: translateY(-100%);
 }
 
 .header__navbar-item--separate::after {
@@ -180,17 +174,49 @@ a {
     transform: translateY(-100%);
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    width: 200px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 15%);
+    display: none;
+}
+
+.dropdown-menu a {
+    color: #464646;
+    text-align: center;
+    display: block;
+    padding: 10px 16px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ddd;
+    color: #fff;
+}
+
+.dropdown-menu span:hover {
+    background-color: #ddd;
+    color: #fff;
+}
+
+
+.hearer_icon {
+    display: flex;
+}
+
 .header__navbar-item-login-dropdown {
     cursor: pointer;
     height: 2rem;
     overflow: hidden;
     padding-left: 1rem;
-    margin: 18px -15px;
     width: 3rem;
 }
 
 .header__navbar-item-shopping-cart {
-    margin-left: 1px;
+    margin-left: -50px;
 }
 
 .count-cart-item {
@@ -370,5 +396,34 @@ a {
 
     .footer__download {
         margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .main_menu .main-menu-item {
+        text-align: left !important;
+    }
+    .navbar-collapse {
+        z-index: 9999 !important;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        width: 100%;
+        background-color: #fff;
+        text-align: center !important;
+    }
+    .navbar-brand span {
+        max-width: 100px;
+        margin: 0 auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: inline-block;
+        top: 0;
+    }
+    .navbar-light .navbar-toggler {
+        border-color: transparent;
+        position: absolute;
+        left: 0;
     }
 }

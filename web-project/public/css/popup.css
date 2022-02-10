@@ -1,0 +1,68 @@
+@import url(/public/css/base.css);
+
+.dialog {
+    background-color: var(--beige-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog-body {
+    max-width: 732px;
+    height: 462px;
+    position: relative;
+    padding: 16px;
+    background-color: #fff;
+}
+
+.dialog-body__input-volumn {
+    display: flex;
+    flex-direction: column;
+    width: 639px;
+    height: 242px;
+}
+
+.dialog-body__input-volumn-item {
+    background-color: var(--orange-red-color);
+    height: 58px;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+/* 
+.dialog-body__input-volumn-size {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white-color);
+    display: flex;
+    background-color: var(--beige-color);
+    height: 92px;
+} */
+
+.dialog-body__input-volumn-quantity {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dialog-body__input-volumn-option {
+    background-color: var(--white-color);
+    height: 86px;
+    padding-top: 8%;
+    border: solid 1px var(--orange-red-color);
+}
+
+.input-volumn {
+    width: 157px;
+    border-color: var(--white-color);
+    border: solid 1px var(--orange-red-color);
+}
+
+.overlay {
+    background-color: var(--grey-color);
+}
