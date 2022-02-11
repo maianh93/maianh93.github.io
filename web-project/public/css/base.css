@@ -329,6 +329,10 @@ a {
     height: 36px;
 }
 
+.btn--confirm {
+    min-width: 277px;
+}
+
 .footer {
     background-color: var(--orange-color);
 }

@@ -14,8 +14,9 @@
 }
 
 .dialog-body {
+    display: flex;
+    flex-direction: column;
     max-width: 732px;
-    height: 462px;
     position: relative;
     padding: 16px;
     background-color: #fff;
@@ -24,26 +25,13 @@
 .dialog-body__input-volumn {
     display: flex;
     flex-direction: column;
-    width: 639px;
-    height: 242px;
 }
 
 .dialog-body__input-volumn-item {
     background-color: var(--orange-red-color);
-    height: 58px;
-    width: 100%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
-/* 
-.dialog-body__input-volumn-size {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--white-color);
-    display: flex;
-    background-color: var(--beige-color);
-    height: 92px;
-} */
 
 .dialog-body__input-volumn-quantity {
     display: flex;
@@ -52,10 +40,14 @@
 
 .dialog-body__input-volumn-option {
     background-color: var(--white-color);
-    height: 86px;
-    padding-top: 8%;
     border: solid 1px var(--orange-red-color);
 }
+
+.dialog-body__deal-confirm-btn {
+    display: flex;
+    flex-direction: row;
+}
+
 
 .input-volumn {
     width: 157px;
@@ -66,3 +58,22 @@
 .overlay {
     background-color: var(--grey-color);
 }
+
+
+@media (max-width: 765px) {
+    .pop-up-price {
+        text-align: center;
+    }
+    .dialog-body__deal-confirm-btn {
+        text-align: center;
+    }
+    .btn--confirm:last-child {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+
+}
+
+
