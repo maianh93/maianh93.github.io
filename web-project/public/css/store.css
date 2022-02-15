@@ -4,8 +4,21 @@
     background-color: var(--beige-color);
 }
 
-.page_sidebar p {
-    text-transform: uppercase;
+.store__image {
+    /* position: relative; */
+    background-image: url(../image/cua-hang/pluto-timescity.jpg);
+    height: 307px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    /* opacity: 0.8; */
+}
+
+.store__image p {
+    /* position: absolute; */
+    padding-top: 140px;
+    margin: auto;
 }
 
 .store__list {
@@ -23,10 +36,10 @@
 }
 
 .store__card-image {
-    background-image: url(../public/image/cua-hang/pluto-loduc.png);
+    overflow: hidden;
     height: 240px;
-    background-position: 50% 10%;
     width: 100%;
+    vertical-align: middle;
 }
 
 .store__card h3 {
@@ -35,6 +48,7 @@
 }
 
 .store__card p {
+    height: 56px;
     padding: 0 15px;
     font-weight: 400;
 }

@@ -115,7 +115,7 @@ ul {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 
 .beige-background {
@@ -260,6 +260,10 @@ a {
     position: relative;
 }
 
+.disable {
+    display: none !important;
+}
+
 .btn {
     text-decoration: none;
     background-color: transparent;
@@ -273,8 +277,16 @@ a {
     font-size: 16px;
 }
 
+
 .btn--orange {
     background-color: var(--orange-color);
+    min-width: 227px;
+}
+
+.btn--orange:hover {
+    background-color: var(--white-color);
+    color: var(--orange-color);
+    border: 1px solid var(--orange-color);
 }
 
 .btn--orange-red {
@@ -289,6 +301,12 @@ a {
     background-color: var(--white-color);
     color: var(--orange-color);
     border: 1px solid var(--orange-color);
+    min-width: 227px;
+}
+
+.btn--white:hover {
+    background-color: var(--orange-color);
+    color: var(--white-color);
 }
 
 .btn--disable {
@@ -331,6 +349,42 @@ a {
 
 .btn--confirm {
     min-width: 277px;
+}
+
+.btn--login {
+    background-color: var(--red-color);
+    width: 100%;
+}
+
+.btn--login:hover {
+    opacity: 0.9;
+    color: var(--white-color);
+}
+
+.btn--checkout {
+    border: solid 1px var(--red-color);
+    background-color: var(--white-color);
+    color: var(--red-color);   
+    width: 100%; 
+}
+
+.btn--checkout:hover {
+    background-color: var(--red-color);
+    color: var(--white-color);   
+    opacity: 0.9;   
+}
+
+.input-text {
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    height: 40px;
+    background: var(--white-color);
+    border: 1px solid var(--black-color);
+    font-size: 16px;
+    color: #000;
+    width: 100%
 }
 
 .footer {
