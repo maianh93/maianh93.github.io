@@ -8,7 +8,7 @@
 
 a {
     text-decoration: none;
-    color: var(--white-color);
+    /* color: var(--white-color); */
 }
 
 a:hover {
@@ -29,6 +29,12 @@ ul {
     --green-color: #789C38;
     --black-color: #333
 
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
 }
 
 .white-text {
@@ -129,12 +135,15 @@ ul {
 
 } */
 
-a {
-    text-decoration: none;
+.navbar-brand img {
+    position: relative;
+    z-index: 100;
+    height: 107px;
 }
 
-.navbar-brand img {
-    height: 107px;
+    
+.navbar-nav a {
+    color: var(--white-color);
 }
 
 .main_menu {
@@ -176,6 +185,10 @@ a {
     right: -32px;
     top: 50%;
     transform: translateY(-100%);
+}
+
+#navbarNavAltMarkup {
+    margin-top: -31px;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -220,6 +233,10 @@ a {
 
 .header__navbar-item-shopping-cart {
     margin-left: -30px;
+}
+
+.header__navbar-item-shopping-cart a  {
+    color: var(--white-color);
 }
 
 .count-cart-item {
@@ -414,6 +431,10 @@ a {
     margin-top: 30px;
 }
 
+.footer__info a {
+    color: var(--white-color);
+}
+
 .footer__company-name-and-design-info {
     display: flex;
     justify-content: space-between;
@@ -421,6 +442,7 @@ a {
 
 .footer__download-image {
     height: 68px;
+    margin-left: -3px;
 }
 
 .footer__download img {
@@ -428,6 +450,14 @@ a {
 }
 
 @media (max-width: 991px) {
+    .navbar-nav  {
+        background-color: var(--beige-color);
+    }
+    
+    .navbar-nav a {
+        color: var(--orange-color);
+    }
+    
     .main_menu .main-menu-item {
         text-align: left !important;
     }
@@ -441,7 +471,7 @@ a {
         text-align: center !important;
     }
     .navbar-brand span {
-        max-width: 100px;
+        max-width: 100%;
         margin: 0 30%;
         position: absolute;
         left: 0;
@@ -460,6 +490,10 @@ a {
 
     .nav-margin {
         margin-top: 0px;
+    }
+
+    #navbarNavAltMarkup {
+        margin-top: 31px;
     }
 }
 
@@ -500,7 +534,7 @@ a {
         text-align: center !important;
     }
     .navbar-brand span {
-        max-width: 100px;
+        max-width: 100%;
         margin: 0 25%;
         position: absolute;
         left: 0;

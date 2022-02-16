@@ -47,6 +47,12 @@ body {
     padding-right: 26px;
 }
 
+@media (max-width: 1200px) {
+    table {
+        width: 500px;
+    }
+}
+
 @media (max-width: 991px) {
     .dialog {
         left: 0%;
@@ -55,6 +61,9 @@ body {
     .price-right {
         text-align: right;
         padding-right: 0px;
+    }
+    h3 {
+        font-size: 20px;
     }
 }
 
@@ -79,7 +88,9 @@ body {
 }
 
 @media (max-width: 576px) {
-
+    table {
+        width: 600px;
+    }
 }
 
 
