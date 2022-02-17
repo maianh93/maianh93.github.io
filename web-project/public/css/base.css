@@ -8,6 +8,7 @@
 
 a {
     text-decoration: none;
+    cursor: pointer;
     /* color: var(--white-color); */
 }
 
@@ -121,7 +122,6 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    /* opacity: 0.8; */
 }
 
 .beige-background {
