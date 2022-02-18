@@ -127,12 +127,15 @@ img {
 .beige-background {
     background-color: var(--beige-color);
 }
-/* 
-.blur {
+
+.opacity-4 {
+    opacity: 0.4;
+}
+
+/* .blur {
     background: rgba(224, 214, 214, 0.2);
     backdrop-filter: blur(8px);
     width: 100%;
-
 } */
 
 .navbar-brand img {
@@ -191,7 +194,7 @@ img {
     margin-top: -31px;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown-menu {
     display: block;
 }
 
@@ -199,7 +202,7 @@ img {
     position: absolute;
     width: 200px;
     box-shadow: 0 0 10px rgb(0 0 0 / 15%);
-    display: none;
+    /* display: none; */
 }
 
 .dropdown-menu a {
@@ -210,14 +213,14 @@ img {
 }
 
 .dropdown-menu a:hover {
-    background-color: #ddd;
-    color: #fff;
+    background-color: var(--beige-color);
+    color: var(--orange-color);
 }
 
-.dropdown-menu span:hover {
+/* .dropdown-menu span:hover {
     background-color: #ddd;
     color: #fff;
-}
+} */
 
 
 .hearer_icon {

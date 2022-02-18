@@ -1,7 +1,7 @@
 @import url(./base.css);
 
 .dialog {
-    background-color: var(--beige-color);
+    /* background-color: var(--beige-color); */
     position: fixed;
     top: 0;
     left: 0;
@@ -20,6 +20,7 @@
     position: relative;
     padding: 16px;
     background-color: #fff;
+    border: 1px solid var(--orange-red-color);
 }
 
 .dialog-body__input-volumn {
@@ -33,11 +34,6 @@
     border-top-right-radius: 8px;
 }
 
-.dialog-body__input-volumn-quantity {
-    display: flex;
-    justify-content: space-between;
-}
-
 .dialog-body__input-volumn-option {
     background-color: var(--white-color);
     border: solid 1px var(--orange-red-color);
@@ -46,6 +42,11 @@
 .dialog-body__deal-confirm-btn {
     display: flex;
     flex-direction: row;
+}
+
+.dialog-body__input-volumn-quantity input {
+    width: 54px;
+    margin: 0 15px;
 }
 
 
