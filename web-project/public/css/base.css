@@ -194,7 +194,7 @@ img {
     margin-top: -31px;
 }
 
-.dropdown-menu {
+.dropdown:hover .dropdown-menu {
     display: block;
 }
 
@@ -202,7 +202,7 @@ img {
     position: absolute;
     width: 200px;
     box-shadow: 0 0 10px rgb(0 0 0 / 15%);
-    /* display: none; */
+    display: none;
 }
 
 .dropdown-menu a {
@@ -217,10 +217,10 @@ img {
     color: var(--orange-color);
 }
 
-/* .dropdown-menu span:hover {
+.dropdown-menu span:hover {
     background-color: #ddd;
     color: #fff;
-} */
+}
 
 
 .hearer_icon {
