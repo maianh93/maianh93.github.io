@@ -36,6 +36,7 @@ body {
       align-items: center;
       text-align: center;
       margin: 0 3px;
+        border: 1px solid var(--orange-color);
   }
 
 .quantity-icon {

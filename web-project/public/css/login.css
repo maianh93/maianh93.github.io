@@ -31,6 +31,56 @@ body {
     width: 183px;
 }
 
+#province-list {
+    width: 100%;
+}
+
+select {
+        border-radius: 5px;
+        width: 125px;
+        height: 38px;
+}
+
+.alert {
+    padding: 0 !important;
+    visibility: hidden;
+}
+
+.alert.error {
+    visibility: visible;
+}
+
+.alert i {
+    visibility: hidden;
+    position: absolute;
+}
+
+.alert.error i {
+    visibility: visible;
+    position: absolute;
+}
+
+.alert.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.alert small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: -22px;
+    left: 20px;
+    visibility: hidden;
+}
+
+.alert.error small {
+    visibility: visible;
+    color: #e74c3c;
+    position: absolute;
+    bottom: -22px;
+    left: 20px;
+}
+
 @media (max-width: 991px) {
     .dialog {
         left: 0%;
@@ -42,6 +92,14 @@ body {
         float: left !important;
         padding-left: 12px !important;
         padding-top: 12px !important;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    #ward-list {
+        margin-top: 8px;
     }
     
 }

@@ -47,6 +47,16 @@ body {
     padding-right: 26px;
 }
 
+#province-list {
+    width: 100%;
+}
+
+select {
+        border-radius: 5px;
+        width: 100%;
+        height: 38px;
+}
+
 @media (max-width: 1200px) {
     table {
         width: 500px;
@@ -84,6 +94,14 @@ body {
 
     .confirm-btn {
         margin-top: 20px;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    #ward-list {
+        margin-top: 8px;
     }
 }
 

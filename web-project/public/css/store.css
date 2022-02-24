@@ -6,7 +6,7 @@
 
 .store__image {
     /* position: relative; */
-    background-image: url(../image/cua-hang/pluto-timescity.jpg);
+    background-image: url(../image/cua-hang/pluto-hn/pluto-timescity.jpg);
     height: 307px;
     background-position: center;
     background-repeat: no-repeat;
@@ -43,14 +43,14 @@
 
 .store__card {
     background-color: var(--white-color);
-    width: 344px;
+    /* width: 344px; */
     flex: 0 0 calc(40% - 24px);
     margin: 0 12px 40px;
 }
 
 .store__card-image {
     overflow: hidden;
-    height: 240px;
+    height: 298px;
     width: 100%;
     vertical-align: middle;
 }
@@ -66,6 +66,11 @@
     font-weight: 400;
 }
 
+.page_sidebar a:hover {
+    font-weight: 500;
+    color: var(--black-color);
+}
+
 .stikySidebar {
     width: 19.5%;
     border-right: solid 1px var(--black-color);
@@ -75,6 +80,11 @@
     z-index: 2;
 }
 
+@media (max-width: 1400px) {
+    .store__card-image {
+        height: 205px;
+    }
+}
 
 @media (max-width: 992px) {
     .stikySidebar {
@@ -89,18 +99,26 @@
     .store_list {
         text-align: center;
     }
+    
+    .page_sidebar {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .store__card-image {
+        height: 205px;
+    }
+    
 }
 
-@media (max-width: 1200px) {
-    .store__card {
-        background-color: var(--white-color);
-        width: 344px;
-        flex: 0 0 calc(50% - 24px);
-        margin: auto;
-    }
-    td {
-        font-size: x-small;
+@media (max-width: 765px) {
+    .store__card-image {
+        height: 298px;
     }
 }
-
 

@@ -49,19 +49,19 @@
                         </button>
                         <div class="navbar-collapse main-menu-item collapse" id="navbarNavAltMarkup">
                             <ul class="navbar-nav">
-                                <li class="nav-item dropdown nav-item--separate">
+                                <li id="menu-nav-btn" class="nav-item dropdown nav-item--separate">
                                     <a class="dropdown-toggle" href="#" id="navbarDropdown_1" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Thực Đơn
                                     </a>
-                                    <div class="dropdown-menu menu-dropdown" aria-labelledby="navbarDropdown_1">
+                                    <div class="dropdown-menu menu-dropdown disable" aria-labelledby="navbarDropdown_1">
                                         <a class="dropdown-item" href="category.html">
                                             Gà giòn không xương</a>
                                         <a class="dropdown-item" href="single-product.html">Gà giòn cay</a>
                                         <a class="dropdown-item" href="single-product.html">Gà giòn không cay</a>
                                         <a class="dropdown-item" href="single-product.html">Hamburger</a>
                                         <a class="dropdown-item" href="single-product.html">Món ăn kèm</a>
-                                        <a class="dropdown-item" href="single-product.html">Món lẻ</a>
+                                        <a class="dropdown-item" href="./page/detail-menu.html">Món lẻ</a>
                                         <a class="dropdown-item" href="single-product.html">Đồ uống - Tráng miệng</a>
                                     </div>
                                 </li>
@@ -80,12 +80,12 @@
                         </div>
                         <div class="hearer_icon d-flex nav-margin">
                             <div class="nav-item dropdown">
-                                <div class="header__navbar-item-login-dropdown" data-dropdown="dropdown-user-menu"><img
+                                <div id="user-nav-btn" class="header__navbar-item-login-dropdown" data-dropdown="dropdown-user-menu"><img
                                         src="./public/image/anonymous-user.jpg"
                                         onerror="this.onerror=null;this.src='/resources/image/anonymous-user.jpg';"
                                         alt="Avatar" class="navbar-user-avatar-img" aria-labelledby="navbarDropdown_1">
                                 </div>
-                                <div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdown_1">
+                                <div class="dropdown-menu user-dropdown disable" aria-labelledby="navbarDropdown_1">
                                     <a class="dropdown-item" href="./page/user-info.html">
                                         Thông tin tài khoản</a>
                                     <a class="dropdown-item" href="./page/user-info.html">Lịch sử đơn hàng</a>
@@ -105,6 +105,8 @@
             </div>
         </div>
     </header>
+    <div class="dialog disable">
+    </div>
     <section class="home">
         <div class="banner">
             <div class="banner-group owl-carousel owl-theme">
@@ -248,8 +250,14 @@
                 loop:true,
                 autoplay:true,
             });
+            
         });
 
     </script>
+
+      <!-- Axios -->
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="./public/js/main.js"></script>
 </body>
 </html>
