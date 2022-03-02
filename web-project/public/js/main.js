@@ -4,7 +4,7 @@
 
 const dropdownMenuBtnElement = document.getElementById("menu-nav-btn");
 const dropdownMenuElement = document.querySelector(".menu-dropdown");
-const windowElement = document.querySelector(".dialog");
+const windowElement = document.querySelector(".fake-face");
 
 
 dropdownMenuBtnElement.addEventListener("click", () => {   

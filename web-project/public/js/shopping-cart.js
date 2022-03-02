@@ -37,10 +37,10 @@ let products = [
 ]
 
 let promotionCode = {
-    A: 0.4,
-    B: 0.3,
-    C: 0.2,
-    D: 0.1,
+    MA40: 0.4,
+    MA30: 0.3,
+    MA20: 0.2,
+    MA10: 0.1,
 }
 
 const numberFormater = new Intl.NumberFormat('de-DE');

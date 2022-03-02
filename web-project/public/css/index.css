@@ -63,7 +63,7 @@
     border-bottom-right-radius: 8px;
 }
 
-.dialog {
+.fake-face {
   background-color: var(--beige-color);
   position: absolute;
   height: 1600px;
