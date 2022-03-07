@@ -56,7 +56,7 @@
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Thực Đơn
                                     </a>
-                                    <div class="dropdown-menu menu-dropdown disable" aria-labelledby="navbarDropdown_1">
+                                    <div id="product-dropdown" class="dropdown-menu menu-dropdown disable" aria-labelledby="navbarDropdown_1">
                                         <a class="dropdown-item" href="category.html">
                                             Gà giòn không xương</a>
                                         <a class="dropdown-item" href="single-product.html">Gà giòn cay</a>
@@ -120,40 +120,34 @@
                     <div class="page_sidebar">
                         <p class="black-text extra-bold-text uppercase-text">Theo khu vực</p>
                         <ul>
-                            <li>
-                                <a class="red-text regular-text" href="1000683241" data-location="Hà Nội"
-                                    data-store-size="5">
-                                    Hà Nội (5)
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="black-text regular-text" href="1000674013" data-location="Tp Hồ Chí Minh"
-                                    data-store-size="3">
-                                    Tp Hồ Chí Minh (3)
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="black-text regular-text" href="1000677862" data-location="Đà Nẵng"
-                                    data-store-size="2">
-                                    Đà Nẵng (2)
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="black-text regular-text" href="1000677862" data-location="all"
-                                    data-store-size="10">
+                            <li id="all-option-store">
+                                <a class="red-text bold-text regular-text" href="#">
                                     Tất cả (10)
+                                </a>
+                            </li>
+                            <li id="hn-option-store">
+                                <a class=" black-text regular-text" href="#">
+                                    TP Hà Nội (5)
+                                </a>
+                            </li>
+
+                            <li id="hcm-option-store">
+                                <a class="black-text regular-text" href="#">
+                                    TP Hồ Chí Minh (3)
+                                </a>
+                            </li>
+
+                            <li id="dn-option-store">
+                                <a class="black-text regular-text" href="#">TP Đà Nẵng (2)
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-12 col-sm-12 ps-5 pt-3">
-                    <h3 class="page_title">Khám phá <span>5</span> cửa hàng của chúng tôi ở <span> Thành phố Hà
-                            Nội</span></h3>
-                    <div class="container pt-5">
+                    <!-- <h3 class="page_title">Khám phá <span>5</span> cửa hàng của chúng tôi ở <span> Thành phố Hà
+                            Nội</span></h3> -->
+                    <div id="right-side" class="container">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="store__card">
@@ -184,8 +178,9 @@
                             </div>
                         </div>
                     </div>
+                    
 
-                    <div class="container">
+                    <!-- <div class="container">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="store__card">
@@ -234,7 +229,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -242,7 +237,7 @@
     </section>
     <footer>
         <div class="footer">
-            <div class="container mt-4 pt-4">
+            <div class="container pt-4">
                 <div class="row ">
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="footer__logo">
@@ -327,6 +322,7 @@
         crossorigin="anonymous"></script>
 
         <script src="../public/js/main.js"></script>
+        <script src="../public/js/store.js"></script>
 
 </body>
 

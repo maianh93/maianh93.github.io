@@ -236,7 +236,7 @@ const updateTotalMoney = (arr) => {
     </li>
     <li class="vat">VAT<span class="red-text amount-of-money">${numberFormater.format(vatTotal)} VND</span></li>
     <li class="discount ${hideClass}">
-            GIẢM GIÁ<span class="red-text amount-of-money">- ${numberFormater.format(discountTotal)} VND</span>
+            GIẢM GIÁ (- ${discountRate * 100}%)<span class="red-text amount-of-money">- ${numberFormater.format(discountTotal)} VND</span>
     </li>
     <li class="total">TỔNG THANH TOÁN <span class="red-text amount-of-money">${numberFormater.format(totalMoney)} VND</span></li>
     `

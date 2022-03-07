@@ -50,6 +50,7 @@
 
 .store__card-image {
     overflow: hidden;
+    object-fit: cover ;
     height: 298px;
     width: 100%;
     vertical-align: middle;

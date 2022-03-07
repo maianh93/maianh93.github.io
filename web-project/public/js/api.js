@@ -67,10 +67,10 @@ function callGetAllCategoriesAPI() {
 }
 
 //API detail-menu
-function callGetProductsAPI() {
+function callGetProductsAPI(categoryId) {
     return axios({
         method: "get",
-        url: `http://phungmaianh.ddns.net/pfc/biz/products/search/byCategoryId?categoryId=45`
+        url: `http://phungmaianh.ddns.net/pfc/biz/products/search/byCategoryId?categoryId=${categoryId}`
     })
 }
 

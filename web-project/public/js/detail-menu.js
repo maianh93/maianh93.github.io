@@ -1,17 +1,23 @@
+const urlParams = new URLSearchParams(window.location.search);
+const categoryId = urlParams.get('id');
+
+const numberFormater = new Intl.NumberFormat('de-DE');
+
 async function loadPage() {
     try {
-        const res = await callGetProductsAPI()
-        // renderProduct(res.data)
-        console.log(res)
+        const res = await callGetProductsAPI(categoryId)
+        renderProduct(res.data)
+        console.log(res.data)
     } catch (error) {
         console.log(error);
     }
 }
 
+
 const renderProduct = (arr) => {
     //Trường hợp mảng rỗng
     if (arr.length == 0) {
-        mainMenuElement.innerHTML = "<li>Không có sản phẩm nào trong thực đơn</li>";
+
         return
     }
 
@@ -33,12 +39,9 @@ const renderProduct = (arr) => {
                     <img src="../public/image/detail-menu/mon-le/1mieng-cay.png" alt="1mieng-gagionkhongcay">
                 </div>
                 <div class="detail-menu__info">
-                    <h3 class="regular-text uppercase-text orange-text extra-bold-text mt-3">1 miếng gà giòn
-                        không cay</h3>
-                    <p class="detail-menu__info-content small-text regular-bold-text grey-text pe-3 ps-3">Gà
-                        giòn Cajun tươi mới được ướp với công thức gia vị Louisiana cay tẩm bột thủ công và rán
-                        chín cùng lớp phủ giòn tan</p>
-                    <p class="extra-bold-text green-text pt-3">36.000đ</p>
+                    <h3 class="regular-text uppercase-text orange-text extra-bold-text mt-3">${t.descriptions.VN.text}</h3>
+                    ${buildDescription(t.units.VN)}
+                    <p class="extra-bold-text green-text pt-3">${numberFormater.format(t.prices.VND.price)}đ</p>
                 </div>
                 <div class="btn btn--red btn--order uppercase-text small-text bold-text mb-4">Đặt mua</div>
             </div>
@@ -55,9 +58,18 @@ const renderProduct = (arr) => {
         `;
     }
 
-    document.querySelector(".main-menu").innerHTML = `
+    document.querySelector(".detail-menu").innerHTML = `
     <h2 class="extra-large-text red-text extra-bold-text uppercase-text text-center">Món lẻ</h2>
     ` + innerHtmlMainMenuElement;
 }
+
+const buildDescription = (obj) => {
+    let a = "";
+    for (const i in obj){
+        a += `<p class="detail-menu__info-content small-text regular-bold-text grey-text pe-3 ps-3">${obj[i].text}</p>`
+    }           
+    return a;
+}
+
 
 loadPage()
