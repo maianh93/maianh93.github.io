@@ -1,23 +1,12 @@
 @import url(./base.css);
 
-.dialog {
-    /* background-color: var(--beige-color); */
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .dialog-body {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     max-width: 732px;
-    position: relative;
+    position: fixed;
+    top: 34%;
+    left: 34%;
     padding: 16px;
     background-color: #fff;
     border: 1px solid var(--orange-red-color);
@@ -58,6 +47,24 @@
 
 .overlay {
     background-color: var(--grey-color);
+}
+
+
+.quantity input {
+    display: block;
+    width: 42px;
+    height: 50px;
+    border-radius: 4px;
+    align-items: center;
+    text-align: center;
+    margin: 0 3px;
+      border: 1px solid var(--orange-color);
+}
+
+.quantity-icon {
+    transform: translateY(18%);
+    cursor: pointer; 
+    margin: 0 20px;
 }
 
 
