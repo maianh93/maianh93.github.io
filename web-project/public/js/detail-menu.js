@@ -14,7 +14,7 @@ async function loadPage() {
     }
 }
 
-
+//render
 const renderProduct = (arr) => {
     //Trường hợp mảng rỗng
     if (arr.length == 0) {
@@ -70,6 +70,9 @@ const buildDescription = (obj) => {
         
     return `<p class="detail-menu__info-content small-text regular-bold-text grey-text pe-3 ps-3">${a}</p>`;
 }
+
+//Đặt mua
+
 
 
 loadPage()

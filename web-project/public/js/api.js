@@ -74,6 +74,14 @@ function callGetProductsAPI(categoryId) {
     })
 }
 
+//API shopping-cart
+function callGetAllOrderByUserIdAPI(userId) {
+    return axios({
+        method: "get",
+        url: `http://phungmaianh.ddns.net/pfc/biz/orders/search/byUserId?userId=${userId}`
+    })
+}
+
 // axios.interceptors.request.use(request => {
 //     console.log('Starting Request', JSON.stringify(request, null, 2))
 //     return request
