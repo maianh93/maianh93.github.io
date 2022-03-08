@@ -29,9 +29,9 @@ const renderProduct = (arr) => {
             innerHtmlRowTextCenterElement += `
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="main-menu__card-image">
-                    <img src="../public/image/main-menu/menu_gakhongxuong.png" alt="menu_gakhongxuong">
+                    <img src="${t.imageUrl}" alt="menu_gakhongxuong">
                 </div>
-                <div onclick=redirectPage1(${t.id}) class="btn btn--main-menu uppercase-text small-text bold-text">${t.descriptions.VN.text}</div>
+                <div onclick="redirectPage1(${t.id}, '${t.descriptions.VN.text}')" class="btn btn--main-menu uppercase-text small-text bold-text">${t.descriptions.VN.text}</div>
             </div>
             `
         }
@@ -50,8 +50,8 @@ const renderProduct = (arr) => {
     ` + innerHtmlMainMenuElement;
 }
 
-const redirectPage1 = (categoryId) => {
-    window.location = `/page/detail-menu.html?id=${categoryId}`;
+const redirectPage1 = (categoryId, categoryName) => {
+    window.location = `/page/detail-menu.html?id=${categoryId}&name=${categoryName}`;
 }
 
 loadPage()

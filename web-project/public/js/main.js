@@ -27,14 +27,14 @@ const renderProductDropdown = (arr) => {
         let t = arr[i];
 
         htmlContent += `
-        <a onclick=redirectPage(${t.id}) class="dropdown-item">${t.descriptions.VN.text}</a>
+        <a onclick="redirectPage(${t.id}, '${t.descriptions.VN.text}')" class="dropdown-item">${t.descriptions.VN.text}</a>
         `
     }
     document.getElementById("product-dropdown").innerHTML = htmlContent;
 }
 
-const redirectPage = (categoryId) => {
-    window.location = `/page/detail-menu.html?id=${categoryId}`;
+const redirectPage = (categoryId, categoryName) => {
+    window.location = `/page/detail-menu.html?id=${categoryId}&name=${categoryName}`;
 }
 
 

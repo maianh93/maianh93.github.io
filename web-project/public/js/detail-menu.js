@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const categoryId = urlParams.get('id');
+const categoryName = urlParams.get('name');
 
 const numberFormater = new Intl.NumberFormat('de-DE');
 
@@ -34,9 +35,9 @@ const renderProduct = (arr) => {
             // Clear nội dung
             innerHtmlRowTextCenterElement += `
             <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="detail-menu__card mx-auto">
+            <div class="detail-menu__card mx-auto mt-5">
                 <div class="detail-menu__card-image">
-                    <img src="../public/image/detail-menu/mon-le/1mieng-cay.png" alt="1mieng-gagionkhongcay">
+                    <img src="${t.imageUrl}" alt="1mieng-gagionkhongcay">
                 </div>
                 <div class="detail-menu__info">
                     <h3 class="regular-text uppercase-text orange-text extra-bold-text mt-3">${t.descriptions.VN.text}</h3>
@@ -59,16 +60,15 @@ const renderProduct = (arr) => {
     }
 
     document.querySelector(".detail-menu").innerHTML = `
-    <h2 class="extra-large-text red-text extra-bold-text uppercase-text text-center">Món lẻ</h2>
+    <h2 class="extra-large-text red-text extra-bold-text uppercase-text text-center mt-5">${categoryName}</h2>
     ` + innerHtmlMainMenuElement;
 }
 
 const buildDescription = (obj) => {
     let a = "";
-    for (const i in obj){
-        a += `<p class="detail-menu__info-content small-text regular-bold-text grey-text pe-3 ps-3">${obj[i].text}</p>`
-    }           
-    return a;
+    a = obj.map(e => e.text).join(" + ");
+        
+    return `<p class="detail-menu__info-content small-text regular-bold-text grey-text pe-3 ps-3">${a}</p>`;
 }
 
 
