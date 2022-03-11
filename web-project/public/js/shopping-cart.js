@@ -121,7 +121,7 @@ const renderProduct = (arr) => {
 
     //Trường hợp mảng rỗng
     if (arr.length == 0) {
-        shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none'>Không có sản phẩm nào trong danh mục</li>";
+        shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none'>Không có sản phẩm nào trong giỏ hàng</li>";
         promotionElement.style.display = "none";
         summaryElement.style.display = "none";
         document.getElementById("confirm-container").classList.add("disable");
@@ -311,7 +311,16 @@ const updateTotalMoney = (arr) => {
             GIẢM GIÁ (- ${discountRate * 100}%)<span class="red-text amount-of-money">- ${numberFormater.format(discountTotal)} VND</span>
     </li>
     <li class="total">TỔNG THANH TOÁN <span class="red-text amount-of-money">${numberFormater.format(totalMoney)} VND</span></li>
-    `
+    ` + `<div id="confirm-container" class="container">
+    <div class="row pt-5 pb-5">
+        <div class="continue-order col-lg-6 col-md-6 col-sm-12">
+            <a href="../page/main-menu.html"><div class="btn btn--white uppercase-text">Tiếp tục đặt hàng</div></a>
+        </div>
+        <div class="confirm-btn col-lg-6 col-md-6 col-sm-12">
+            <a href="../page/checkout.html"><div id="confirm-btn" class="btn btn--orange float-end uppercase-text">Thanh toán</div></a>
+        </div>
+    </div>
+</div>`
 }
 
 const checkPromoCodeValue = () => {

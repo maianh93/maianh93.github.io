@@ -189,9 +189,23 @@ body {
     }
 }
 
+@media (max-width: 1200px) {
+    .btn--orange, .btn--white {
+        min-width: 0 !important;
+    }
+}
+
 @media (max-width: 521px) {
+    .btn--orange, .btn--white {
+        min-width: 227px !important;
+    }
+
     .quantity {
         padding-top: 0;
         transform: translateX(39%);
+    }
+
+    .continue-order {
+        margin: 0 0 20px 82px;
     }
 }

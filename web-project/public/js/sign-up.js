@@ -210,7 +210,6 @@ signupBtnElement.addEventListener("click", () => {
         }
         // signUpUser(newUser);
         signUpNewUser(newUser);
-        // window.location = "/index.html";
     }
 })
 
@@ -241,9 +240,11 @@ function signUpNewUser(newUserInfo) {
             ward: optionWardsSelectionElement.value
         }
         return callPostUpdateAPI(userId, tokenValue, updateInfo);
+        
     })
     .then(res => {
         console.log(res.data);
+        window.location = "/index.html";
     })
     .catch(error => {
         console.log(error.response.data);  

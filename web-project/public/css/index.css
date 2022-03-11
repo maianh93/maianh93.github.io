@@ -64,6 +64,21 @@
 }
 
 
+/* @media (max-width: 1800px) {
+  .banner-item {
+    height: 1084px;
+}
+.banner {
+  width: 100%;
+  height: 1084px;
+  position: relative;
+}
+
+.home__main-menu-card {
+  margin-top: 30px;
+}
+} */
+
 @media (max-width: 1200px) {
   .banner-item {
     height: 484px;

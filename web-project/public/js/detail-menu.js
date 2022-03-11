@@ -113,8 +113,7 @@ const renderProduct = (products, promotions) => {
                         <h3 class="regular-text uppercase-text orange-text extra-bold-text mt-3">MUA 1 TẶNG 1 -
                             2 MIẾNG GÀ</h3>
                         <p class="detail-menu__info-content small-text regular-bold-text grey-text pe-3 ps-3">
-                            Mua Combo 2 Gà Giòn + Nước tặng 2 Gà Giòn <br><br>
-                            ÁP DỤNG GIAO HÀNG TẬN NƠI
+                            Mua Combo 2 Gà Giòn + Nước tặng 2 Gà Giòn 
                         </p>
                         <p class="extra-bold-text green-text pt-3">91.000đ</p>
                     </div>
@@ -122,7 +121,7 @@ const renderProduct = (products, promotions) => {
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="detail-menu__card mx-auto">
+                <div class="detail-menu__card mx-auto mt-5">
                     <div class="detail-menu__card-image">
                         <img src="../public/image/detail-menu/khuyen-mai/3-tang-3.jpg" alt="mua-3-tang-3">
                     </div>
@@ -130,8 +129,7 @@ const renderProduct = (products, promotions) => {
                         <h3 class="regular-text uppercase-text orange-text extra-bold-text mt-3">MUA 1 TẶNG 1 -
                             3 MIẾNG GÀ</h3>
                         <p class="detail-menu__info-content small-text regular-bold-text grey-text pe-3 ps-3">
-                            Mua Combo 3 Gà Giòn + Nước tặng 3 Gà Giòn <br><br>
-                            ÁP DỤNG GIAO HÀNG TẬN NƠI
+                            Mua Combo 3 Gà Giòn + Nước tặng 3 Gà Giòn
                         </p>
                         <p class="extra-bold-text green-text pt-3">127.000đ</p>
                     </div>

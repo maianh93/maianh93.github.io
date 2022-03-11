@@ -68,21 +68,53 @@
     margin: 0 20px;
 }
 
+@media (max-width: 991px) {
+    .dialog-body {
+        /* display: flex; */
+        min-width: 595px;
+        flex-direction: column;
+        max-width: 732px;
+        position: fixed;
+        top: 26%;
+        left: 15%;
+        padding: 16px;
+        background-color: #fff;
+        border: 1px solid var(--orange-red-color);
+    }
+}
+
 
 @media (max-width: 765px) {
+    .dialog-body {
+        /* display: flex; */
+        min-width: 175px;
+        flex-direction: column;
+        max-width: 732px;
+        position: fixed;
+        top: 26%;
+        left: 5%;
+        padding: 16px;
+        background-color: #fff;
+        border: 1px solid var(--orange-red-color);
+    }
+
     .pop-up-price {
-        text-align: center;
+        text-align: center !important;
     }
-    .dialog-body__deal-confirm-btn {
-        text-align: center;
+
+    .quantity-center {
+        text-align: center !important;
     }
-    .btn--confirm:last-child {
-        margin-top: 15px;
+
+    .dialog-body__input-volumn-quantity {
+        margin-left: 55px;
     }
 }
 
 @media (max-width: 576px) {
-
+    .info-name {
+        text-align: center !important;
+    }
 }
 
 
