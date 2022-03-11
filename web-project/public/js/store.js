@@ -67,7 +67,7 @@ let stores = [
         id: 9,
         name: "PLUTO LOTTE ĐÀ NẴNG",
         province: "DN",
-        address: "Siêu thị Lotte Đà Nẵng, 6 Nại Nam, P. Hòa Cường Bắc, Q. Hải Châu, TP Đà Nẵng",
+        address: "Siêu thị Lotte Đà Nẵng, P. Hòa Cường Bắc, Q. Hải Châu, TP Đà Nẵng",
         image: "../public/image/cua-hang/pluto-hn/pluto-timescity.jpg",
         googlemap: "https://www.google.com/maps/place/Lotte+Mart+%C4%90%C3%A0+N%E1%BA%B5ng/@16.0348369,108.2269446,17z/data=!3m1!4b1!4m5!3m4!1s0x314219e42bd859f1:0x59203ba8579a98a5!8m2!3d16.0345781!4d108.2290194?hl=vi-VN"
     },

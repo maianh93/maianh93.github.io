@@ -210,7 +210,7 @@ signupBtnElement.addEventListener("click", () => {
         }
         // signUpUser(newUser);
         signUpNewUser(newUser);
-        
+        // window.location = "/index.html";
     }
 })
 

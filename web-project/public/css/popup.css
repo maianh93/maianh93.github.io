@@ -2,6 +2,7 @@
 
 .dialog-body {
     /* display: flex; */
+    min-width: 595px;
     flex-direction: column;
     max-width: 732px;
     position: fixed;

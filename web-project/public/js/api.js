@@ -74,11 +74,41 @@ function callGetProductsAPI(categoryId) {
     })
 }
 
+function callGetProductByIdAPI(id) {
+    return axios({
+        method: "get",
+        url: `http://phungmaianh.ddns.net/pfc/biz/products/${id}`
+    })
+}
+
+//API promotion-product
+function callGetPromotionProductsAPI(id) {
+    return axios({
+        method: "get",
+        url: `http://phungmaianh.ddns.net/pfc/biz/categories/promotion`
+    })
+}
+
 //API shopping-cart
 function callGetAllOrderByUserIdAPI(userId) {
     return axios({
         method: "get",
         url: `http://phungmaianh.ddns.net/pfc/biz/orders/search/byUserId?userId=${userId}`
+    })
+}
+
+function callPostUpdateItemOrderAPI(itemInfo) {
+    return axios({
+        method: "put",
+        url: `http://phungmaianh.ddns.net/pfc/biz/orders/save/item`,
+        data: itemInfo
+    })
+}
+
+function callGetOrderByUserIdAndStaTusAPI(userId) {
+    return axios({
+        method: "get",
+        url: ` http://phungmaianh.ddns.net/pfc/biz/orders/search/byUserIdAndStatus?userId=${userId}&status=ACTIVE`
     })
 }
 

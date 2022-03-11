@@ -7,7 +7,7 @@ body {
 
 .home__main-image {
   background-image: url(../image/ve-chung-toi/banner.jpg);
-  height: 606px;
+  height: 806px;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -219,12 +219,103 @@ body {
     .left {
         text-align: left;
     }
+
+    .timeline__image-2003 {
+      background-image: url(../image/ve-chung-toi/love-that-chickend.jfif);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 378px;
+  }
+  
+  .timeline__image-2005 {
+      background-image: url(../image/ve-chung-toi/pluto-hodacdi.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 378px;
+  }
+  
+  .timeline__image-2012 {
+      background-image: url(../image/ve-chung-toi/company.jpg);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 378px;
+  }
+  
+  .timeline__image-2019 {
+      background-image: url(../image/ve-chung-toi/pluto-leduan.jpg);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 378px;
+  }
+  
+  .timeline__image-2021 {
+      background-image: url(../image/ve-chung-toi/tuyen-dung.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 378px;
+  }
   }
 
   @media screen and (max-width: 765px) {
     .home__main-image {
       height: 206px;
     }
+
+    .left-content {
+      padding: 20px 0 20px 0;
+    }
+
+    .right-content {
+      padding: 20px 0 20px 0;
+      /* background-color: white; */
+      position: relative;
+      border-radius: 6px;
+    }
+
+    .timeline__image-2003 {
+      background-image: url(../image/ve-chung-toi/love-that-chickend.jfif);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 216px;
+  }
+  
+  .timeline__image-2005 {
+      background-image: url(../image/ve-chung-toi/pluto-hodacdi.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 216px;
+  }
+  
+  .timeline__image-2012 {
+      background-image: url(../image/ve-chung-toi/company.jpg);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 216px;
+  }
+  
+  .timeline__image-2019 {
+      background-image: url(../image/ve-chung-toi/pluto-leduan.jpg);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 216px;
+  }
+  
+  .timeline__image-2021 {
+      background-image: url(../image/ve-chung-toi/tuyen-dung.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 216px;
+  }
   } 
 
   @media screen and (max-width: 576px) {

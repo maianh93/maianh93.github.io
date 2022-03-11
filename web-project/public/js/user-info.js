@@ -1,3 +1,5 @@
+//Chi tiet TK
+
 const updateBtnElement = document.getElementById("update-btn");
 const firstNameInputElement = document.getElementById("firstname");
 const lastNameInputElement = document.getElementById("lastname");
@@ -53,3 +55,4 @@ updateBtnElement.addEventListener("click", () => {
 
 doGetUser(localStorage.getItem("userId"), localStorage.getItem("token"))
 
+//Lich su don hang

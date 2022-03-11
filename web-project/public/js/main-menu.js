@@ -1,7 +1,7 @@
 async function loadPage() {
     try {
-        const res = await callGetAllCategoriesAPI()
-        renderProduct(res.data)
+        const res = await callGetAllCategoriesAPI();
+        renderProduct(filterNotPromotion(res.data))
         console.log(res.data[0].id)
     } catch (error) {
         console.log(error);
@@ -49,6 +49,9 @@ const renderProduct = (arr) => {
         <h2 class="extra-large-text red-text extra-bold-text uppercase-text text-center">Thực đơn</h2>
     ` + innerHtmlMainMenuElement;
 }
+
+
+
 
 const redirectPage1 = (categoryId, categoryName) => {
     window.location = `/page/detail-menu.html?id=${categoryId}&name=${categoryName}`;

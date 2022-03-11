@@ -36,11 +36,67 @@ let products = [
     }
 ]
 
+async function buildShopingCart (userId) {
+    products.length = 0;
+    callGetOrderByUserIdAndStaTusAPI(userId)
+        .then(res => {
+            let data = res.data;
+            console.log("callGetOrderByUserIdAndStaTusAPI: " + JSON.stringify(data));
+            let items = data[0].items;
+            let promiseProducts = [];
+            for (let i = 0; i < items.length; i++) {
+                let item = items[i];
+                let total = item.quantity;
+                if (!total || total <= 0)
+                    continue;
+                let id = item.id;
+                let promiseProduct = callGetProductByIdAPI(item.productId)
+                    .then(res => {
+                        let product = res.data;
+                        let name = product.descriptions.VN.text;
+                        let description = product.units.VN.map(e => e.text);
+                        let image = product.imageUrl;
+                        let price = product.prices.VND.price;
+                        let productId = item.productId;
+
+                        let p = {
+                            id,
+                            name,
+                            description,
+                            image,
+                            price,
+                            total,
+                            productId
+                        };
+                        return p;
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        return {};
+                    });
+                promiseProducts.push(promiseProduct);
+            }
+            return Promise.all(promiseProducts);        
+        })
+        .then(ps => {
+            ps.forEach(p => {
+                products.push(p);
+            });
+        })
+        .then(e => {
+            // console.log(products);
+            renderProduct(products);
+        })
+        .catch(error => {
+            console.log(error);
+        });        
+}
+
 let promotionCode = {
-    MA40: 0.4,
-    MA30: 0.3,
-    MA20: 0.2,
-    MA10: 0.1,
+    PLUTO5: 0.05,
+    PLUTO20: 0.2,
+    PLUTO15: 0.15,
+    PLUTO10: 0.1,
 }
 
 const numberFormater = new Intl.NumberFormat('de-DE');
@@ -58,9 +114,6 @@ const discountElement = document.querySelector(".discount.disable")
 
 let discountRate = 0;
 
-console.log(plusBtnElement)
-console.log(inputQuantityElement.value)
-
 // Render danh sách sản phẩm ra ngoài giao diện
 const renderProduct = (arr) => {
     //B1: Xóa hết nội dung trước khi render
@@ -68,10 +121,11 @@ const renderProduct = (arr) => {
 
     //Trường hợp mảng rỗng
     if (arr.length == 0) {
-        shoppingCartElement.innerHTML = "<li>Không có sản phẩm nào trong danh mục</li>";
+        shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none'>Không có sản phẩm nào trong danh mục</li>";
         promotionElement.style.display = "none";
         summaryElement.style.display = "none";
-        totalProductsElement.style.display = "none";
+        document.getElementById("confirm-container").classList.add("disable");
+        // totalProductsElement.style.display = "none";
         return
     }
 
@@ -161,6 +215,12 @@ const updateTotalProduct = (id, inc) => {
         if (products[i].id == id) { 
             let currentQtty = products[i].total;
             products[i].total = Math.max(0, currentQtty+= inc);
+            let itemInfo = {
+                userId: localStorage.getItem("userId"),
+                productId: products[i].productId,
+                quantity: products[i].total
+            };
+            callPostUpdateItemOrderAPI(itemInfo);
             return;
         }
     }    
@@ -175,6 +235,12 @@ const changeTotalProduct = (id, event) => {
     for (let i = 0; i < products.length; i++) {
         if (products[i].id == id) {
             products[i].total = inputQuantityValue;
+            let itemInfo = {
+                userId: localStorage.getItem("userId"),
+                productId: products[i].productId,
+                quantity: products[i].total
+            };
+            callPostUpdateItemOrderAPI(itemInfo);
         }
     }
     // Render lại giao diện sau khi xóa
@@ -193,7 +259,13 @@ const changeTotalProduct = (id, event) => {
 const deleteProduct = (id) => {
     for (let i = 0; i < products.length; i++) {
         if (products[i].id == id) {
+            let itemInfo = {
+                userId: localStorage.getItem("userId"),
+                productId: products[i].productId,
+                quantity: 0
+            };
             products.splice(i, 1);
+            callPostUpdateItemOrderAPI(itemInfo);
         }
     }
     renderProduct(products)
@@ -259,5 +331,8 @@ const getDiscountRate = () => {
 }
 
 btnElement.addEventListener("click", checkPromoCodeValue);
+buildShopingCart(localStorage.getItem("userId"))
 
-renderProduct(products)
+document.getElementById("confirm-btn").addEventListener("click", {
+    
+})
