@@ -121,7 +121,7 @@ const renderProduct = (products, promotions) => {
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="detail-menu__card mx-auto mt-5">
+                <div class="detail-menu__card mx-auto">
                     <div class="detail-menu__card-image">
                         <img src="../public/image/detail-menu/khuyen-mai/3-tang-3.jpg" alt="mua-3-tang-3">
                     </div>
