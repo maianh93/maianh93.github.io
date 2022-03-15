@@ -1,16 +1,31 @@
 @import url(./base.css);
 
+.dialog {
+    background-color: var(--beige-color);
+    position: absolute;
+    height: 1300px;
+    top: 0px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.4;
+}
+
 .dialog-body {
-    /* display: flex; */
+    position: fixed;
     min-width: 595px;
     flex-direction: column;
     max-width: 732px;
-    position: fixed;
     top: 34%;
     left: 34%;
     padding: 16px;
     background-color: #fff;
     border: 1px solid var(--orange-red-color);
+    z-index: 1000;
 }
 
 .dialog-body__input-volumn {

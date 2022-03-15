@@ -191,7 +191,7 @@ body {
 
 @media (max-width: 1200px) {
     .btn--orange, .btn--white {
-        min-width: 0 !important;
+        min-width: 182px !important;
     }
 }
 
@@ -207,5 +207,11 @@ body {
 
     .continue-order {
         margin: 0 0 20px 82px;
+    }
+}
+
+@media (max-width: 400px) {
+    .btn--orange, .btn--white {
+        min-width: 189px !important;
     }
 }

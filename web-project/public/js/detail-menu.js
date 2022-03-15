@@ -1,7 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const categoryId = urlParams.get('id');
 const categoryName = urlParams.get('name');
-const categoryPromotion = urlParams.get('name')
 const userId = localStorage.getItem("userId");
 
 const numberFormater = new Intl.NumberFormat('de-DE');
@@ -9,9 +8,12 @@ const numberFormater = new Intl.NumberFormat('de-DE');
 async function loadPage() {
     try {
         const resProduct = await callGetProductsAPI(categoryId);
-        const resPromotion = await callGetPromotionProductsAPI(293);
+        const resPromotionId = await callGetPromotionProductsAPI();
+        const resPromotion = await callGetProductsAPI(resPromotionId.data[0].id);
+        document.getElementById("title").innerText=`Pluto | ${categoryName}`
 
         console.log(resProduct.data)
+        console.log(resPromotionId.data[0].id)
         console.log(resPromotion.data)
 
         renderProduct(resProduct.data, resPromotion.data)
@@ -32,7 +34,6 @@ const renderProduct = (products, promotions) => {
     let numberOfRow = Math.floor(numberOfCategory / 3 + 1);
 
     let innerHtmlMainMenuElement = "";
-    let innerProtionMenuElement ="";
     let j = 0;
     for (let i = 0; i < numberOfRow; i++) {
         let innerHtmlRowTextCenterElement = "";
@@ -58,20 +59,30 @@ const renderProduct = (products, promotions) => {
         }
         
         innerHtmlMainMenuElement += `
-        <div class="container mt-5">
+        <div class="container">
             <div class="row text-center">
                 ${innerHtmlRowTextCenterElement}
             </div>
         </div>
         `;
     }
-    for (let i = 0; i < numberOfRow; i++) {
+
+    document.querySelector(".detail-menu").innerHTML = `
+    <h2 class="extra-large-text red-text extra-bold-text uppercase-text text-center mt-5">${categoryName}</h2>
+    ` + innerHtmlMainMenuElement;
+
+    let numberOfCategoryPromotion = promotions.length;
+    let numberOfRowPromotion = Math.floor(numberOfCategoryPromotion / 3 + 1);
+
+    let innerHtmlPromotionElements = "";
+    let k = 0;
+    for (let i = 0; i < numberOfRowPromotion; i++) {
         let innerHtmlRowTextCenterElement = "";
 
-        for (; j < promotions.length; j++) {
-            const t = products[j];
+        for (; k < promotions.length; k++) {
+            const t = promotions[k];
             // Clear nội dung
-            innerProtionMenuElement += `
+            innerHtmlRowTextCenterElement += `
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="detail-menu__card mx-auto">
                     <div class="detail-menu__card-image">
@@ -88,57 +99,16 @@ const renderProduct = (products, promotions) => {
             `
         }
         
-        innerProtionMenuElement += `
-        <div class="container mt-5">
+        innerHtmlPromotionElements += `
+        <div class="container mt-5 pb-3">
             <div class="row text-center">
                 ${innerHtmlRowTextCenterElement}
             </div>
         </div>
         `;
     }
+    document.querySelector(".detail-menu").innerHTML += `<h2 class="container extra-large-text black-text extra-bold-text uppercase-text mt-5">Sản phẩm đang khuyến mãi</h2>` + innerHtmlPromotionElements;
 
-
-    document.querySelector(".detail-menu").innerHTML = `
-    <h2 class="extra-large-text red-text extra-bold-text uppercase-text text-center mt-5">${categoryName}</h2>
-    ` + innerHtmlMainMenuElement + `<div class="container mt-5">
-    <h2 class="extra-large-text black-text extra-bold-text uppercase-text">Sản phẩm đang khuyến mãi</h2>
-    <div class="container mt-5">
-        <div class="row text-center">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="detail-menu__card mx-auto">
-                    <div class="detail-menu__card-image">
-                        <img src="../public/image/detail-menu/khuyen-mai/2-tang-2.jpg" alt="mua-2-tang-2">
-                    </div>
-                    <div class="detail-menu__info">
-                        <h3 class="regular-text uppercase-text orange-text extra-bold-text mt-3">MUA 1 TẶNG 1 -
-                            2 MIẾNG GÀ</h3>
-                        <p class="detail-menu__info-content small-text regular-bold-text grey-text pe-3 ps-3">
-                            Mua Combo 2 Gà Giòn + Nước tặng 2 Gà Giòn 
-                        </p>
-                        <p class="extra-bold-text green-text pt-3">91.000đ</p>
-                    </div>
-                    <div class="btn btn--red btn--order uppercase-text small-text bold-text mb-4">Đặt mua</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="detail-menu__card mx-auto">
-                    <div class="detail-menu__card-image">
-                        <img src="../public/image/detail-menu/khuyen-mai/3-tang-3.jpg" alt="mua-3-tang-3">
-                    </div>
-                    <div class="detail-menu__info">
-                        <h3 class="regular-text uppercase-text orange-text extra-bold-text mt-3">MUA 1 TẶNG 1 -
-                            3 MIẾNG GÀ</h3>
-                        <p class="detail-menu__info-content small-text regular-bold-text grey-text pe-3 ps-3">
-                            Mua Combo 3 Gà Giòn + Nước tặng 3 Gà Giòn
-                        </p>
-                        <p class="extra-bold-text green-text pt-3">127.000đ</p>
-                    </div>
-                    <div class="btn btn--red btn--order uppercase-text small-text bold-text mb-4">Đặt mua</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>`;
 }
 
 const buildDescription = (obj) => {
@@ -149,50 +119,68 @@ const buildDescription = (obj) => {
 
 
 //Đặt mua
-const orderSingleProduct = (id, productName, productPrice) => {
-    let quantity = document.querySelector(".quantity-value>input");
-    quantity.onchange = function(){
-        document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
-    }
-    document.getElementById("add-to-cart").onclick = function() {
-        let userId = localStorage.getItem("userId");
-        let productId = id;
-        let _quantity = quantity.value;
-        callPostUpdateItemOrderAPI({
-            userId,
-            productId,
-            quantity: _quantity
-        })
-        .then(res => {
-            console.log(res.data)
-            return res.data;
-        })
-        .then(data => {
-            let items = data.items;
-            let cartNumber = items
-                .filter(i => i.quantity > 0)
-                .length;
-            localStorage.setItem("cartItemCount", cartNumber);
-            updateCartItemCount();
-        });
-        document.querySelector(".dialog-body").classList.add("disable");
-        document.querySelector(".detail-menu").classList.remove("opacity-4");
-    }
 
-    let name = document.querySelector(".dialog-body__input-volumn-item");
-    document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
-    name.innerHTML = `<p class="white-text text-center semi-large-text bold-text pt-2">${productName}</p>`
-    document.querySelector(".dialog-body").classList.remove("disable");
-    document.querySelector(".detail-menu").classList.add("opacity-4")
+
+const orderSingleProduct = (id, productName, productPrice) => {
+    isLogin()
+        .then(result => {
+            if (result) {
+                let quantity = document.querySelector(".quantity-value>input");
+                quantity.value = 1;
+                quantity.onchange = function(){
+                document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
+                }
+                document.getElementById("add-to-cart").onclick = function() {
+                    let userId = localStorage.getItem("userId");
+                    let productId = id;
+                    let _quantity = quantity.value;
+                    callPostUpdateItemOrderAPI({
+                        userId,
+                        productId,
+                        quantity: _quantity
+                    })
+                    .then(res => {
+                        console.log(res.data)
+                        return res.data;
+                    })
+                    .then(data => {
+                        let items = data.items;
+                        let cartNumber = items
+                            .filter(i => i.quantity > 0)
+                            .length;
+                        localStorage.setItem("cartItemCount", cartNumber);
+                        updateCartItemCount();
+                    });
+                    document.querySelector(".dialog-body").classList.add("disable");
+                    document.querySelector(".dialog").classList.add("disable");
+                }
+
+                let name = document.querySelector(".dialog-body__input-volumn-item");
+                document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
+                name.innerHTML = `<p class="white-text text-center semi-large-text bold-text pt-2">${productName}</p>`
+                document.querySelector(".dialog-body").classList.remove("disable");
+                document.querySelector(".dialog").classList.remove("disable");
+            } else {
+                alert("Đăng nhập trước khi đặt hàng!")
+            }
+        })
+        .catch (error => {
+            console.log(error)
+        })
 }
 
+document.querySelector(".dialog").addEventListener("click", () => {
+    document.querySelector(".dialog-body").classList.add("disable");
+    document.querySelector(".dialog").classList.add("disable");
+}) 
+
+
+
 const updateTotalProduct = (inc) => {
-    // console.log("hi")
     let ele = document.querySelector(".quantity-value>input");
     let currentQtty = parseInt(ele.value);
     ele.value = Math.max(0, currentQtty + inc);
     ele.onchange();
-    // console.log("ele: " + ele.value);
 
 }
 

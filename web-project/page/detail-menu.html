@@ -27,7 +27,8 @@
     <!-- Personal -->
     <link rel="stylesheet" href="../lib/font/font.css">
     <link rel="stylesheet" href="../public/css/detail-menu.css">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="../public/image/logo/logo.ico">
+    <title id ="title">Pluto | Menu chi tiết</title>
 </head>
 
 <body>
@@ -87,7 +88,7 @@
                                         onerror="this.onerror=null;this.src='/resources/image/anonymous-user.jpg';"
                                         alt="Avatar" class="navbar-user-avatar-img" aria-labelledby="navbarDropdown_1">
                                 </div>
-                                <div class="dropdown-menu user-dropdown disable" aria-labelledby="navbarDropdown_1">
+                                <div id="dropdown-user" class="dropdown-menu user-dropdown disable" aria-labelledby="navbarDropdown_1">
                                     <a class="dropdown-item" href="../page/user-info.html">
                                         Thông tin tài khoản</a>
                                     <a class="dropdown-item" href="../page/user-info.html">Lịch sử đơn hàng</a>
@@ -110,7 +111,7 @@
     <div class="fake-face disable">
     </div>
     <section class="detail-menu">
-        <!-- <div class="container mt-5">
+        <!-- <div id="detail-menu" class="container mt-5">
             <h2 class="extra-large-text red-text extra-bold-text uppercase-text text-center">Món lẻ</h2>
             <div class="row text-center">
                 <div class="col-lg-4 col-md-4 col-sm-12">
@@ -215,8 +216,8 @@
                     </div>
                 </div>
             </div>
-        </div> -->
-        <!-- <div class="container mt-5">
+        </div>
+        <div id="promotion-menu" class="container mt-5">
             <h2 class="extra-large-text black-text extra-bold-text uppercase-text">Sản phẩm đang khuyến mãi</h2>
             <div class="container mt-5">
                 <div class="row text-center">
@@ -258,6 +259,9 @@
             </div>
         </div> -->
     </section>
+    <div class="dialog disable">
+
+    </div>
     <div class="dialog-body disable">
         <div class="dialog-body__input-volumn">
             <div class="dialog-body__input-volumn-item">
@@ -304,7 +308,8 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+   
 
     <footer>
         <div class="footer">
@@ -391,8 +396,8 @@
         crossorigin="anonymous"></script>
                     <!-- Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../public/js/base.js"></script>
     <script src="../public/js/api.js"></script>
+    <script src="../public/js/base.js"></script>
     <script src="../public/js/main.js"></script>
     <script src="../public/js/detail-menu.js"></script>
 </body>

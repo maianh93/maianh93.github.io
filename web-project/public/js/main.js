@@ -15,7 +15,7 @@ async function loadMainMenu() {
             renderProductDropdown(filterNotPromotion(res.data))
             renderPromotion(filterPromotion(res.data))
             console.log(res.data)
-        
+            checkLogin();
         } catch (error) {
             console.log(error);
         }
@@ -47,7 +47,7 @@ const renderPromotion = (arr) => {
         let t = arr[i];
 
         htmlContent += `
-        <a onclick="redirectPagePromotion(${t.id}, '${t.descriptions.VN.text}')" class="">Khuyến Mãi</a>
+        <a onclick="redirectPagePromotion(${t.id}, '${t.descriptions.VN.text}')" class="">Khuyến Mại</a>
         `
     }
     document.getElementById("promotion-menu").innerHTML = htmlContent;
@@ -108,10 +108,39 @@ const filterPromotion = (obj) => {
     return result;
 }
 
-console.log(document.querySelector("log-out-btn"))
-document.getElementById("log-out-btn").addEventListener("click", () => {
-    localStorage.setItem("token", undefined)
-})
+// if (isLogin()) {
+//     console.log(document.getElementById("dropdown-user"))
+//     document.getElementById("dropdown-user").innerHTML = `
+//     <a class="dropdown-item" href="./user-info.html">Thông tin tài khoản</a>
+//     <a class="dropdown-item" href="./user-info.html">Lịch sử đơn hàng</a>
+//     <a id="log-out-btn" class="dropdown-item" href="./login.html">Đăng xuất</a>`
+// } else {
+//     document.getElementById("dropdown-user").innerHTML = `
+//     <a class="dropdown-item" href="./login.html">Đăng nhập</a>
+//     <a class="dropdown-item" href="./sign-up.html">Đăng ký</a>
+//     `
+// }
+
+const checkLogin = () => {
+    isLogin()
+        .then(result => {
+            if (result) {
+                console.log(document.getElementById("dropdown-user"))
+                document.getElementById("dropdown-user").innerHTML = `
+                <a class="dropdown-item" href="./user-info.html">Thông tin tài khoản</a>
+                <a class="dropdown-item" href="./user-info.html">Lịch sử đơn hàng</a>
+                <a onclick = "setUndefinedToken()" id="log-out-btn" class="dropdown-item" href="./login.html">Đăng xuất</a>`
+            } else {
+                document.getElementById("dropdown-user").innerHTML = `
+                <a class="dropdown-item" href="./login.html">Đăng nhập</a>
+                <a class="dropdown-item" href="./sign-up.html">Đăng ký</a>
+                `
+            }
+        })
+        .catch (error => {
+            console.log(error)
+        })
+}
 
 
 

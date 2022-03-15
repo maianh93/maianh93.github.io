@@ -37,59 +37,73 @@ let products = [
 ]
 
 async function buildShopingCart (userId) {
-    products.length = 0;
-    callGetOrderByUserIdAndStaTusAPI(userId)
-        .then(res => {
-            let data = res.data;
-            console.log("callGetOrderByUserIdAndStaTusAPI: " + JSON.stringify(data));
-            let items = data[0].items;
-            let promiseProducts = [];
-            for (let i = 0; i < items.length; i++) {
-                let item = items[i];
-                let total = item.quantity;
-                if (!total || total <= 0)
-                    continue;
-                let id = item.id;
-                let promiseProduct = callGetProductByIdAPI(item.productId)
+    isLogin()
+        .then(result => {
+            if (result) {
+                products.length = 0;
+                callGetOrderByUserIdAndStaTusAPI(userId)
                     .then(res => {
-                        let product = res.data;
-                        let name = product.descriptions.VN.text;
-                        let description = product.units.VN.map(e => e.text);
-                        let image = product.imageUrl;
-                        let price = product.prices.VND.price;
-                        let productId = item.productId;
+                        let data = res.data;
+                        console.log("callGetOrderByUserIdAndStaTusAPI: " + JSON.stringify(data));
+                        let items = data[0].items;
+                        let promiseProducts = [];
+                        for (let i = 0; i < items.length; i++) {
+                            let item = items[i];
+                            let total = item.quantity;
+                            if (!total || total <= 0)
+                                continue;
+                            let id = item.id;
+                            let promiseProduct = callGetProductByIdAPI(item.productId)
+                                .then(res => {
+                                    let product = res.data;
+                                    let name = product.descriptions.VN.text;
+                                    let description = product.units.VN.map(e => e.text);
+                                    let image = product.imageUrl;
+                                    let price = product.prices.VND.price;
+                                    let productId = item.productId;
 
-                        let p = {
-                            id,
-                            name,
-                            description,
-                            image,
-                            price,
-                            total,
-                            productId
-                        };
-                        return p;
+                                    let p = {
+                                        id,
+                                        name,
+                                        description,
+                                        image,
+                                        price,
+                                        total,
+                                        productId
+                                    };
+                                    return p;
+                                })
+                                .catch(error => {
+                                    console.log(error);
+                                    return {};
+                                });
+                            promiseProducts.push(promiseProduct);
+                        }
+                        return Promise.all(promiseProducts);        
+                    })
+                    .then(ps => {
+                        ps.forEach(p => {
+                            products.push(p);
+                        });
+                    })
+                    .then(e => {
+                        // console.log(products);
+                        renderProduct(products);
                     })
                     .catch(error => {
                         console.log(error);
-                        return {};
-                    });
-                promiseProducts.push(promiseProduct);
+        });   
+            } else {
+                products.length = 0;
+                shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none; padding-bottom:300px'>Vui lòng đăng nhập để xem giỏ hàng</li>";
+                promotionElement.style.display = "none";
+                summaryElement.style.display = "none";
             }
-            return Promise.all(promiseProducts);        
         })
-        .then(ps => {
-            ps.forEach(p => {
-                products.push(p);
-            });
+        .catch (error => {
+            console.log(error)
         })
-        .then(e => {
-            // console.log(products);
-            renderProduct(products);
-        })
-        .catch(error => {
-            console.log(error);
-        });        
+         
 }
 
 let promotionCode = {
@@ -121,10 +135,11 @@ const renderProduct = (arr) => {
 
     //Trường hợp mảng rỗng
     if (arr.length == 0) {
-        shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none'>Không có sản phẩm nào trong giỏ hàng</li>";
+        shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none; padding-bottom:300px'>Không có sản phẩm nào trong giỏ hàng</li>";
         promotionElement.style.display = "none";
         summaryElement.style.display = "none";
         document.getElementById("confirm-container").classList.add("disable");
+        document.querySelector(".promotion").classList.add("disable");
         // totalProductsElement.style.display = "none";
         return
     }
@@ -341,7 +356,3 @@ const getDiscountRate = () => {
 
 btnElement.addEventListener("click", checkPromoCodeValue);
 buildShopingCart(localStorage.getItem("userId"))
-
-document.getElementById("confirm-btn").addEventListener("click", {
-    
-})

@@ -25,9 +25,9 @@ function loginUser(loginInfo) {
 }
 
 // Ham lang nghe va xu ly viec login
-loginBtnElement.addEventListener("click", () => {
+loginBtnElement.addEventListener("click", (toastr) => {
     if (loginEmailInputElement.value === "" || loginPasswordInputElement.value === "") {
-        alert("Hãy nhập đầy đủ thông tin!");
+        toastr.warning('My name is Inigo Montoya. You killed my father, prepare to die!')
     }
     let loginInfo = {
         id: loginEmailInputElement.value,

@@ -121,5 +121,22 @@
     .store__card-image {
         height: 171px;
     }
+
+    .btn--orange {
+        min-width: 127px;
+    }
+
+    .regular-text {
+        font-size: 16px;
+    }
+
+    .semi-large-text {
+        font-size: 18px;
+    }
+
+    .store__card h3 {
+        margin: 15px 0;
+        font-weight: 500;
+    }
 }
 

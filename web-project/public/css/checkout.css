@@ -57,6 +57,10 @@ select {
         height: 38px;
 }
 
+@media (max-width: 1440px) {
+    
+}
+
 @media (max-width: 1200px) {
     table {
         width: 500px;

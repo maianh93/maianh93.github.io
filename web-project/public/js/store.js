@@ -65,7 +65,7 @@ let stores = [
     },
     {
         id: 9,
-        name: "PLUTO LOTTE ĐÀ NẴNG",
+        name: "PLUTO SIÊU THỊ LOTTE ĐÀ NẴNG",
         province: "DN",
         address: "Siêu thị Lotte Đà Nẵng, P. Hòa Cường Bắc, Q. Hải Châu, TP Đà Nẵng",
         image: "../public/image/cua-hang/pluto-hn/pluto-timescity.jpg",

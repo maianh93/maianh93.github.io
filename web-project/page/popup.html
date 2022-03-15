@@ -87,7 +87,7 @@
                                         onerror="this.onerror=null;this.src='/resources/image/anonymous-user.jpg';"
                                         alt="Avatar" class="navbar-user-avatar-img" aria-labelledby="navbarDropdown_1">
                                 </div>
-                                <div class="dropdown-menu user-dropdown disable" aria-labelledby="navbarDropdown_1">
+                                <div id="dropdown-user" class="dropdown-menu user-dropdown disable" aria-labelledby="navbarDropdown_1">
                                     <a class="dropdown-item" href="../page/user-info.html">
                                         Thông tin tài khoản</a>
                                     <a class="dropdown-item" href="../page/user-info.html">Lịch sử đơn hàng</a>
@@ -109,59 +109,56 @@
     </header>
     <div class="fake-face disable">
     </div>
-    <div class="dialog">
-        <div class="dialog-body">
-            <div class="dialog-body__input-volumn">
-                <div class="dialog-body__input-volumn-item">
-                    <p class="white-text text-center semi-large-text bold-text pt-2">Khoai tây chiên</p>
-                </div>
-                <div class="container beige-background">
-                    <div class="row mt-2 p-3">
-                        <p class="col-lg-6 col-md-6 col-sm-12 orange-red-text bold-text semi-large-text pt-3">Size</p>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="dialog-body__input-volumn-option text-center p-3">
-                                <div class="btn btn--orange-red me-5">S</div>
-                                <div class="btn btn--size bold-text me-5">M</div>
-                                <div class="btn btn--size bold-text">L</div>
+    <div id="dialog" class="dialog ">
+    </div>
+    <div class="dialog-body">
+        <div class="dialog-body__input-volumn">
+            <div class="dialog-body__input-volumn-item">
+                <p class="white-text text-center semi-large-text bold-text pt-2">Khoai tây chiên</p>
+            </div>
+            <div class=" container beige-background">
+                <div class="row mt-2 p-3">
+                    <p class="quantity-center col-lg-6 col-md-6 col-sm-12 orange-red-text bold-text semi-large-text pt-2">Số lượng
+                    </p>
+                    <div class="col-lg-6 col-md-6 col-sm-12 dialog-body__input-volumn-quantity d-flex">
+                        <div class="quantity">
+                            <div class="d-flex">
+                                <div class="quantity-icon">
+                                    <i onclick="updateTotalProduct(-1)" class="far fa-minus-square extra-bold-text orange-text fa-2x"></i>
+                                </div>
+                                <div class="quantity-value">
+                                    <input class="orange-text extra-bold-text" type="text" value="1">
+                                </div>
+                                <div class="quantity-icon">
+                                    <i onclick="updateTotalProduct(1)" class="far fa-plus-square extra-bold-text orange-text fa-2x"></i>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row mt-2 p-3">
-                        <p class="col-lg-6 col-md-6 col-sm-12 orange-red-text bold-text semi-large-text pt-2">Số lượng
-                        </p>
-                        <div class="col-lg-6 col-md-6 col-sm-12 dialog-body__input-volumn-quantity d-flex">
-                            <p class="btn btn--orange-red my-auto">+</p>
-                            <input class="text-center" value="1">
-                            <p class="btn btn--orange-red my-auto">-</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row pt-3">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="uppercase-text semi-large-text bold-text text-center">Tổng thanh toán:</div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="pop-up-price semi-large-text bold-text green-text">29.000đ</div>
-                    </div>
-                </div>
-            </div>
-            <div class="dialog-body__deal-confirm-btn">
-                <div class="container pt-3">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="btn btn--white black-text uppercase-text btn--bigger btn--confirm">Thêm vào giỏ
-                                hàng</div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="btn btn--orange-red uppercase-text btn--bigger btn--confirm">Thanh toán</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="uppercase-text semi-large-text bold-text text-center">Tổng tiền:</div>
+                </div>
+                <div id="pop-up-price" class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="pop-up-price semi-large-text bold-text green-text">29.000đ</div>
+                </div>
+            </div>
+        </div>
+        <div class="dialog-body__deal-confirm-btn">
+            <div class="container pt-3">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                        <div  id="add-to-cart" class="btn btn--orange-red uppercase-text btn--bigger btn--confirm">Thêm vào giỏ hàng</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <footer>
         <div class="footer">
             <div class="container mt-4 pt-4">
@@ -250,8 +247,11 @@
 
         <!-- Axios -->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <script src="../public/js/api.js"></script>
         <script src="../public/js/base.js"></script>
         <script src="../public/js/main.js"></script>
+        <script src="../public/js/pop-up.js"></script>
 </body>
 
 </html>

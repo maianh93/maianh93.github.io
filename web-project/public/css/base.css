@@ -581,4 +581,16 @@ img {
     .nav-margin {
         margin-top: 0px;
     }
+
+    .header__navbar-item-login-dropdown {
+        width: 2rem;    
+    }
+
+    .navbar-brand span {
+        margin: 0 -3%;
+    }
+
+    .footer__company-name-and-design-info {
+        font-size: 14px;
+    }
 }

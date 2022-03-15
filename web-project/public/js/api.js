@@ -56,6 +56,13 @@ function callGetUserAPI(id, token) {
     })
 }
 
+function callPostVerifyAPI(currentToken) {
+    return axios({
+        method: "post",
+        url: `http://phungmaianh.ddns.net/pfc/auth/session/verify`,
+        data: currentToken
+    })
+}
 
 //API main-menu
 
