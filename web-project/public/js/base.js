@@ -30,3 +30,14 @@ const isLogin = () => {
 const setUndefinedToken = () => {
     localStorage.setItem("token", undefined)
 }
+
+var myVar;
+
+function loadingFunction() {
+  myVar = setTimeout(showPage, 900);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("allDiv").style.display = "block";
+}

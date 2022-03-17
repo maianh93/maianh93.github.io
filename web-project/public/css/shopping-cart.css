@@ -217,6 +217,10 @@ body {
         margin-top: 10px;
         text-align: end;
     }
+
+    .single-product {
+        text-align: center;
+    }
 }
 
 @media (max-width: 400px) {
