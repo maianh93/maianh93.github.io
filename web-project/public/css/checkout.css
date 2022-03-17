@@ -57,6 +57,10 @@ select {
         height: 38px;
 }
 
+.confirm-btn {
+    text-align: end;
+}
+
 @media (max-width: 1440px) {
     
 }
@@ -112,6 +116,10 @@ select {
 @media (max-width: 576px) {
     table {
         width: 600px;
+    }
+
+    .back-btn {
+        text-align: end;
     }
 }
 

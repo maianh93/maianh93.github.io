@@ -7,7 +7,6 @@ const addressInputElement = document.getElementById("address");
 const emailInputElement = document.getElementById("email_address");
 const phoneNumberInputElement = document.getElementById("phone_number");
 
-console.log(firstNameInputElement)
 
 //Ham xu ly viec get
 function doGetUser(id, token) {

@@ -27,7 +27,7 @@ const renderProduct = (arr) => {
             const t = arr[j];
             // Clear nội dung
             innerHtmlRowTextCenterElement += `
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-5 mb-3">
                 <div class="main-menu__card-image">
                     <img src="${t.imageUrl}" alt="menu_gakhongxuong">
                 </div>

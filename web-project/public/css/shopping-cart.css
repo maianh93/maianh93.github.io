@@ -77,6 +77,7 @@ body {
 	font-size: 1rem;
 	padding: 1rem 1.5rem;
 	border: 2px solid #DDD;
+    border-color: var(--orange-color);
 }
 
 .promotion:hover>input {
@@ -87,6 +88,7 @@ body {
 	float: left;
 	width: 20%;
 	padding: 1rem 0.5rem;
+    background-image: -webkit-linear-gradient(var(--orange-color), #ce6009);
 }
 
 .promotion:hover>button {
@@ -120,6 +122,14 @@ body {
 
 .summary ul li.total {
 	font-weight: bold;
+}
+
+.continue-order {
+    text-align: start;
+}
+
+.confirm-btn {
+    text-align: end;
 }
 
 
@@ -190,28 +200,25 @@ body {
 }
 
 @media (max-width: 1200px) {
-    .btn--orange, .btn--white {
-        min-width: 182px !important;
-    }
+
 }
 
 @media (max-width: 521px) {
-    .btn--orange, .btn--white {
-        min-width: 227px !important;
-    }
-
     .quantity {
         padding-top: 0;
         transform: translateX(39%);
     }
 
     .continue-order {
-        margin: 0 0 20px 82px;
+        text-align: end;
+    }
+    
+    .confirm-btn {
+        margin-top: 10px;
+        text-align: end;
     }
 }
 
 @media (max-width: 400px) {
-    .btn--orange, .btn--white {
-        min-width: 189px !important;
-    }
+
 }

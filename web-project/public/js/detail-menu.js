@@ -161,7 +161,7 @@ const orderSingleProduct = (id, productName, productPrice) => {
                 document.querySelector(".dialog-body").classList.remove("disable");
                 document.querySelector(".dialog").classList.remove("disable");
             } else {
-                alert("Đăng nhập trước khi đặt hàng!")
+                toastr.error('Đăng nhập trước khi đặt hàng!')
             }
         })
         .catch (error => {

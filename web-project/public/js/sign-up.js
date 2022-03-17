@@ -193,16 +193,14 @@ function loginUser(loginInfo) {
 // Thêm thông tin đăng ký - login - update
 signupBtnElement.addEventListener("click", () => {
     if (firstNameInputElement.value === "" || lastNameInputElement.value === "" || addressInputElement.value === "" || signUpEmailInputElement.value === "" || phoneNumberInputElement.value === "" || signUpPasswordInputElement.value === "" || signUpConfirmPasswordInputElement.value === "") {
-        alert("Hãy nhập đầy đủ thông tin!");
+        toastr.error('Hãy nhập đầy đủ thông tin!');
     } else if (signUpPasswordInputElement.value != signUpConfirmPasswordInputElement.value) {
-        signUpConfirmPasswordInputElement.classList.add("error-sign");
-        document.querySelector(".alert").classList.add("error");
-        document.querySelector(".alert small").innerText="Mật khẩu không trùng khớp";
+        toastr.error('Mật khẩu không trùng khớp');
 
     } else {
         signUpConfirmPasswordInputElement.classList.remove("error-sign");
         document.querySelector(".alert small").innerText="";
-        alert("Đã đăng ký thành công!");
+        toastr.success("Đã đăng ký thành công!");
         
         let newUser = {
             password: signUpPasswordInputElement.value,
@@ -244,7 +242,7 @@ function signUpNewUser(newUserInfo) {
     })
     .then(res => {
         console.log(res.data);
-        window.location = "/index.html";
+        window.location = "/page/login.html";
     })
     .catch(error => {
         console.log(error.response.data);  

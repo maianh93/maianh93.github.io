@@ -125,13 +125,20 @@ const checkLogin = () => {
     isLogin()
         .then(result => {
             if (result) {
-                console.log(document.getElementById("dropdown-user"))
+                document.getElementById("user-nav-btn").innerHTML = `<img
+                src="./public/image/anonymous-user.jpg"
+                onerror="this.onerror=null;this.src='/resources/image/anonymous-user.jpg';"
+                alt="Avatar" class="navbar-user-avatar-img" aria-labelledby="navbarDropdown_1">`
                 document.getElementById("dropdown-user").innerHTML = `
-                <a class="dropdown-item" href="../page/user-info.html">Thông tin tài khoản</a>
-                <a class="dropdown-item" href="../page/user-info.html">Lịch sử đơn hàng</a>
+                <a onclick="renderUserInfo()" class="dropdown-item" href="../page/user-info.html">Thông tin tài khoản</a>
+                <a onclick="renderOrderInfo()" class="dropdown-item" href="../page/order-info.html">Lịch sử đơn hàng</a>
                 <a onclick = "setUndefinedToken()" id="log-out-btn" class="dropdown-item" href="../page/login.html">Đăng xuất</a>`
                 return callGetAllOrderByUserIdAPI(localStorage.getItem("userId"));
             } else {
+                document.getElementById("user-nav-btn").innerHTML = `<img
+                src="./public/image/login-user-image.jpg"
+                onerror="this.onerror=null;this.src='/resources/image/anonymous-user.jpg';"
+                alt="Avatar" class="navbar-user-avatar-img" aria-labelledby="navbarDropdown_1">`
                 document.getElementById("dropdown-user").innerHTML = `
                 <a class="dropdown-item" href="../page/login.html">Đăng nhập</a>
                 <a class="dropdown-item" href="../page/sign-up.html">Đăng ký</a>
@@ -142,6 +149,7 @@ const checkLogin = () => {
         .then(res => {
             if (res) {
                 let items = res.data.items;
+                console.log(items)
                 let cartNumber = items
                     .filter(i => i.quantity > 0)
                     .length;
@@ -153,6 +161,7 @@ const checkLogin = () => {
             console.log(error)
         })
 }
+
 
 
 

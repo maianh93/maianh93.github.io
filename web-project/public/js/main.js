@@ -6,11 +6,27 @@ const dropdownMenuBtnElement = document.getElementById("menu-nav-btn");
 const dropdownMenuElement = document.querySelector(".menu-dropdown");
 const windowElement = document.querySelector(".fake-face");
 
+toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-center",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+}
 
 
 async function loadMainMenu() {
         try {
-            console.log("ok")
             const res = await callGetAllCategoriesAPI();
             renderProductDropdown(filterNotPromotion(res.data))
             renderPromotion(filterPromotion(res.data))
@@ -125,12 +141,19 @@ const checkLogin = () => {
     isLogin()
         .then(result => {
             if (result) {
-                console.log(document.getElementById("dropdown-user"))
+                document.getElementById("user-nav-btn").innerHTML = `<img
+                src="../public/image/anonymous-user.jpg"
+                onerror="this.onerror=null;this.src='/resources/image/anonymous-user.jpg';"
+                alt="Avatar" class="navbar-user-avatar-img" aria-labelledby="navbarDropdown_1">`
                 document.getElementById("dropdown-user").innerHTML = `
                 <a class="dropdown-item" href="./user-info.html">Thông tin tài khoản</a>
                 <a class="dropdown-item" href="./user-info.html">Lịch sử đơn hàng</a>
                 <a onclick = "setUndefinedToken()" id="log-out-btn" class="dropdown-item" href="./login.html">Đăng xuất</a>`
             } else {
+                document.getElementById("user-nav-btn").innerHTML = `<img
+                src="../public/image/login-user-image.jpg"
+                onerror="this.onerror=null;this.src='/resources/image/anonymous-user.jpg';"
+                alt="Avatar" class="navbar-user-avatar-img" aria-labelledby="navbarDropdown_1">`
                 document.getElementById("dropdown-user").innerHTML = `
                 <a class="dropdown-item" href="./login.html">Đăng nhập</a>
                 <a class="dropdown-item" href="./sign-up.html">Đăng ký</a>
@@ -141,7 +164,6 @@ const checkLogin = () => {
             console.log(error)
         })
 }
-
 
 
 loadMainMenu()

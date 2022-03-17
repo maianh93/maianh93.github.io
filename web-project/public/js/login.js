@@ -20,14 +20,14 @@ function loginUser(loginInfo) {
         console.log(error.response.data);  
         console.log(error.response.status);  
         console.log(error.response.headers);
-        alert("Tài khoản không hợp lệ");
+        toastr.error('Vui lòng đăng nhập lại', 'Tài khoản không hợp lệ');
     });
 }
 
 // Ham lang nghe va xu ly viec login
-loginBtnElement.addEventListener("click", (toastr) => {
+loginBtnElement.addEventListener("click", () => {
     if (loginEmailInputElement.value === "" || loginPasswordInputElement.value === "") {
-        toastr.warning('My name is Inigo Montoya. You killed my father, prepare to die!')
+        toastr.error('Vui lòng nhập đủ thông tin', 'Thiếu thông tin đăng nhập');
     }
     let loginInfo = {
         id: loginEmailInputElement.value,

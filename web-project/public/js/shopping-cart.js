@@ -91,10 +91,14 @@ async function buildShopingCart (userId) {
                         renderProduct(products);
                     })
                     .catch(error => {
+                        promotionElement.style.display = "none";
+                        shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none; padding-bottom:300px'>Không có sản phẩm nào trong giỏ hàng</li>";
                         console.log(error);
         });   
             } else {
                 products.length = 0;
+                summaryElement.style.display = "none";
+                confirmBtnElement.style.display = "none";
                 shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none; padding-bottom:300px'>Vui lòng đăng nhập để xem giỏ hàng</li>";
                 promotionElement.style.display = "none";
                 summaryElement.style.display = "none";
@@ -123,6 +127,7 @@ const inputQuantityElement = document.querySelector("input");
 const plusBtnElement = document.querySelectorAll(".fa-plus-square");
 const summaryUlElement = document.querySelector(".summary ul");
 const inputCodeElement = document.getElementById("promo-code");
+const confirmBtnElement = document.getElementById("confirm-container");
 const btnElement = document.querySelector(".promotion button");
 const discountElement = document.querySelector(".discount.disable")
 
@@ -138,6 +143,7 @@ const renderProduct = (arr) => {
         shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none; padding-bottom:300px'>Không có sản phẩm nào trong giỏ hàng</li>";
         promotionElement.style.display = "none";
         summaryElement.style.display = "none";
+        confirmBtnElement.style.display = "none";
         document.getElementById("confirm-container").classList.add("disable");
         document.querySelector(".promotion").classList.add("disable");
         // totalProductsElement.style.display = "none";
@@ -188,7 +194,7 @@ const renderProduct = (arr) => {
                 <div class="col-lg-1 col-md-1 col-sm-12 text-center">
                     <div class="remove pt-5">
                         <span class="close" onclick="deleteProduct(${t.id})">
-                            <i class="fas fa-trash black-text fa-2x"></i>
+                            <i class="fas fa-trash black-text fa-2x" style ="cursor:pointer;"></i>
                         </span>
                     </div>
                 </div>
@@ -315,7 +321,7 @@ const updateTotalMoney = (arr) => {
 
     // let hideClass = discountRate == 0 ? " hide" : "";
 
-    // Cập nhật lên trên giao diện
+    // // Cập nhật lên trên giao diện
     summaryUlElement.innerHTML = "";
 
     summaryUlElement.innerHTML += `
@@ -326,23 +332,23 @@ const updateTotalMoney = (arr) => {
             GIẢM GIÁ (- ${discountRate * 100}%)<span class="red-text amount-of-money">- ${numberFormater.format(discountTotal)} VND</span>
     </li>
     <li class="total">TỔNG THANH TOÁN <span class="red-text amount-of-money">${numberFormater.format(totalMoney)} VND</span></li>
-    ` + `<div id="confirm-container" class="container">
+    ` 
+    document.getElementById("confirm-container").innerHTML =`
     <div class="row pt-5 pb-5">
-        <div class="continue-order col-lg-6 col-md-6 col-sm-12">
-            <a href="../page/main-menu.html"><div class="btn btn--white uppercase-text">Tiếp tục đặt hàng</div></a>
-        </div>
-        <div class="confirm-btn col-lg-6 col-md-6 col-sm-12">
-            <a href="../page/checkout.html"><div id="confirm-btn" class="btn btn--orange float-end uppercase-text">Thanh toán</div></a>
-        </div>
-    </div>
-</div>`
+                <div class="continue-order col-lg-6 col-md-6 col-sm-12">
+                    <a href="../page/main-menu.html"><div class="btn btn--white uppercase-text">Tiếp tục đặt hàng</div></a>
+                </div>
+                <div class="confirm-btn col-lg-6 col-md-6 col-sm-12">
+                    <a href="../page/checkout.html"><div id="confirm-btn" class="btn btn--orange uppercase-text">Tiến hành thanh toán</div></a>
+                </div>
+            </div>`
 }
 
 const checkPromoCodeValue = () => {
     let inputPromodCode = inputCodeElement.value;
     let rate = promotionCode[inputPromodCode];
     if (!rate) {
-        alert("Ma giam gia khong phu hop!");
+        toastr.error("Mã giảm giá không phù hợp!");
         discountRate = 0;
     } else {
         discountRate = rate;

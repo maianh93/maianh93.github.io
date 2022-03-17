@@ -325,6 +325,7 @@ img {
 .btn--orange {
     background-color: var(--orange-color);
     min-width: 227px;
+    border: 1px solid var(--orange-color);
 }
 
 .btn--orange:hover {
@@ -376,6 +377,7 @@ img {
 
 .btn--order {
     padding: 7px 15px;
+    border: solid 1px var(--red-color);
 }
 
 .btn--order:hover {

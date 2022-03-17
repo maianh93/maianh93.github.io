@@ -86,7 +86,6 @@ const hcmOptionElement = document.getElementById("hcm-option-store");
 const dnOptionElement = document.getElementById("dn-option-store");
 const allOptionElement = document.getElementById("all-option-store");
 const pageTitleElement = document.getElementsByClassName("page_title");
-console.log(allOptionElement)
 
 // Hàm filter
 const filterStoreByProvince = (arr, province) => {

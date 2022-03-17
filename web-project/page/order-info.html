@@ -29,9 +29,9 @@
 
     <!-- Personal -->
     <link rel="stylesheet" href="../lib/font/font.css">
-    <link rel="stylesheet" href="../public/css/shopping-cart.css">
+    <link rel="stylesheet" href="../public/css/user-info.css">
     <link rel="icon" type="image/x-icon" href="../public/image/logo/logo.ico">
-    <title id ="title">Pluto | Giỏ hàng</title>
+    <title id ="title">Pluto | Thông tin tài khoản</title>
 </head>
 
 <body>
@@ -113,142 +113,50 @@
     </header>
     <div class="fake-face disable">
     </div>
-    <h2 class="extra-large-text red-text extra-bold-text uppercase-text text-center pt-5">giỏ hàng</h2>
-    <section class="shopping-cart">
-        
-        <!-- <div class="container single-product mt-5">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="image">
-                        <img src="../public/image/detail-menu/ga-gion-khong-xuong/gakoxuong_cb65.jpg" alt="gacay_combo3mieng_1">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="info mt-2">
-                        <h4 class="info-name orange-text extra-bold-text semi-large-text uppercase-text">COMBO GÀ GIÒN KHÔNG XƯƠNG (3 MIẾNG)</h3>
-                            <div class="detail ps-2">
-                                <p class="black-text bold-text small-text">3 miếng gà giòn không xương</p>
-                                <p class="black-text bold-text small-text">1 salad bắp cải</p>
-                                <p class="black-text bold-text small-text">1 sprite/coca/fanta</p>
-                            </div>
-                            <p class="single-price ps-2 bold-text small-text green-text">69.000đ</p>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-12 text-center">
-                    <div class="quantity">
-                        <div class="d-flex">
-                            <div class="quantity-icon">
-                                <i class="far fa-minus-square extra-bold-text orange-text fa-2x"></i>
-                            </div>
-                            <div class="quantity-value">
-                                <input class="orange-text extra-bold-text" type="text" value="1">
-                            </div>
-                            <div class="quantity-icon">
-                                <i class="far fa-plus-square extra-bold-text orange-text fa-2x"></i>
-                            </div>
+    <div class="container">
+        <div id ="order-info" class="order-info">
+            <h3 class="red-text uppercase-text text-center bold-text mt-5 pb-3">lịch sử đơn hàng</h3>
+            <div class="order-info-body">
+                <div class="container">
+                    <div class="row">
+                        <div style="overflow-x:auto;">
+                            <table class="text-center pt-4 mb-5">
+                                <tr>
+                                    <th
+                                        class="col-lg-3 col-md-3 col-sm-3 bold-text black-text small-text uppercase-text">
+                                        ngày đặt hàng</th>
+                                    <th colspan="2"
+                                        class="col-lg-3 col-md-3 col-sm-3 bold-text black-text small-text uppercase-text">
+                                        chi tiết đơn hàng</th>
+                                    <th
+                                        class="col-lg-3 col-md-3 col-sm-3 bold-text black-text small-text uppercase-text">
+                                        tổng thanh toán</th>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3" class="col-lg-3 col-md-3 col-sm-3">29/10/2021
+                                    </td>
+                                    <td class="col-lg-3 col-md-3 col-sm-3">01 COMBO GÀ GIÒN KHÔNG XƯƠNG (3 MIẾNG)</td>
+                                    <td class="col-lg-3 col-md-3 col-sm-3">69.000đ</td>
+                                    <td rowspan="3" class="col-lg-3 col-md-3 col-sm-3 price-right">280.000đ</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td class="col-lg-3 col-md-3 col-sm-3">02 COMBO GÀ GIÒN CAY (3 MIẾNG)</td>
+                                    <td class="col-lg-3 col-md-3 col-sm-3">230.000đ</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td class="col-lg-3 col-md-3 col-sm-3">GIẢM GIÁ</td>
+                                    <td class="col-lg-3 col-md-3 col-sm-3">-19.000đ</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-12 text-center">
-                    <div class="total-notional-price pt-5">
-                        <span class="notional-price pt-2 bold-text semi-large-text red-text">69.000đ</span>
-                    </div>
-                </div>
-                <div class="col-lg-1 col-md-1 col-sm-12 text-center">
-                    <div class="remove pt-5">
-                        <span class="close">
-                            <a href=""><i class="fas fa-trash black-text fa-2x"></i></a>
-                        </span>
-                    </div>
-                </div>
+            </div>
+        </div>   
 
-            </div>
-        </div>
-        <div class="container single-product mt-5">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-12">
-                        <div class="image">
-                            <img src="../public/image/gacay_combo3mieng_1.jpg" alt="combo-ga-cay-3">
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12">
-                        <div class="info mt-2">
-                            <h4 class="info-name orange-text extra-bold-text semi-large-text uppercase-text">COMBO GÀ GIÒN CAY (3 MIẾNG)</h3>
-                                <div class="detail ps-2">
-                                    <p class="black-text bold-text small-text">3 miếng gà giòn cay</p>
-                                    <p class="black-text bold-text small-text">1 khoai tây chiên (nhỏ)</p>
-                                    <p class="black-text bold-text small-text">1 sprite/coca/fanta</p>
-                                </div>
-                                <p class="single-price ps-2 bold-text small-text green-text">115.000đ</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12 text-center">
-                        <div class="quantity">
-                            <div class="d-flex">
-                                <div class="quantity-icon">
-                                    <i class="far fa-minus-square extra-bold-text orange-text fa-2x"></i>
-                                </div>
-                                <div class="quantity-value">
-                                    <input class="orange-text extra-bold-text" type="text" value="2">
-                                </div>
-                                <div id="plus" class="quantity-icon">
-                                    <i class="far fa-plus-square orange-text extra-bold-text fa-2x"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12 text-center">
-                        <div class="total-notional-price pt-5">
-                            <span class="notional-price pt-2 bold-text semi-large-text red-text">230.000đ</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 col-md-1 col-sm-12 text-center">
-                        <div class="remove pt-5">
-                            <span class="close">
-                                <a href=""><i class="fas fa-trash black-text fa-2x"></i></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-        </div> -->
-    </section>
-    <section class="option-container container">
-        <div class="row">
-            <!-- Mã giảm giá -->
-        <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="promotion">
-                <input placeholder="Mã Giảm Giá" type="text" id="promo-code" autocomplete="off" />
-                <button type="button"></button>
-            </div>
-        </div>
-        
-        <!-- Tổng tiền -->
-        <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="summary">
-                <ul>
-                    <!-- <li class="subtotal extra-bold-text">TỔNG CỘNG <span class="extra-bold-text red-text amount-of-money">299.000 VND</span>
-                    </li>
-                    <li class="vat">VAT<span class="red-text amount-of-money">30.000 VND</span></li>
-                    <li class="discount disable">
-                        GIẢM GIÁ<span class="red-text amount-of-money">-19.000 VND</span>
-                    </li>
-                    <li class="total">TỔNG THANH TOÁN <span class="red-text amount-of-money">280.000 VND</span></li> -->
-                </ul>
-            </div>
-        </div>
-        </div>
-        <div id="confirm-container" class="container">
-            <!-- <div class="row pt-5 pb-5">
-                <div class="continue-order col-lg-6 col-md-6 col-sm-12">
-                    <a href="../page/main-menu.html"><div class="btn btn--white uppercase-text">Tiếp tục đặt hàng</div></a>
-                </div>
-                <div class="confirm-btn col-lg-6 col-md-6 col-sm-12">
-                    <a href="../page/checkout.html"><div id="confirm-btn" class="btn btn--orange uppercase-text">Tiến hành thanh toán</div></a>
-                </div>
-            </div> -->
-        </div>
-        
-    </section>
+    </div>
     <footer>
         <div class="footer">
             <div class="container mt-4 pt-4">
@@ -327,8 +235,6 @@
         </div>
     </footer>
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>
@@ -339,13 +245,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        <!-- Axios -->
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-        <script src="../public/js/api.js"></script>
-        <script src="../public/js/base.js"></script>
-        <script src="../public/js/main.js"></script>
-        <script src="../public/js/shopping-cart.js"></script>
+    <script src="../public/js/api.js"></script>
+    <script src="../public/js/base.js"></script>
+    <script src="../public/js/main.js"></script>
+    <script src="../public/js/user-info.js"></script>
 </body>
 
 </html>
