@@ -96,11 +96,11 @@
 
 @media (max-width: 991px) {
     .banner-item {
-      height: 350px;
+      height: 324px;
   }
   .banner {
     width: 100%;
-    height: 350px;
+    height: 324px;
     position: relative;
   }
 }

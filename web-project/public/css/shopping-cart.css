@@ -197,6 +197,11 @@ body {
     .promotion>button {
         padding: 0.5rem 1rem;
     }
+
+    .continue-order {
+        margin-bottom: 6px;
+        text-align: end;
+    }
 }
 
 @media (max-width: 1200px) {

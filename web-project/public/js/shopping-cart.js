@@ -361,4 +361,9 @@ const getDiscountRate = () => {
 }
 
 btnElement.addEventListener("click", checkPromoCodeValue);
+inputCodeElement.addEventListener("keypress", (e) => {
+    if (e.key === 'Enter') {
+        checkPromoCodeValue();
+    }
+})
 buildShopingCart(localStorage.getItem("userId"))

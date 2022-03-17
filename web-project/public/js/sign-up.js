@@ -197,7 +197,10 @@ signupBtnElement.addEventListener("click", () => {
     } else if (signUpPasswordInputElement.value != signUpConfirmPasswordInputElement.value) {
         toastr.error('Mật khẩu không trùng khớp');
 
-    } else {
+    } else if ((signUpPasswordInputElement.value).length < 8) {
+        toastr.error('Mật khẩu không đúng định dạng')
+    }
+    else {
         signUpConfirmPasswordInputElement.classList.remove("error-sign");
         document.querySelector(".alert small").innerText="";
         toastr.success("Đã đăng ký thành công!");
