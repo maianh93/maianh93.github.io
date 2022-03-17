@@ -75,33 +75,51 @@ const buildDescription = (obj) => {
 
 //Đặt mua
 const orderSingleProduct = (id, productName, productPrice) => {
-    let quantity = document.querySelector(".quantity-value>input");
-    quantity.onchange = function(){
-        document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
-    }
-    document.getElementById("add-to-cart").onclick = function() {
-        let userId = localStorage.getItem("userId");
-        let productId = id;
-        let _quantity = quantity.value;
-        callPostUpdateItemOrderAPI({
-            userId,
-            productId,
-            quantity: _quantity
-        })
-        .then(res => {
-            console.log(res.data)
+    isLogin()
+    .then(result => {
+        if (result) {
+            let quantity = document.querySelector(".quantity-value>input");
+            quantity.value = 1;
+            quantity.onchange = function(){
+            document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
+            }
+            document.getElementById("add-to-cart").onclick = function() {
+                let userId = localStorage.getItem("userId");
+                let productId = id;
+                let _quantity = quantity.value;
+                callPostUpdateItemOrderAPI({
+                    userId,
+                    productId,
+                    quantity: _quantity
+                })
+                .then(res => {
+                    console.log(res.data)
+                    return res.data;
+                })
+                .then(data => {
+                    let items = data.items;
+                    let cartNumber = items
+                        .filter(i => i.quantity > 0)
+                        .length;
+                    localStorage.setItem("cartItemCount", cartNumber);
+                    updateCartItemCount();
+                });
+                document.querySelector(".dialog-body").classList.add("disable");
+                document.querySelector(".dialog").classList.add("disable");
+            }
+
+            let name = document.querySelector(".dialog-body__input-volumn-item");
+            document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
+            name.innerHTML = `<p class="white-text text-center semi-large-text bold-text pt-2">${productName}</p>`
+            document.querySelector(".dialog-body").classList.remove("disable");
+            document.querySelector(".dialog").classList.remove("disable");
+        } else {
+            toastr.error('Đăng nhập trước khi đặt hàng!')
         }
-
-        )
-        document.querySelector(".dialog-body").classList.add("disable");
-        document.querySelector(".detail-menu").classList.remove("opacity-4")
-    }
-
-    let name = document.querySelector(".dialog-body__input-volumn-item");
-    document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
-    name.innerHTML = `<p class="white-text text-center semi-large-text bold-text pt-2">${productName}</p>`
-    document.querySelector(".dialog-body").classList.remove("disable");
-    document.querySelector(".detail-menu").classList.add("opacity-4")
+    })
+    .catch (error => {
+        console.log(error)
+    })
 }
 
 const updateTotalProduct = (inc) => {
