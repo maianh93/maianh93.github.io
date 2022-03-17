@@ -121,12 +121,19 @@
         text-align: center !important;
     }
 
-    .dialog-body__input-volumn-quantity {
-        margin-left: 55px;
-    }
 }
 
 @media (max-width: 576px) {
+    .dialog-body {
+        /* display: flex; */
+        max-width: 332px;
+
+    }
+
+    .quantity-container {
+        padding-left: 27px;
+    }
+
     .info-name {
         text-align: center !important;
     }

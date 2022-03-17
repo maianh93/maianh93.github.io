@@ -27,6 +27,10 @@ body {
     height: 76px;
 }
 
+.quantity-container {
+  display: flex;
+}
+
 @media (max-width: 1200px) {
     .banner-item {
       height: 484px;

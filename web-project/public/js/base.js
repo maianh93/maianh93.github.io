@@ -34,7 +34,7 @@ const setUndefinedToken = () => {
 var myVar;
 
 function loadingFunction() {
-  myVar = setTimeout(showPage, 900);
+  myVar = setTimeout(showPage, 333);
 }
 
 function showPage() {

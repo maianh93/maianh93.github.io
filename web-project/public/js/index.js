@@ -148,8 +148,8 @@ const checkLogin = () => {
         })
         .then(res => {
             if (res) {
-                let items = res.data.items;
-                console.log(items)
+                let items = res.data[0].items;
+                console.log(res.data)
                 let cartNumber = items
                     .filter(i => i.quantity > 0)
                     .length;

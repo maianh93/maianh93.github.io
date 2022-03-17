@@ -188,6 +188,11 @@ function loginUser(loginInfo) {
     });
 }
 
+// Regex for password: Password must be started with A to Z, a to z or number. 
+// Min length is 8. And It can contains '@$!%*#?&' character
+const pwdRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/;
+const isValidPassword = (pwd) => pwdRegex.test(pwd);
+
 
 
 // Thêm thông tin đăng ký - login - update
@@ -197,8 +202,8 @@ signupBtnElement.addEventListener("click", () => {
     } else if (signUpPasswordInputElement.value != signUpConfirmPasswordInputElement.value) {
         toastr.error('Mật khẩu không trùng khớp');
 
-    } else if ((signUpPasswordInputElement.value).length < 8) {
-        toastr.error('Mật khẩu không đúng định dạng')
+    } else if (!isValidPassword(signUpPasswordInputElement.value)) {
+        toastr.error('Mật khẩu phải có tối thiểu 8 ký tự, bao gồm cả số và chữ', 'Mật khẩu không đúng định dạng');
     }
     else {
         signUpConfirmPasswordInputElement.classList.remove("error-sign");

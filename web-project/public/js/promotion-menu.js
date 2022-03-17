@@ -122,6 +122,11 @@ const orderSingleProduct = (id, productName, productPrice) => {
     })
 }
 
+document.querySelector(".dialog").addEventListener("click", () => {
+    document.querySelector(".dialog-body").classList.add("disable");
+    document.querySelector(".dialog").classList.add("disable");
+}) 
+
 const updateTotalProduct = (inc) => {
     // console.log("hi")
     let ele = document.querySelector(".quantity-value>input");

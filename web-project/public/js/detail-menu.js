@@ -20,6 +20,21 @@ async function loadPage() {
     } catch (error) {
         console.log(error);
     }
+
+    // Promise.all([
+    //     callGetProductsAPI(categoryId),
+    //     callGetPromotionProductsAPI()
+    // ])
+    // .then(arr => {
+    //     let resProduct = arr[0], resPromotionId = arr[1];
+    //     document.getElementById("title").innerText=`Pluto | ${categoryName}`;
+    //     console.log(resProduct.data);
+    //     console.log(resPromotionId.data[0].id);
+    //     return Promise.all([resProduct.data, callGetProductsAPI(resPromotionId.data[0].id)]);
+    // })
+    // .then(arr => renderProduct(arr[0], arr[1].data))
+    // .catch(err => console.log(err))
+    
 }
 
 //render product
@@ -126,9 +141,25 @@ const orderSingleProduct = (id, productName, productPrice) => {
         .then(result => {
             if (result) {
                 let quantity = document.querySelector(".quantity-value>input");
-                quantity.value = 1;
+                callGetOrderByUserIdAndStaTusAPI(localStorage.getItem("userId"))
+                    .then(res => {
+                        if (res.data && res.data.length > 0) {
+                            let items = [...res.data[0].items];
+                            let filteredItems = items.filter(item => item.productId == id);
+                            return filteredItems && filteredItems.length > 0 && filteredItems[0].quantity > 0 ? filteredItems[0].quantity : 1; 
+                        } else {
+                            return 1;
+                        }
+                        
+                    })
+                    .then(qtty => {
+                        quantity.value = qtty;
+                        document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
+                    })
+                    .catch(err => console.log(err));
+
                 quantity.onchange = function(){
-                document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
+                    document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
                 }
                 document.getElementById("add-to-cart").onclick = function() {
                     let userId = localStorage.getItem("userId");
@@ -156,7 +187,6 @@ const orderSingleProduct = (id, productName, productPrice) => {
                 }
 
                 let name = document.querySelector(".dialog-body__input-volumn-item");
-                document.getElementById("pop-up-price").innerHTML = `<div class="pop-up-price semi-large-text bold-text green-text">${numberFormater.format(productPrice*quantity.value)}đ</div>`
                 name.innerHTML = `<p class="white-text text-center semi-large-text bold-text pt-2">${productName}</p>`
                 document.querySelector(".dialog-body").classList.remove("disable");
                 document.querySelector(".dialog").classList.remove("disable");

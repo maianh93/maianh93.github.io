@@ -149,6 +149,7 @@ const checkLogin = () => {
                 <a class="dropdown-item" href="./user-info.html">Thông tin tài khoản</a>
                 <a class="dropdown-item" href="./order-info.html">Lịch sử đơn hàng</a>
                 <a onclick = "setUndefinedToken()" id="log-out-btn" class="dropdown-item" href="./login.html">Đăng xuất</a>`
+                return callGetAllOrderByUserIdAPI(localStorage.getItem("userId"));
             } else {
                 document.getElementById("user-nav-btn").innerHTML = `<img
                 src="../public/image/login-user-image.jpg"
@@ -158,11 +159,24 @@ const checkLogin = () => {
                 <a class="dropdown-item" href="./login.html">Đăng nhập</a>
                 <a class="dropdown-item" href="./sign-up.html">Đăng ký</a>
                 `
+                return null;
             }
         })
+        .then(res => {
+            if (res) {
+                let items = res.data[0].items;
+                console.log(res.data)
+                let cartNumber = items
+                    .filter(i => i.quantity > 0)
+                    .length;
+                localStorage.setItem("cartItemCount", cartNumber);
+                updateCartItemCount();
+            }
+        }) 
         .catch (error => {
             console.log(error)
         })
+
 }
 
 
