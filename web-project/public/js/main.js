@@ -147,7 +147,7 @@ const checkLogin = () => {
                 alt="Avatar" class="navbar-user-avatar-img" aria-labelledby="navbarDropdown_1">`
                 document.getElementById("dropdown-user").innerHTML = `
                 <a class="dropdown-item" href="./user-info.html">Thông tin tài khoản</a>
-                <a class="dropdown-item" href="./user-info.html">Lịch sử đơn hàng</a>
+                <a class="dropdown-item" href="./order-info.html">Lịch sử đơn hàng</a>
                 <a onclick = "setUndefinedToken()" id="log-out-btn" class="dropdown-item" href="./login.html">Đăng xuất</a>`
             } else {
                 document.getElementById("user-nav-btn").innerHTML = `<img
