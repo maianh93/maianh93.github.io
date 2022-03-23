@@ -35,6 +35,11 @@ const App = () => {
 
     const result = [
         {
+            bmi: 1,
+            text: "Please fill infomation",
+            message: ""
+        },
+        {
             bmi: 18.5,
             text: "You are underweight!!!",
             message: "You need to apply diet and exercise to gain weight."
