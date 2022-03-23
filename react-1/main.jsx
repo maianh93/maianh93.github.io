@@ -6,6 +6,10 @@
 // "Hello React"
 // )
 
+// const { useState } = require("react");
+
+// const { useState } = require("react");
+
 // ReactDOM.render(h1, app)
 
 //Cú pháp JSX (hay dùng hơn vì ngắn gọn, viết được trực tiếp mã html) => Phải biên dịch qua NodeJS trước
@@ -17,7 +21,7 @@
 //         <h1 className="heading" onClick={() => {
 //             alert("hehehe")
 //         }}
-        
+
 //         id = {123}
 //         style={{
 //             color: "red",
@@ -112,50 +116,182 @@
 //     label: "Click me!!!",
 // };
 
+const { useState } = React; //important
+
 const CashBackIcon = () => <i className="bi bi-cash-stack"></i>;
 
-const PeopleIcon = () => <i className="bi bi-cash-stack"></i>; 
+const PeopleIcon = () => <i className="bi bi-people-fill"></i>;
 
-const InputField = (props) => (
-        <div className="form-field">
-            <label className="form-label" htmlFor={props.id}>{props.label}</label>
-            <div className="form-control">
-                {props.icon}
-                <input id={props.id} type={props.type} />
-            </div>
-            
+const InputField = (props) => {
+    //props.children
+    return <div className="form-field">
+        <label className="form-label" htmlFor={props.id}>{props.label}</label>
+        <div className="form-control">
+            {props.icon}
+            <input type="number"
+            name={props.name}
+            value={props.value}
+            onChange={props.onChange} />
         </div>
-);
-
-InputField.propTypes = {
-        label: PropTypes.string.isRequired,
-        id: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired,
-        icon: PropTypes.element.isRequired,
-};
-
-const App = () => {
-    return (
-    <div className="container">
-        <h1 className="heading">Tip Caculator</h1>
-
-        <form action="">
-        <InputField 
-            label ="Bill amount" 
-            id="amnount" 
-            // type="number" 
-            icon = {<CashBackIcon />} 
-        />
-        <InputField 
-            label ="Number of guest" 
-            id="amnount" 
-            type="number" 
-            icon = {<PeopleIcon />} 
-        />
-        <button></button>
-        </form>
 
     </div>
+};
+
+
+
+InputField.propTypes = {
+    label: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    icon: PropTypes.element.isRequired,
+};
+
+const OptionField = (props) => {
+    //chỉ sử dụng trong hàm map
+    //chỉ sử dụng trong ngữ cảnh của hàm map
+    //Hỏi lại bố nó
+    const options = props.options.map((option, index) => (
+        <option value={option.value}>{option.label}</option>
+    ));
+    return (
+        <div className="option-field">
+            <label htmlFor={props.id}>{props.label}</label>
+            <select 
+            name={props.id} 
+            id={props.id} 
+            onChange={props.onChange}
+            defaultValue={props.defaultValue}>
+                {options}
+            </select>
+        </div>
+    );
+};
+
+// let options = [{
+//     value: "1", label: "1"
+// }, {value: "2", label: "2"}]
+// let inPutProps = {
+//     id: 10,
+//     label: "shshs",
+//     defaultValue: "kkkkkk",
+//     options: options,
+//     onChange: () => {
+//         // dosmt
+//     }
+// }
+const App = () => {
+    //Hooks
+    const [tip, setTip] = useState(0); //state, setState
+    const [values, setValues] = useState({
+        amount: 0,
+        guests: 0,
+        quantity: 0.3,
+    })
+
+    const handleChange = (e) => {
+        //Hỏi lại bố nó
+        setValues({
+            ...values,
+            [e.target.name]: e.target.value,
+          });
+        console.log(values)
+    }
+    //State
+    const options = [
+        {
+            value: 0.3,
+            label: "30% - Outstanding"
+        },
+        {
+            value: 0.2,
+            label: "20% - Good"
+        },
+        {
+            value: 0.15,
+            label: "15% - It's Okay"
+        },
+        {
+            value: 0.1,
+            label: "10% - Bad"
+        },
+        {
+            value: 0.05,
+            label: "5% - Terrible"
+        }
+    ];
+    const gender = [
+        {
+            value: -1,
+            label: "Other"
+        },
+        {
+            value: 0,
+            label: "Male"
+        },
+        {
+            value: 1,
+            label: "Female"
+        }
+    ]
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); //important
+        //Uncontrolled form
+        // Hỏi lại bố nó
+
+        const { amount, guests, quality } = e.target.elements;
+
+        const totalTip = amount.value * quality.value
+
+        const tipPerson = (totalTip / guests.value).toFixed(2);
+
+        console.log(tipPerson)
+        setTip(tipPerson)
+    };
+
+    return (
+        <div className="container">
+            <h1 className="heading">Tip Caculator</h1>
+
+            <form onSubmit={handleSubmit} action="">
+                <InputField
+                    label="Bill amount"
+                    id="amount"
+                    onChange={handleChange}
+                    value={values.amount}
+                    type="number" 
+                    name="amount"
+                    icon={<CashBackIcon />}
+                />
+                <InputField
+                    label="Number of guests"
+                    id="guests"
+                    onChange={handleChange}
+                    value={values.guests}
+                    type="number"
+                    name="guests"
+                    icon={<PeopleIcon />}
+                />
+                <OptionField
+                    label="Service Quality"
+                    id="quality"
+                    name="quality"
+                    defaultValue={values.quantity}
+                    options={options}
+                />
+                <OptionField
+                    label="Gender"
+                    id="gender"
+                    options={gender}
+                />
+                <p className="result">
+                    Tips <b>${tip}</b>
+                </p>
+            <button className="btn-calculate">Calculate</button>
+            </form>
+
+        </div>
     );
 }
 

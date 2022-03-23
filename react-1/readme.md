@@ -20,3 +20,13 @@ Function component
 
 - typescript
 - flow
+
+-PureFunction: chỉ sử dụng và tác động đoạn mã bên trong function, không được thay đổi trực tiếp
+
+- one way: chạy từ trên xuống dưới
+- state: thông tin mô tả => phản ảnh giao diện (mô tả dữ liệu hiện tại)
+
+- two way: cập nhật lại
+
+- map: phải lưu ý key (thường là id của dữ liệu) vì React sẽ nhận biết qua key
+- props
