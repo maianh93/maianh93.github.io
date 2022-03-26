@@ -1,8 +1,11 @@
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
   }
   
+  .game-board {
+    margin: auto;
+    margin-top: 50px;
+  }
   ol, ul {
     padding-left: 30px;
   }
@@ -31,6 +34,16 @@ body {
     text-align: center;
     width: 34px;
   }
+
+  .styleX {
+    color: #345594;
+    font-weight: 700;
+  }
+
+  .styleO {
+    color: red;
+    font-weight: 700;
+  }
   
   .square:focus {
     outline: none;
@@ -43,6 +56,7 @@ body {
   .game {
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
   
   .game-info {
