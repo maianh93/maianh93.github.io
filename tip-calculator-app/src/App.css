@@ -1,0 +1,12 @@
+#root {
+  width: 425px;
+  margin: auto;
+  padding: 50px;
+  border: 1px #ddd solid;
+}
+
+h1 {
+  text-align: center;
+}
+
+
