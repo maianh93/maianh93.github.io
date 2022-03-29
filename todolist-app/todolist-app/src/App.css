@@ -1,0 +1,54 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-weight: 700;
+}
+.app {
+width: 400px;
+margin: auto;
+margin-top: 50px;
+text-align: center;
+border: 1px solid #ccc;
+padding: 25px 25px 25px 0;
+}
+
+.todo-task-name {
+  text-align: left;
+  padding-left: 34px;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.btn--delete {
+  background-color: #e45a5a;
+  border: 1px solid #e45a5a;
+  color: #fff;
+}
+
+.btn--add {
+  background-color: #598df2;
+  border: 1px solid #598df2;
+  color: #fff;
+  font-weight: bold;
+}
+
+input {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #fff;
+}
