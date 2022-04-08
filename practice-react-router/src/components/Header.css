@@ -1,0 +1,14 @@
+.active {
+    background-color: transparent;
+    box-shadow: none;
+    border-color: #1b1c1d;
+    font-weight: 700;
+    color: rgba(0,0,0,.95);
+    border-bottom: #1b1c1d;
+    border-bottom-style: solid;
+    border-radius: 0;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    margin: 0 0 -2px;
+    border-bottom-width: 2px;
+}

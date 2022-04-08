@@ -1,0 +1,12 @@
+.add-to-cart {
+    text-decoration: none;
+    background-color: #333;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    font-size: 16px;
+}

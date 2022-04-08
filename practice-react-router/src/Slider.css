@@ -1,0 +1,16 @@
+.banner {
+    overflow: hidden;
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.banner-item {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+}
