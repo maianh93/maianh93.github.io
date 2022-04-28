@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
-import Layout from "./component/Layout/Layout";
+import Layout from "./components/Layout/Layout";
 
 ReactDOM.render(
   <React.StrictMode>

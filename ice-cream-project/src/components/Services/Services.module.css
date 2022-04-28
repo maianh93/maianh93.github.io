@@ -1,0 +1,11 @@
+.service_title {
+    text-align: center;
+}
+
+.service_image {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}

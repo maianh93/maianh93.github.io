@@ -1,0 +1,10 @@
+.footer__downloadimage {
+    height: 68px;
+    width: 210px;
+    margin-left: -3px;
+    border-radius: 8px;
+}
+
+.footer__download img {
+    margin-top: 25px;
+}

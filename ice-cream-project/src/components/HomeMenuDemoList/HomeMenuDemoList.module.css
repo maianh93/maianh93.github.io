@@ -1,0 +1,10 @@
+.list_item {
+    cursor: pointer;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    transition: linear 0.25s;
+}
+
+.list_item:hover {
+    transform: scale(0.98);
+}
