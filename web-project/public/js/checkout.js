@@ -1,42 +1,9 @@
 let products = [
-    {
-        id: 1,
-        name: "COMBO GÀ GIÒN KHÔNG XƯƠNG (3 MIẾNG)",
-        description: [
-            "3 miếng gà giòn không xương",
-            "1 salad bắp cải",
-            "1 sprite/coca/fanta"
-        ],
-        image: "../public/image/detail-menu/ga-gion-khong-xuong/combo-3pc-ga-gion-k-xuong.jpg",
-        price: 69000,
-        total: 0
-    },
-    {
-        id: 2,
-        name: "COMBO GÀ GIÒN CAY (3 MIẾNG)",
-        description: [
-            "3 miếng gà giòn cay",
-            "1 khoai tây chiên (nhỏ)",
-            "1 sprite/coca/fanta"
-        ],
-        image: "../public/image/detail-menu/ga-gion-cay/gacay_combo3mieng_1.jpg",
-        price: 115000,
-        total: 0
-    },
-    {
-        id: 3,
-        name: "COMBO GÀ GIÒN CAY (3 MIẾNG)",
-        description : [
-            "3 miếng gà giòn không xương",
-            "3 miếng gà giòn không xương"
-        ],
-        image: "../public/image/detail-menu/ga-gion-cay/gacay_combo3mieng_1.jpg",
-        price: 115000,
-        total: 0
-    }
+
 ]
 
 async function buildShopingCart (userId) {
+    console.log("Build shopping cart!")
     isLogin()
         .then(result => {
             if (result) {
@@ -91,17 +58,10 @@ async function buildShopingCart (userId) {
                         renderProduct(products);
                     })
                     .catch(error => {
-                        promotionElement.style.display = "none";
-                        shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none; padding-bottom:300px'>Không có sản phẩm nào trong giỏ hàng</li>";
                         console.log(error);
         });   
             } else {
                 products.length = 0;
-                summaryElement.style.display = "none";
-                confirmBtnElement.style.display = "none";
-                shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none; padding-bottom:300px'>Vui lòng đăng nhập để xem giỏ hàng</li>";
-                promotionElement.style.display = "none";
-                summaryElement.style.display = "none";
             }
         })
         .catch (error => {
@@ -110,101 +70,81 @@ async function buildShopingCart (userId) {
          
 }
 
-let promotionCode = {
-    PLUTO5: 0.05,
-    PLUTO20: 0.2,
-    PLUTO15: 0.15,
-    PLUTO10: 0.1,
-}
-
 const numberFormater = new Intl.NumberFormat('de-DE');
-const shoppingCartElement = document.querySelector(".shopping-cart");
-// const notionalPriceElement = document.querySelector(".notional-price");
-// const singlePriceElement = document.querySelector(".single-price");
-const promotionElement = document.querySelector(".promotion");
-const summaryElement = document.querySelector(".summary");
-const inputQuantityElement = document.querySelector("input");
-const plusBtnElement = document.querySelectorAll(".fa-plus-square");
-const summaryUlElement = document.querySelector(".summary ul");
-const inputCodeElement = document.getElementById("promo-code");
-const confirmBtnElement = document.getElementById("confirm-container");
-const btnElement = document.querySelector(".promotion button");
-const discountElement = document.querySelector(".discount.disable")
-
-let discountRate = 0;
+const checkoutTablement = document.querySelector("#checkout-table");
+const summaryTablement = document.querySelector("#summaryTable");
 
 // Render danh sách sản phẩm ra ngoài giao diện
 const renderProduct = (arr) => {
     //B1: Xóa hết nội dung trước khi render
-    shoppingCartElement.innerHTML = "";
-
-    //Trường hợp mảng rỗng
-    if (arr.length == 0) {
-        shoppingCartElement.innerHTML = "<li class='text-center red-text semi-large-text' style='list-style-type: none; padding-bottom:300px'>Không có sản phẩm nào trong giỏ hàng</li>";
-        promotionElement.style.display = "none";
-        summaryElement.style.display = "none";
-        confirmBtnElement.style.display = "none";
-        document.getElementById("confirm-container").classList.add("disable");
-        document.querySelector(".promotion").classList.add("disable");
-        // totalProductsElement.style.display = "none";
-        return
-    }
+    checkoutTablement.innerHTML = `
+        <tr>
+            <th
+                class="col-lg-3 col-md-3 col-sm-12 bold-text black-text small-text uppercase-text">
+                tên sản phẩm</th>
+            <th
+                class="col-lg-3 col-md-3 col-sm-12 bold-text black-text small-text uppercase-text">
+                số lượng</th>
+            <th
+                class="col-lg-3 col-md-3 col-sm-12 bold-text black-text small-text uppercase-text">
+                đơn giá</th>
+            <th
+                class="col-lg-3 col-md-3 col-sm-12 bold-text black-text small-text uppercase-text">
+                thành tiền</th>
+        </tr>
+    `;
 
     for (let i = 0; i < arr.length; i++) {
         const t = arr[i];
-        const details = buildDescription(t.description);
+        console.log("each", t)
         // Clear nội dung
-        shoppingCartElement.innerHTML += `
-        <div class="container single-product mt-5">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="image">
-                        <img src=${t.image}>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="info mt-2">
-                        <h4 class="info-name orange-text extra-bold-text semi-large-text uppercase-text">${t.name}</h3>
-                            <div class="detail ps-2">
-                                ${details}
-                            </div>
-                            <p class="single-price ps-2 bold-text small-text green-text">${numberFormater.format(t.price)}</p>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-12 text-center">
-                    <div class="quantity">
-                        <div class="d-flex">
-                            <div class="quantity-icon">
-                                <i class="far fa-minus-square extra-bold-text orange-text fa-2x" onclick="updateTotalProduct(${t.id}, -1); renderProduct(products);"></i>
-                            </div>
-                            <div class="quantity-value" onchange="changeTotalProduct(${t.id}, event)">
-                                <input id="input_qtty_${t.id}" class="orange-text extra-bold-text" type="text" value="${t.total}">
-                            </div>
-                            <div class="quantity-icon">
-                                <i class="far fa-plus-square extra-bold-text orange-text fa-2x" onclick="updateTotalProduct(${t.id}, 1); renderProduct(products);"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-12 text-center">
-                    <div class="total-notional-price pt-5">
-                        <span class="notional-price pt-2 bold-text semi-large-text red-text">${numberFormater.format(t.total * t.price)}đ</span>
-                    </div>
-                </div>
-                <div class="col-lg-1 col-md-1 col-sm-12 text-center">
-                    <div class="remove pt-5">
-                        <span class="close" onclick="deleteProduct(${t.id})">
-                            <i class="fas fa-trash black-text fa-2x" style ="cursor:pointer;"></i>
-                        </span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        checkoutTablement.innerHTML += `
+            <tr>
+                <td class="col-lg-3 col-md-3 col-sm-12">${t.name}
+                </td>
+                <td class="col-lg-3 col-md-3 col-sm-12">${t.total}</td>
+                <td class="col-lg-3 col-md-3 col-sm-12">${numberFormater.format(t.price)} đ</td>
+                <td class="col-lg-3 col-md-3 col-sm-12 price-right">${numberFormater.format(t.price * t.total)} đ</td>
+            </tr>
         `
     }
-    updateTotalProduct(products)
-    updateTotalMoney(products)
+    const totalBill = arr.map(e => e.total * e.price).reduce((p, c) => p + c);
+    const discount = -1 * totalBill * 0.2;
+    const vat = (totalBill + discount) * 0.1;
+    const shipFee = 49000;
+    summaryTablement.innerHTML = `
+    <tr>
+        <th
+            class="col-lg-4 col-md-3 col-sm-12 bold-text black-text small-text uppercase-text">
+            <span>Tổng cộng</span></th>
+
+        <td
+            class="col-lg-3 col-md-3 col-sm-12 bold-text black-text small-text price-right">
+            ${numberFormater.format(totalBill)} đ</td>
+    </tr>
+    <tr>
+        <th class="col-lg-4 col-md-3 col-sm-12 black-text small-text uppercase-text">
+            giảm giá</th>
+        <td class="col-lg-3 col-md-3 col-sm-12 price-right">${numberFormater.format(discount)} đ</td>
+    </tr>
+    <tr>
+        <th class="col-lg-4 col-md-3 col-sm-12 black-text small-text uppercase-text">phí
+            ship</th>
+        <td class="col-lg-3 col-md-3 col-sm-12 price-right">${numberFormater.format(shipFee)} đ</td>
+    </tr>
+    <tr>
+        <th class="col-lg-4 col-md-3 col-sm-12 black-text small-text uppercase-text">
+            VAT</th>
+        <td class="col-lg-3 col-md-3 col-sm-12 price-right">${numberFormater.format(vat)} đ</td>
+    </tr>
+    <tr>
+        <th
+            class="col-lg-4 col-md-3 col-sm-12 black-text small-text uppercase-text bold-text">
+            tổng thanh toán</th>
+        <td class="col-lg-3 col-md-3 col-sm-12 bold-text price-right">${numberFormater.format(totalBill + discount + vat + shipFee)} đ</td>
+    </tr>
+    `;
+
 }
 
 // In ra màn hình description
@@ -290,8 +230,6 @@ const deleteProduct = (id) => {
         }
     }
     renderProduct(products)
-    localStorage.setItem("cartItemCount", localStorage.getItem("cartItemCount") - 1);
-    updateCartItemCount();
 }
 
 // Tính tổng tiền
@@ -362,10 +300,5 @@ const getDiscountRate = () => {
     return discountRate;
 }
 
-btnElement.addEventListener("click", checkPromoCodeValue);
-inputCodeElement.addEventListener("keypress", (e) => {
-    if (e.key === 'Enter') {
-        checkPromoCodeValue();
-    }
-})
+
 buildShopingCart(localStorage.getItem("userId"))

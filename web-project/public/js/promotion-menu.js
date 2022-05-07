@@ -131,7 +131,7 @@ const updateTotalProduct = (inc) => {
     // console.log("hi")
     let ele = document.querySelector(".quantity-value>input");
     let currentQtty = parseInt(ele.value);
-    ele.value = Math.max(0, currentQtty + inc);
+    ele.value = Math.max(1, currentQtty + inc);
     ele.onchange();
     // console.log("ele: " + ele.value);
 

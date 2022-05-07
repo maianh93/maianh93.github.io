@@ -146,17 +146,17 @@ const checkLogin = () => {
                 return null;
             }
         })
-        // .then(res => {
-        //     if (res) {
-        //         let items = res.data[0].items;
-        //         console.log(res.data)
-        //         let cartNumber = items
-        //             .filter(i => i.quantity > 0)
-        //             .length;
-        //         localStorage.setItem("cartItemCount", cartNumber);
-        //         updateCartItemCount();
-        //     }
-        // }) 
+        .then(res => {
+            if (res) {
+                let items = res.data[0].items;
+                console.log(res.data)
+                let cartNumber = items
+                    .filter(i => i.quantity > 0)
+                    .length;
+                localStorage.setItem("cartItemCount", cartNumber);
+                updateCartItemCount();
+            }
+        }) 
         .catch (error => {
             console.log(error)
         })
