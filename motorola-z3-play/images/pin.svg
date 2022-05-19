@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="48" viewBox="0 0 70 48">
+  <defs>
+    <clipPath id="clip-Instagram_-_icon">
+      <rect width="70" height="48"/>
+    </clipPath>
+  </defs>
+  <g id="Instagram_-_icon" data-name="Instagram - icon" clip-path="url(#clip-Instagram_-_icon)">
+    <g id="iconfinder_instagram_2639840" transform="translate(15.5 4.5)">
+      <circle id="Ellipse_1" data-name="Ellipse 1" cx="5.241" cy="5.241" r="5.241" transform="translate(14.433 14.433)" fill="#fff"/>
+      <path id="Path_1" data-name="Path 1" d="M26.374,3H12.624A9.636,9.636,0,0,0,3,12.626v13.75A9.636,9.636,0,0,0,12.626,36h13.75A9.636,9.636,0,0,0,36,26.374V12.624A9.636,9.636,0,0,0,26.374,3ZM19.5,27.75a8.25,8.25,0,1,1,8.25-8.25A8.258,8.258,0,0,1,19.5,27.75Zm9.625-16.5A1.375,1.375,0,1,1,30.5,9.875,1.376,1.376,0,0,1,29.125,11.25Z" transform="translate(0 0)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

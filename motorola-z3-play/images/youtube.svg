@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="48" viewBox="0 0 70 48">
+  <defs>
+    <clipPath id="clip-YouTube_-_icon">
+      <rect width="70" height="48"/>
+    </clipPath>
+  </defs>
+  <g id="YouTube_-_icon" data-name="YouTube - icon" clip-path="url(#clip-YouTube_-_icon)">
+    <path id="Icon_awesome-youtube" data-name="Icon awesome-youtube" d="M37.473,8.725a4.753,4.753,0,0,0-3.289-3.417C31.283,4.5,19.65,4.5,19.65,4.5s-11.633,0-14.534.808A4.753,4.753,0,0,0,1.827,8.725c-.777,3.014-.777,9.3-.777,9.3s0,6.289.777,9.3a4.679,4.679,0,0,0,3.289,3.362c2.9.808,14.534.808,14.534.808s11.633,0,14.534-.808a4.679,4.679,0,0,0,3.289-3.362c.777-3.014.777-9.3.777-9.3s0-6.289-.777-9.3ZM15.845,23.737V12.318l9.723,5.71-9.723,5.709Z" transform="translate(15.35 6)" fill="#fff"/>
+  </g>
+</svg>
